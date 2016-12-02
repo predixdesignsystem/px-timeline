@@ -1,6 +1,6 @@
 {
   "name": "px-timeline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": [
     "px-timeline.html"
   ],
@@ -12,18 +12,7 @@
     "bower_components",
     "node_modules",
     "test",
-    "data",
-    "img",
-    "video",
-    "audio",
-    "OSS_Notice.pdf",
-    "scripts",
-    ".github",
-    "px-timeline.png",
-    "monogram-wdmk.png",
-    "LICENSE.md",
-    "CONTRIBUTING.md",
-    "HISTORY.md"
+    "OSS_Notice.pdf"
   ],
   "dependencies": {
     "polymer": "^1.6.0",
