@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>px-timeline Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/px-timeline-demo.css" />
+  <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../px-theme/px-theme-styles.html" />
+  <style include="px-theme-styles" is="custom-style"></style>
+  <link rel="import" href="../iron-ajax/iron-ajax.html" />
+  <link rel="import" href="../px-api-viewer/px-api-viewer.html" />
+  <link rel="import" href="../px-tabs/px-tab-set.html" />
+  <link rel="import" href="../px-dropdown/px-dropdown.html" />
+  <link rel="import" href="../px-tooltip/px-tooltip.html"/>
+
+  <link rel="import" href="px-timeline.html" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="import" href="../px-demo-snippet/px-demo-snippet.html">
+  <link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
+  <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+</head>
+
+<body>
+
+  <!-- Wrap elements with auto-binding template to -->
+  <!-- allow use of Polymer bindings in main document -->
+  <template id="just-for-demo" is="dom-bind">
+
+    <!-- discription -->
+    <div class="hero u-p++ text--shadow">
+      <a class="actionable flex flex--right flex--middle" href="https://github.com/PredixDev/px-timeline" target="_blank">
+        <iron-icon class="menu__open" icon="fa:fa-github"></iron-icon>View on Github
+      </a>
+      <h1 class="delta">px-timeline</h1>
+      <div class="description-text">
+        The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively. Timeline schema and configuration options are detailed in the API reference below.
+      </div>
+      <div class="flex">
+        <img class="u-mr-- " src="https://img.shields.io/travis/PredixDev/px-timeline.svg?style=flat-square" alt="Travis"  onerror="this.style.display='none'"/>
+        <img class="u-mr--" src="https://img.shields.io/bower/v/px-timeline.svg?style=flat-square" alt="Bower" onerror="this.style.display='none'" />
+        <img class="u-mr--" src="https://img.shields.io/github/issues-raw/PredixDev/px-timeline.svg?style=flat-square" alt="Issues" onerror="this.style.display='none'" />
+      </div>
+    </div>
+    <br />
+
+    <!-- mega demo -->
+    <div style="position: relative;" class="u-pb++ flex flex--col" id="defaultTab">
+      <div class="tabContainer u-pt++ u-pl++">
+        <px-tab-set selected="{{selected}}" bare no-bottom-border>
+          <template is="dom-repeat" items="{{optionsArray}}">
+            <px-tab>Option {{indexPlusOne(index)}}</px-tab>
+          </template>
+        </px-tab-set>
+      </div>
+      <px-tab-pages selected="{{selected}}">
+        <template is="dom-repeat" items="{{optionsArray}}">
+          <section class="tab-page">
+            <div class="mega-demo flex u-ph++ u-pb++">
+              <!-- Properties -->
+              <div class="properties u-ph+ u-pb+ u-mt+">
+                <p class="epsilon">Properties</p>
+
+                <div class="flex u-mb-">
+                  <input id="enhanced{{indexPlusOne(index)}}" class="toggle__input toggle__input--small" type="checkbox" checked="{{item.enhanced::change}}">
+                  <label for$="enhanced{{indexPlusOne(index)}}" class="toggle__label toggle__label--small"></label>
+                  <div class="u-ml-">Enhanced Timeline</div>
+                </div>
+
+                <div class="flex u-mb-">
+                  <input id="timeGroups{{indexPlusOne(index)}}" class="toggle__input toggle__input--small" type="checkbox" checked="{{item.timeGroups::change}}">
+                  <label for$="timeGroups{{indexPlusOne(index)}}" class="toggle__label toggle__label--small"></label>
+                  <div class="u-ml-">Show Time Groups</div>
+                </div>
+
+                <div class="flex u-mb-">
+                  <input id="showNodeContent{{indexPlusOne(index)}}" class="toggle__input toggle__input--small" type="checkbox" checked="{{item.showNodeContent::change}}">
+                  <label for$="showNodeContent{{indexPlusOne(index)}}" class="toggle__label toggle__label--small"></label>
+                  <div class="u-ml-">Expand All Nodes</div>
+                </div>
+
+              </div>
+              <div class="demoContainer u-mt+">
+                <!-- demo -->
+                <div class="flex flex--col">
+                  <div class="flex__item demo u-ph+ u-pb+">
+                    <div class="u-mt+">
+                      <px-timeline
+                        show-time-groups="[[item.timeGroups]]"
+                        show-node-content="{{item.showNodeContent}}"
+                        timeline-data="{{data}}"
+                        enhanced="{{item.enhanced}}">
+                      </px-timeline>
+                    </div>
+                  </div>
+                  <div class="flex__item">
+                    <px-demo-snippet
+                      element-properties={{item}}
+                      element-name="px-timeline">
+                    </px-demo-snippet>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="apiContainer">
+              <div class="flex flex--col api u-mt++" >
+                <div>
+                  <px-api-viewer source="px-timeline"></px-api-viewer>
+                </div>
+              </div>
+            </div>
+          </section>
+        </template>
+      </px-tab-pages>
+    </div>
+    <footer class="footer flex flex--center">
+      <div class="footer__container u-pv++">
+        <div>
+          <a href="https://ge.com/digital" >
+            <img src="monogram-wdmk.png" alt="GE Monogram" class="footer__img">
+          </a>
+        </div>
+        <div class="footer__list">
+          <ul class="list-inline list-inline--delimited">
+            <li>
+              <a href="http://predix.io/legal" class="footer__list--lnk">Legal</a>
+            </li>
+            <li>
+              <a href="mailto:info@predix.io" class="footer__list--lnk">Contact Us</a>
+            </li>
+            <li>Copyright &copy; 2016 General Electric Company. All rights reserved.</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </template>
+  <script>
+    window.addEventListener('WebComponentsReady', function() {
+
+      var template = document.querySelector('template[is=dom-bind]'),
+          optionsArray = [
+            {
+              "timeGroups": false,
+              "showNodeContent": false,
+              "enhanced": true,
+              "timelineData": {"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}
+            }
+          ],
+          indexPlusOne = function(num) {
+            return num + 1;
+          },
+          ironAjaxEl = document.createElement('iron-ajax'),
+          nodes;
+
+          ironAjaxEl.handleAs = "json";
+          ironAjaxEl.url = "data/timeline-data.json";
+          ironAjaxEl.addEventListener('response', function(evt) {
+            nodes = evt.detail.response;
+            template.data = nodes;
+            template.nodeCount = nodes.length;
+          });
+          ironAjaxEl.generateRequest();
+          template.selected = "0";
+          template.optionsArray = optionsArray;
+          template.indexPlusOne = indexPlusOne;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!-- import polymer library -->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-timeline-node-list.html">
+<link rel="import" href="px-timeline-node-text.html">
+<link rel="import" href="px-timeline-node-img.html">
+<link rel="import" href="px-timeline-node-video.html">
+<link rel="import" href="px-timeline-node-audio.html">
+<link rel="import" href="css/px-timeline-styles.html">
+
+<!-- declare DOM module -->
+<dom-module id="px-timeline-node-main">
+  <template>
+    <style include="px-timeline-styles"></style>
+    <div class="left-node__head flex flex--start">
+
+      <div class="left-node__head__icon flex flex--col flex--middle">
+        <template is="dom-if" if="{{enhanced}}">
+          <div class="left-node__head__icon__icons flex">
+
+            <div class="left-node__head__icon__icons__tri icons__tri--color flex flex--middle">
+              <template  is="dom-if" if="{{hideContent}}">
+                <template is="dom-if" if={{timelineContent.body.length}}>
+                  <i class="icons__tri right-caret fa fa-caret-right hot" aria-hidden="true" on-tap="openContent"></i>
+                </template>
+                <template is="dom-if" if={{!timelineContent.body.length}}>
+                  <i class="icon__icon--hidden right-caret fa fa-caret-right hot" aria-hidden="true" on-tap="openContent"></i>
+                </template>
+              </template>
+              <template  is="dom-if" if="{{showContent}}">
+                <template is="dom-if" if={{timelineContent.body.length}}>
+                  <i class="icons__tri down-caret fa fa-caret-down hot" aria-hidden="true" on-tap="closeContent"></i>
+                </template>
+                <template is="dom-if" if={{!timelineContent.body.length}}>
+                  <i class="icon__icon--hidden down-caret fa fa-caret-down hot" aria-hidden="true" on-tap="closeContent"></i>
+                </template>
+              </template>
+            </div>
+
+            <template is="dom-if" if={{timelineContent.body.length}}>
+              <div id="open-icon" class="left-node__head__icon__icons__circle icons__circle--enhanced flex flex--center flex--middle">
+
+                <template is="dom-if" if="{{timelineMetadata.customIcon}}">
+                  <i class$="icons__circle--enhanced__imedia fa {{timelineMetadata.customIcon}}" aria-hidden="true"></i>
+                </template>
+
+                <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
+                  <template is="dom-if" if="{{bodyVideo}}">
+                    <i class="icons__circle--enhanced__imedia media-video fa fa-video-camera" aria-hidden="true"></i>
+                  </template>
+                  <template is="dom-if" if="{{bodyImg}}">
+                    <i class="icons__circle--enhanced__imedia media-photo fa fa-camera" aria-hidden="true"></i>
+                  </template>
+                  <template is="dom-if" if="{{bodyAudio}}">
+                    <i class="icons__circle--enhanced__imedia media-headphones fa fa-headphones" aria-hidden="true"></i>
+                  </template>
+                  <template is="dom-if" if="{{bodyList}}">
+                    <i class="icons__circle--enhanced__imedia media-list fa fa-list" aria-hidden="true"></i>
+                  </template>
+                  <template is="dom-if" if="{{bodyText}}">
+                    <i class="icons__circle--enhanced__imedia media-text fa fa-font" aria-hidden="true"></i>
+                  </template>
+                </template>
+
+              </div>
+            </template>
+
+            <template is="dom-if" if={{!timelineContent.body.length}}>
+              <div class="left-node__head__icon__icons__circle icons__circle--simple circle--simple--enhanced flex">
+              </div>
+            </template>
+          </div>
+
+          <template is="dom-if" if="{{showLine}}">
+            <template is="dom-if" if={{timelineContent.body.length}}>
+              <div class="left-node__head__icon__line left-node__head__icon__line--enhanced">
+              </div>
+            </template>
+            <template is="dom-if" if={{!timelineContent.body.length}}>
+              <div class="left-node__head__icon__line left-node__head__icon__line--enhanced--simple">
+              </div>
+            </template>
+          </template>
+
+        </template>
+
+        <template is="dom-if" if="{{!enhanced}}">
+          <div class="left-node__head__icon__icons__circle icons__circle--simple flex">
+          </div>
+          <template is="dom-if" if="{{showLine}}">
+            <div class="left-node__head__icon__line">
+            </div>
+          </template>
+        </template>
+      </div>
+
+      <div class="left-node__head__title flex flex--col flex--justify">
+        <div class="left-node__head__title__title flex">
+          <div class="left-node__head__title__title__text">
+            <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
+          </div>
+        </div>
+        <div class="left-node__head__title__date flex">
+          <span> {{formattedEdittedDate}} </span>
+        </div>
+      </div>
+    </div>
+
+    <template is="dom-if" if="{{!enhanced}}">
+      <div class="left-node__body flex flex--start">
+        <div class="left-node__body__line flex flex--col flex--middle">
+          <template is="dom-if" if="{{showLine}}">
+            <div class="left-node__body__line__line">
+            </div>
+          </template>
+        </div>
+        <div class="left-node__body__content--basic flex">
+          <div class="left-node__body__content--basic__text">
+            <span> {{basicBodyText}} </span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template is="dom-if" if="{{enhanced}}">
+      <template is="dom-if" if="{{showContent}}">
+        <div class="left-node__body flex flex--start">
+          <div class="left-node__body__line flex flex--col flex--middle">
+            <template is="dom-if" if="{{showLine}}">
+              <div class="left-node__body__line__line">
+              </div>
+            </template>
+          </div>
+          <div class="left-node__body__content flex">
+            <div class="left-node__body__content__editor flex">
+              <template is="dom-if" if="{{showImg}}">
+                <div class="left-node__body__content__editor__img flex flex--center flex--middle">
+                  <img class="left-node__body__content__editor__img__img" src="{{timelineMetadata.editorImg}}">
+                </div>
+              </template>
+              <template is="dom-if" if="{{!showImg}}">
+                <div class="left-node__body__content__editor__icon flex flex--center flex--middle">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+              </template>
+              <div class="left-node__body__content__editor__details flex flex--col">
+                <div class="left-node__body__content__editor__details__name">
+                  <span class=""> {{timelineMetadata.editedBy}} </span>
+                </div>
+                <div class="left-node__body__content__editor__details__role">
+                  <span class=""> {{timelineMetadata.editorTitle}} </span>
+                </div>
+                <template is="dom-if" if="{{hasPercent}}">
+                  <div class="left-node__body__content__editor__details__percent">
+                    <span class="left-node__body__content__editor__details__percent__value">
+                      {{timelineMetadata.percent}}%
+                    </span>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div class="left-node__body__content__media flex flex--col">
+              <div class="left-node__body__content__media__title">
+                <span class="timeline-node__header__title--text"> {{contentHeadline}} </span>
+              </div>
+              <template is="dom-if" if="{{bodyList}}">
+                <px-timeline-node-list
+                  content-body-list="[[timelineContent.body]]">
+                </px-timeline-node-list>
+              </template>
+              <template is="dom-if" if="{{bodyText}}">
+                <px-timeline-node-text
+                  content-body-text="[[contentBodyText]]">
+                </px-timeline-node-text>
+              </template>
+              <template is="dom-if" if="{{bodyImg}}">
+                <px-timeline-node-img
+                  content-body-img="[[contentBodyImg]]">
+                </px-timeline-node-img>
+              </template>
+              <template is="dom-if" if="{{bodyVideo}}">
+                <px-timeline-node-video
+                  content-body-video="[[contentBodyVideo]]"
+                  node-content="[[timelineContent]]">
+                </px-timeline-node-video>
+              </template>
+              <template is="dom-if" if="{{bodyAudio}}">
+                <px-timeline-node-audio
+                  content-body-audio="[[contentBodyAudio]]">
+                </px-timeline-node-audio>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+    </template>
+
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'px-timeline-node-main',
+    properties: {
+      enhanced: {
+        type: Boolean,
+        observer: 'enhancedChanged'
+      },
+      showNodeContent: {
+        type: Boolean,
+        observer: 'autoBodyChanged'
+      }
+    },
+    ready: function () {
+      if (this.timelineMetadata.percent) {
+        this.hasPercent = true;
+      }
+      if (this.timelineMetadata.editorImg) {
+        this.showImg = true;
+      } else {
+        this.showImg = false;
+      }
+      if (this.timelineContent) {
+        if (this.timelineContent.body) {
+          this.contentBody = true;
+          if (this.showNodeContent) {
+            this.showContent = true;
+          } else {
+            this.hideContent = true;
+          }
+          if (this.timelineContent.body[0]) {
+            if (!this.enhanced) {
+              this.basicBodyText = this.timelineContent.body[0].text;
+            }
+            this.contentHeadline = this.timelineContent.body[0].headline;
+          }
+        } else {
+          this.contentBody = false;
+          this.hideContent = false;
+          this.showContent = false;
+        }
+        if (this.timelineMetadata.customIcon) {
+          this.customIcon = true;
+        }
+        if (this.timelineContent.bodyType) {
+          if (this.timelineContent.bodyType.toUpperCase() === 'LIST') {
+            this.bodyList = true;
+          }
+          if (this.timelineContent.bodyType.toUpperCase() === 'TEXT') {
+            this.bodyText = true;
+            this.contentBodyText = this.timelineContent.body[0];
+          }
+          if (this.timelineContent.bodyType.toUpperCase() === 'IMG') {
+            this.bodyImg = true
+            this.contentBodyImg = this.timelineContent.body[0];
+          }
+          if (this.timelineContent.bodyType.toUpperCase() === 'VIDEO') {
+            this.bodyVideo = true
+            this.contentBodyVideo = this.timelineContent.body[0];
+          }
+          if (this.timelineContent.bodyType.toUpperCase() === 'AUDIO') {
+            this.bodyAudio = true
+            this.contentBodyAudio = this.timelineContent.body[0];
+          }
+        }
+      }
+    },
+    autoBodyChanged: function(newValue, oldValue) {
+      if (this.showNodeContent) {
+        if (this.timelineContent && this.timelineContent.body.length) {
+            this.showContent = true;
+            this.contentBody = true;
+            this.hideContent = false;
+          } else {
+            this.showContent = false;
+            this.contentBody = false;
+        }
+      } else {
+        this.hideContent = true;
+        this.showContent = false;
+      }
+    },
+    enhancedChanged: function (newValue, oldValue) {
+      if (this.timelineContent.body[0] && !newValue) {
+        this.basicBodyText = this.timelineContent.body[0].text;
+      }
+      return this.enhanced = newValue;
+    },
+    openContent: function(event, detail, sender) {
+      this.showContent = true;
+      this.hideContent = false;
+    },
+    closeContent: function(event, detail, sender) {
+      this.showContent = false;
+      this.hideContent = true;
+    }
+  });
+</script>

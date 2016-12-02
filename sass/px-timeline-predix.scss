@@ -1,0 +1,129 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+//
+// Sass for the Predix notion of the px-timeline component
+//
+// @author
+//
+
+/*
+THIS FILE SHOULD CONTAIN ONLY RULES SPECIFIC TO PREDIX BRANDING
+common/abstract rules go in px-timeline-sketch.scss, not in this file.
+*/
+
+// Settings
+@import "px-colors-design/_settings.colors.scss";
+
+@import 'px-timeline-sketch.scss';
+
+.icons__tri--color {
+  color: $primary-blue;
+}
+.icons__tri--color:hover {
+  color: $primary-blue-hover;
+}
+
+.base-icon-styles {
+  -moz-box-shadow: 0 0 0 calculateRem(1px) #A5AAAF;
+  -webkit-box-shadow: 0 0 0 calculateRem(1px) #A5AAAF;
+  box-shadow: 0 0 0 calculateRem(1px) #A5AAAF;
+}
+
+.timeline-header__inner {
+  border: 3px solid #b1b1bc;
+}
+
+.timeline-line__inner {
+  background-color: #b1b1bc;
+}
+
+.left-node__head__icon__date {
+  color: #676D72;
+}
+
+.left-node__head__icon__line--date {
+  background-color: #A5AAAF;
+}
+
+.left-node__head__icon__line {
+  background-color: #A5AAAF;
+}
+
+.left-node__head__title__title__line {
+  border-bottom: 1px dashed #A5AAAF;
+}
+
+.icons__circle--enhanced {
+  @extend .enhanced-icon-bubble;
+  color: #A5AAAF;
+}
+
+.icons__circle--simple {
+  @extend .simple-icon-bubble;
+  background: #E8EDEF;
+  color: #A5AAAF;
+}
+
+.left-node__head__title__date {
+  color: #A7ACAF;
+}
+
+.left-node__body__line__line {
+  background-color: #A5AAAF;
+}
+
+.left-node__body__content__editor__icon {
+  @extend .base-icon-styles;
+  color: #A5AAAF;
+}
+
+.left-node__body__content__editor__details__role {
+  color: #A7ACAF;
+}
+
+.left-node__body__content__media__video__embed {
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+.left-node__body__content__media__video__video {
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+.left-node__body__content__media__audio {
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+.timeline-node__icon__circle {
+  color: #737881;
+}
+
+.timeline-node__icon__line {
+  background-color: #b1b1bc;
+}
+
+.timeline-node__time__date span {
+  color: #A7ACAF;
+}
+
+.timeline-node__header__content__line {
+  color: $grey5
+}
+
+.timeline-node__line__inner {
+  background-color: #b1b1bc;
+}
+
+.timeline-icon {
+  color: #737881;
+}

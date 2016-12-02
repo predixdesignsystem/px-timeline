@@ -1,0 +1,173 @@
+[
+  {
+    "metaData": {
+      "editedBy": "Google Chrome Developers",
+      "editedDate": "Fri Nov 04 2016 16:28:10 GMT-0700 (PDT)",
+      "editorImg": "img/immelt.jpg",
+      "editorTitle": "Chief Polymaster",
+      "percent": "99"
+    },
+    "content": {
+      "title": "Lazy loading data with app-route",
+      "bodyType": "Video",
+      "body": [
+        {
+          "video": "video/sample-video.mp4",
+          "headline": "Who doesn't love to lazy load?",
+          "text": "Thanks to Rob Dobson",
+          "host": "local",
+          "isComment": true
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "Google Chrome Developers",
+      "editedDate": "Fri Nov 04 2016 14:12:00 GMT-0700 (PDT)",
+      "editorImg": "img/immelt.jpg",
+      "editorTitle": "Poly Chiefmaster",
+      "percent": "88",
+      "customIcon": "fa-code-fork"
+    },
+    "content": {
+      "title": "Binding to Arrays",
+      "bodyType": "Video",
+      "body": [
+        {
+          "video": "https://www.youtube.com/embed/HBUb8frm2Tw?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN",
+          "headline": "To ng-repeat or dom-repeat, that is the question",
+          "text": "Thanks to the GE Digital team for evangelising polymer",
+          "host": "Remote"
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "Software Engineering Daily",
+      "editedDate": "Thu Nov 03 2016 09:18:00 GMT-0700 (PDT)",
+      "editorTitle": "Host & Editor",
+      "percent": "92",
+      "editorImg": "img/immelt.jpg"
+    },
+    "content": {
+      "title": "Google’s Polymer Project with Rob Dodson",
+      "bodyType": "Audio",
+      "body": [
+        {
+          "audio": "audio/Polymer_Edited.mp3",
+          "headline": "Polymer... more native than national geographic",
+          "text": "Smart phone apps have better performance than web apps. When we have an application that we use on a regular basis, we download that application to a smart phone rather than using the browser based version on our mobile browser. Google’s Polymer Project wants to improve the gap between native app performance and mobile web app performance. The key problem with mobile web is that we are sending huge JavaScript bundles to mobile devices, which inhibits performance. The Polymer Project is working to build more functionality into our mobile browsers so that it is easier to load these heavy web applications.",
+          "host": "local",
+          "isComment": true
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "Soundcloud Podcast",
+      "editedDate": "Tue Nov 1 2016 11:42:00 GMT-0700 (PDT)",
+      "editorTitle": "Machine AI Recomendations",
+      "customIcon": "fa-code"
+    },
+    "content": {
+      "title": "Polymer 1.0 Announced",
+      "bodyType": "Audio",
+      "body": [
+        {
+          "audio": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/212712436&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
+          "headline": "Everyone agrees on Polymer",
+          "text": "Just listen to podcast. No explanation is necessary",
+          "host": "remote",
+          "isComment": true
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "GE Digital",
+      "editedDate": "Thu Oct 27 2016 18:28:10 GMT-0700 (PDT)",
+      "editorTitle": "Chief Technical Division",
+      "percent": "100",
+      "editorImg": "img/immelt.jpg",
+      "customIcon": "fa-bullhorn"
+    },
+    "content": {
+      "title": "Building the industrial internet",
+      "bodyType": "text",
+      "body": [
+        {
+          "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
+          "headline": "Predix, the operating system for the Industrial Internet",
+          "isComment": true
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "GE Digital",
+      "editedDate": "Thu Oct 20 2016 17:28:10 GMT-0700 (PDT)"
+    },
+    "content": {
+      "title": "Building the industrial internet",
+      "bodyType": "text",
+      "body": [
+        {
+          "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
+          "headline": "This is the content headline",
+          "isComment": true
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "Polymer Team",
+      "editedDate": "Mon Sep 12 2016 06:37:00 GMT-0700 (PDT)"
+    },
+    "content": {
+      "title": "New Polycast",
+      "bodyType": "LIST",
+      "body": [
+        { "key": "Topic 1",
+          "value": "Data Binding"
+        },
+        { "key": "Topic 2",
+          "value": "Data Flow"
+        },
+        { "key": "Topic 3",
+          "value": "Shadow Dom"
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "GE Digital",
+      "editedDate": "Thu Dec 17 2015 00:00:00 GMT-0700 (PDT)"
+    },
+    "content": {
+      "title": "Building the industrial internet",
+      "bodyType": "text",
+      "body": [
+        {
+          "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
+          "headline": "This is the content headline"
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "GE Digital",
+      "editedDate": "Tue Nov 03 2015 00:00:00 GMT-0700 (PDT)"
+    },
+    "content": {
+      "title": "Building the industrial internet",
+      "bodyType": "text",
+      "body": [
+        {
+          "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
+          "headline": "This is the content headline",
+          "isComment": true
+        }
+      ]
+    }
+  }
+]

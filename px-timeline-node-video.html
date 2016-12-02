@@ -1,0 +1,52 @@
+<!-- import polymer library -->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-timeline-node-comment-svg.html">
+<link rel="import" href="css/px-timeline-styles.html">
+
+<!-- declare DOM module -->
+<dom-module id="px-timeline-node-video">
+  <template>
+    <style include="px-timeline-styles"></style>
+    <div class="left-node__body__content__media__text__box flex">
+      <template is="dom-if" if="{{comment}}">
+        <px-timeline-node-comment-svg> </px-timeline-node-comment-svg>
+        <div class="left-node__body__content__media__text--spacer flex">
+        </div>
+      </template>
+      <div class="left-node__body__content__media__text">
+        <span>[[contentBodyVideo.text]]</span>
+      </div>
+    </div>
+    <div class="left-node__body__content__media__video flex flex--start">
+      <template is="dom-if" if="{{remoteHost}}">
+        <embed class="left-node__body__content__media__video__embed" src="[[contentBodyVideo.video]]"/>
+      </template>
+      <template is="dom-if" if="{{localHost}}">
+        <video class="left-node__body__content__media__video__video" src="[[contentBodyVideo.video]]" controls>
+        </video>
+      </template>
+    </div>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'px-timeline-node-video',
+    properties: {
+
+    },
+    ready: function() {
+      if (this.contentBodyVideo) {
+        if (this.contentBodyVideo.host.toUpperCase() === 'REMOTE' && this.contentBodyVideo.video) {
+          this.remoteHost = true;
+        }
+        if (this.contentBodyVideo.host.toUpperCase() === 'LOCAL' && this.contentBodyVideo.video) {
+          this.localHost = true;
+        }
+        if (this.contentBodyVideo.isComment) {
+          this.comment = true;
+        }
+      }
+    }
+  });
+</script>

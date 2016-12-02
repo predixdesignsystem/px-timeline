@@ -1,0 +1,193 @@
+
+<!-- import polymer library -->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-timeline-node-main.html">
+<link rel="import" href="css/px-timeline-styles.html">
+
+
+<!-- declare DOM module -->
+<dom-module id="px-timeline-left-node">
+  <template>
+    <style include="px-timeline-styles"></style>
+    <div id="left-node-box" class="left-node flex flex--start flex--col">
+
+      <template is="dom-if" if={{showTimeGroups}}>
+        <template is="dom-if" if={{showDate}}>
+
+          <div class="left-node__head flex flex--start">
+            <div class="left-node__head__icon flex flex--col flex--middle">
+              <div class="left-node__head__icon__date flex">
+                <template is="dom-if" if="{{showToday}}">
+                  <span class=""> TODAY </span>
+                </template>
+                <template is="dom-if" if="{{showWeek}}">
+                  <span class=""> THIS WEEK </span>
+                </template>
+                <template is="dom-if" if="{{showMonth}}">
+                  <span class=""> THIS MONTH </span>
+                </template>
+                <template is="dom-if" if="{{showYear}}">
+                  <span class=""> THIS YEAR </span>
+                </template>
+                <template is="dom-if" if="{{showLastYear}}">
+                  <span class=""> LAST YEAR </span>
+                </template>
+              </div>
+              <div class="left-node__head__icon__line--date">
+              </div>
+            </div>
+            <div class="left-node__head__title flex flex--col flex--justify">
+            </div>
+          </div>
+        </template>
+      </template>
+
+      <px-timeline-node-main
+        id="node-head-icons"
+        timeline-content="{{timelineContent}}"
+        timeline-metadata="{{timelineMetadata}}"
+        enhanced="{{enhanced}}"
+        show-node-content="{{showNodeContent}}"
+        show-line="{{showLine}}"
+        show-content="{{showContent}}"
+        hide-content="{{hideContent}}"
+        formatted-editted-date="{{formattedEdittedDate}}">
+      </px-timeline-node-main>
+
+    </div>
+  </template>
+</dom-module>
+<script src="../moment/moment.js"></script>
+<script>
+  Polymer({
+    is: 'px-timeline-left-node',
+    properties: {
+      timelineMetadata: {
+        type: Object,
+        value: function() {
+          return {};
+        }
+      },
+      timelineContent: {
+        type: Object,
+        value: function() {
+          return {};
+        }
+      },
+      showNodeContent: {
+        type: Boolean
+      },
+      showToday: {
+        type: Boolean
+      },
+      showWeek: {
+        type: Boolean
+      },
+      showMonth: {
+        type: Boolean
+      },
+      showYear: {
+        type: Boolean
+      },
+      showLastYear: {
+        type: Boolean
+      },
+      showTimeGroups: {
+        type: Boolean
+      },
+      nodeCount: {
+        type: Number
+      },
+      showLine: {
+        type: Boolean,
+        value: true
+      },
+      enhanced: {
+        type: Boolean
+      }
+    },
+    ready: function() {
+      if (this.timelineIndex === this.nodeCount - 1) {
+        this.showLine = false;
+      }
+      var dateTime = new Date(this.timelineMetadata.editedDate).getTime();
+      var dateDate = new Date(this.timelineMetadata.editedDate);
+      var dateDay = dateDate.getDate();
+      var dateWeekDay = dateDate.getDay();
+      var dateMonth = dateDate.getMonth();
+      var dateYear = dateDate.getFullYear();
+
+      var nowDate = this.startDate;
+      var formattedDate = moment(dateDate).format('hh:mm a, MMM D');
+      this.formattedEdittedDate = formattedDate.toUpperCase();
+
+      var nowTime = nowDate.getTime();
+      var nowDay = nowDate.getDate();
+      var nowWeekDay = nowDate.getDay();
+      var nowMonth = nowDate.getMonth();
+      var nowYear = nowDate.getFullYear();
+
+      var oneDay = 1000*60*60*24;
+      var oneWeek = oneDay*7;
+      var timeDiff = nowTime - dateTime;
+
+      if (nowDay === dateDay) {
+        if (nowMonth === dateMonth && nowYear === dateYear) {
+          if (!this.today) {
+            this.showDate = true;
+            this.showToday = true;
+          }
+        }
+      } else {
+        if (nowTime - dateTime < oneWeek) {
+          if (nowWeekDay - dateWeekDay > 0) {
+            if (!this.week) {
+              this.showDate = true;
+              this.showWeek = true;
+            }
+          } else {
+            if (nowMonth === dateMonth) {
+              if (!this.month) {
+                this.showDate = true;
+                this.showMonth = true;
+              }
+            } else {
+              if (nowYear === dateYear) {
+                if (!this.year) {
+                  this.showDate = true;
+                  this.showYear = true;
+                }
+              }
+            }
+          }
+        } else {
+          if (nowMonth === dateMonth) {
+            if (nowYear === dateYear) {
+              if (!this.month) {
+                this.showDate = true;
+                this.showMonth = true;
+              }
+            } else {
+              if (!this.lastYear) {
+                this.showDate = true;
+                this.showLastYear = true;
+              }
+            }
+          } else {
+            if (nowYear === dateYear) {
+              if (!this.year) {
+                this.showDate = true;
+                this.showYear = true;
+              }
+            } else {
+              if (!this.lastYear) {
+                this.showDate = true;
+                this.showLastYear = true;
+              }
+            }
+          }
+        }
+      }
+    }
+  });
+</script>

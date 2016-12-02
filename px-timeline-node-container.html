@@ -1,0 +1,123 @@
+<!-- import polymer library -->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-timeline-left-node.html">
+<link rel="import" href="css/px-timeline-styles.html">
+
+<!-- declare DOM module -->
+<dom-module id="px-timeline-node-container">
+  <template>
+    <style include="px-timeline-styles"></style>
+    <template is="dom-repeat" items="[[timelineData]]">
+      <px-timeline-left-node
+        id="left-node"
+        timeline-metadata="[[item.metaData]]"
+        timeline-content="[[item.content]]"
+        timeline-index="[[index]]"
+        show-node-content="{{showNodeContent}}"
+        show-dates="{{todayChecker(item)}}"
+        start-date="{{startDate}}"
+        show-time-groups="{{showTimeGroups}}"
+        node-count="{{nodeCount}}"
+        today="{{today}}"
+        week="{{week}}"
+        month="{{month}}"
+        year="{{year}}"
+        last-year="{{lastYear}}"
+        enhanced="{{enhanced}}">
+      </px-timeline-left-node>
+    </template>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'px-timeline-node-container',
+    properties: {
+      showNodeContent: {
+        type: Boolean
+      },
+      showTimeGroups: {
+        type: Boolean
+      },
+      nodeCount: {
+        type: Number
+      },
+      startDate: {
+        type: Object
+      },
+      today: {
+        type: Boolean
+      },
+      week: {
+        type: Boolean
+      },
+      month: {
+        type: Boolean
+      },
+      year: {
+        type: Boolean
+      },
+      lastYear: {
+        type: Boolean
+      },
+      enhanced: {
+        type: Boolean
+      }
+    },
+    startDateChanged: function (newValue, oldValue) {
+      return this.startDate = newValue;
+    },
+    todayChecker: function (item) {
+      var dateTime = new Date(item.metaData.editedDate).getTime();
+      var dateDate = new Date(item.metaData.editedDate);
+      var dateDay = dateDate.getDate();
+      var dateWeekDay = dateDate.getDay();
+      var dateMonth = dateDate.getMonth();
+      var dateYear = dateDate.getFullYear();
+
+      var nowDate = this.startDate;
+      var nowTime = nowDate.getTime();
+      var nowDay = nowDate.getDate();
+      var nowWeekDay = nowDate.getDay();
+      var nowMonth = nowDate.getMonth();
+      var nowYear = nowDate.getFullYear();
+
+      var oneDay = 1000*60*60*24;
+      var oneWeek = oneDay * 7;
+
+      if (nowDay === dateDay) {
+        if (nowMonth === dateMonth && nowYear === dateYear) {
+          this.today = true;
+        }
+      } else {
+        if (nowTime - dateTime < oneWeek) {
+          if (nowWeekDay - dateWeekDay > 0) {
+            this.week = true;
+          } else {
+            if (nowMonth === dateMonth) {
+              this.month = true;
+            } else {
+              if (nowYear === dateYear) {
+                this.year = true;
+              }
+            }
+          }
+        } else {
+          if (nowMonth === dateMonth) {
+            if (nowYear === dateYear) {
+              this.month = true;
+            } else {
+              this.lastYear = true;
+            }
+          } else {
+            if (nowYear === dateYear) {
+              this.year = true;
+            } else {
+              this.lastYear = true;
+            }
+          }
+        }
+      }
+    }
+  });
+</script>

@@ -1,0 +1,58 @@
+{
+  "name": "px-timeline",
+  "version": "0.1.0",
+  "main": [
+    "px-timeline.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "gulpfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test",
+    "data",
+    "img",
+    "video",
+    "audio",
+    "OSS_Notice.pdf",
+    "scripts",
+    ".github",
+    "px-timeline.png",
+    "monogram-wdmk.png",
+    "LICENSE.md",
+    "CONTRIBUTING.md",
+    "HISTORY.md"
+  ],
+  "dependencies": {
+    "polymer": "^1.6.0",
+    "webcomponentsjs": "^0.7.20",
+    "px-theme": "^2.0.1",
+    "moment": "^2.15.0",
+    "px-iconography-design":"^0.3.2",
+    "px-actionable-text-icons-design": "^0.1.0",
+    "px-tables-design": "^0.3.12",
+    "px-forms-design": "^0.3.15",
+    "px-starter-kit-design": "^0.6.0",
+    "px-meta-lists-design": "^0.3.4",
+    "px-meta-buttons-design": "^0.5.5",
+    "iron-ajax": "^1.4.3"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.3",
+    "px-tabs": "~0.5.3",
+    "px-api-viewer": "^0.1.0",
+    "px-demo-snippet": "^0.6.0",
+    "px-toggle-design": "^0.2.12",
+    "px-headings-design": "^0.2.14",
+    "px-code-design": "^0.2.11",
+    "px-dropdown": "^2.0.0",
+    "px-headings-design": "^0.2.13",
+    "px-layout-design": "^0.3.13",
+    "px-box-design": "~0.3.13",
+    "px-code-design": "~0.2.11",
+    "px-input-group-design": "^0.2.12",
+    "px-flag-design": "^0.2.12"
+  }
+}
