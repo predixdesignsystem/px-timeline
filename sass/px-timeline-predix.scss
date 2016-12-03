@@ -21,109 +21,95 @@ common/abstract rules go in px-timeline-sketch.scss, not in this file.
 
 // Settings
 @import "px-colors-design/_settings.colors.scss";
-
 @import 'px-timeline-sketch.scss';
 
+$px-timeline-border-color : var(--px-timeline-border-color, $gray6);
+
 .icons__tri--color {
-  color: $primary-blue;
+  color: var(--px-timeline-chevron-color, $primary-blue);
 }
 .icons__tri--color:hover {
-  color: $primary-blue-hover;
-}
-
-.base-icon-styles {
-  -moz-box-shadow: 0 0 0 calculateRem(1px) #A5AAAF;
-  -webkit-box-shadow: 0 0 0 calculateRem(1px) #A5AAAF;
-  box-shadow: 0 0 0 calculateRem(1px) #A5AAAF;
-}
-
-.timeline-header__inner {
-  border: 3px solid #b1b1bc;
-}
-
-.timeline-line__inner {
-  background-color: #b1b1bc;
-}
-
-.left-node__head__icon__date {
-  color: #676D72;
-}
-
-.left-node__head__icon__line--date {
-  background-color: #A5AAAF;
-}
-
-.left-node__head__icon__line {
-  background-color: #A5AAAF;
-}
-
-.left-node__head__title__title__line {
-  border-bottom: 1px dashed #A5AAAF;
-}
-
-.icons__circle--enhanced {
-  @extend .enhanced-icon-bubble;
-  color: #A5AAAF;
+  color: var(--px-timeline-chevron-color--hover, $primary-blue-hover);
 }
 
 .icons__circle--simple {
   @extend .simple-icon-bubble;
-  background: #E8EDEF;
-  color: #A5AAAF;
+  background-color: var(--px-timeline-simple-bubble-color, $gray2);
+  color: $px-timeline-border-color;
+}
+
+.base-icon-styles {
+  -moz-box-shadow: 0 0 0 calculateRem(1px) $px-timeline-border-color;
+  -webkit-box-shadow: 0 0 0 calculateRem(1px) $px-timeline-border-color;
+  box-shadow: 0 0 0 calculateRem(1px) $px-timeline-border-color;
+}
+
+.timeline-header__inner {
+  border: 3px solid $px-timeline-border-color;
+}
+
+.timeline-line__inner {
+  background-color: $px-timeline-border-color;
+}
+
+.left-node__head__icon__date {
+  color: $px-timeline-border-color;
+}
+
+.left-node__head__icon__line--date {
+  background-color: $px-timeline-border-color;
+}
+
+.left-node__head__icon__line {
+  background-color: $px-timeline-border-color;
+}
+
+.left-node__head__title__title__line {
+  border-bottom: 1px dashed $px-timeline-border-color;
+}
+
+.icons__circle--enhanced {
+  @extend .enhanced-icon-bubble;
+  color: $px-timeline-border-color;
 }
 
 .left-node__head__title__date {
-  color: #A7ACAF;
+  color: $px-timeline-border-color;
 }
 
 .left-node__body__line__line {
-  background-color: #A5AAAF;
+  background-color: $px-timeline-border-color;
 }
 
 .left-node__body__content__editor__icon {
   @extend .base-icon-styles;
-  color: #A5AAAF;
+  color: $px-timeline-border-color;
 }
 
 .left-node__body__content__editor__details__role {
-  color: #A7ACAF;
-}
-
-.left-node__body__content__media__video__embed {
-  border: 1px solid #FFFFFF;
-  background-color: #FFFFFF;
-}
-
-.left-node__body__content__media__video__video {
-  border: 1px solid #FFFFFF;
-  background-color: #FFFFFF;
-}
-
-.left-node__body__content__media__audio {
-  border: 1px solid #FFFFFF;
-  background-color: #FFFFFF;
+  color: $px-timeline-border-color;
 }
 
 .timeline-node__icon__circle {
-  color: #737881;
+  color: $px-timeline-border-color;
 }
 
 .timeline-node__icon__line {
-  background-color: #b1b1bc;
+  background-color: $px-timeline-border-color;
 }
 
 .timeline-node__time__date span {
-  color: #A7ACAF;
+  color: $px-timeline-border-color;
 }
 
 .timeline-node__header__content__line {
-  color: $grey5
+  color: $px-timeline-border-color;
 }
 
 .timeline-node__line__inner {
-  background-color: #b1b1bc;
+  background-color: $px-timeline-border-color;
 }
 
 .timeline-icon {
-  color: #737881;
+  color: $px-timeline-border-color;
 }

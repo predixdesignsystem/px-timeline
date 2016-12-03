@@ -1,4 +1,6 @@
-#px-timeline
+#px-timeline [![Build Status](https://travis-ci.org/PredixDev/px-timeline.svg?branch=master)](https://travis-ci.org/PredixDev/px-timeline)
+
+[![px-timeline demo](px-timeline.png?raw=true)](https://github.com/PredixDev/px-timeline)
 
 ## Overview
 
@@ -17,10 +19,10 @@ Node, npm and bower are necessary to install the component and dependencies. web
 
 ## Getting Started
 
-First, include the component in your application by adding the following to the dependencies in your bower.json file.
+First, install the component via bower on the command line.
 
 ```
-"px-timeline": "https://github.build.ge.com/emerging-verticals/px-timeline.git"
+bower install px-timeline --save
 ```
 
 Second, import the component to your application with the following tag in your head.
@@ -33,10 +35,10 @@ Finally, use the component in your application:
 
 ```
 <px-timeline
-  show-time-groups="[[item.timeGroups]]"
-  show-node-content="{{item.showNodeContent}}"
+  show-time-groups=true
+  show-node-content=false
   timeline-data="{{data}}"
-  enhanced="{{item.enhanced}}">
+  enhanced=true>
 </px-timeline>
 
 ```
