@@ -1,3 +1,7 @@
+v0.1.3
+==================
+* updated chevron colors
+
 v0.1.2
 ==================
 * removed audio/video to reduce repo size

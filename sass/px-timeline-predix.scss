@@ -26,10 +26,10 @@ common/abstract rules go in px-timeline-sketch.scss, not in this file.
 $px-timeline-border-color : var(--px-timeline-border-color, $gray6);
 
 .icons__tri--color {
-  color: var(--px-timeline-chevron-color, $primary-blue);
+  color: var(--px-timeline-chevron-color, $gray6);
 }
 .icons__tri--color:hover {
-  color: var(--px-timeline-chevron-color--hover, $primary-blue-hover);
+  color: var(--px-timeline-chevron-color--hover, $gray8);
 }
 
 .icons__circle--simple {
