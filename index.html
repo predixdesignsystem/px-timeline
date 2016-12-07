@@ -88,12 +88,24 @@
                 <div class="flex flex--col">
                   <div class="flex__item demo u-ph+ u-pb+">
                     <div class="u-mt+">
-                      <px-timeline
-                        show-time-groups="[[item.timeGroups]]"
-                        show-node-content="{{item.showNodeContent}}"
-                        timeline-data="{{data}}"
-                        enhanced="{{item.enhanced}}">
-                      </px-timeline>
+                      <!-- A social media -type example -->
+                      <template is="dom-if" if="{{isTab(index,0)}}">
+                        <px-timeline
+                          show-time-groups="[[item.timeGroups]]"
+                          show-node-content="{{item.showNodeContent}}"
+                          timeline-data="{{data}}"
+                          enhanced="{{item.enhanced}}">
+                        </px-timeline>
+                      </template>
+                      <!-- A more industrial example -->
+                      <template is="dom-if" if="{{isTab(index,1)}}">
+                        <px-timeline
+                          show-time-groups="[[item.timeGroups]]"
+                          show-node-content="{{item.showNodeContent}}"
+                          timeline-data="{{data2}}"
+                          enhanced="{{item.enhanced}}">
+                        </px-timeline>
+                      </template>
                     </div>
                   </div>
                   <div class="flex__item">
@@ -153,19 +165,18 @@
               "showNodeContent": true,
               "enhanced": true,
               "timelineData": {"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}
-            },
-            {
-              "timeGroups": false,
-              "showNodeContent": false,
-              "enhanced": false,
-              "timelineData": {"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}
             }
           ],
           indexPlusOne = function(num) {
             return num + 1;
           },
+          isTab = function(num1, num2) {
+            return num1 === num2;
+          },
           ironAjaxEl = document.createElement('iron-ajax'),
-          nodes;
+          nodes,
+          ironAjaxEl2 = document.createElement('iron-ajax'),
+          nodes2;
 
           ironAjaxEl.handleAs = "json";
           ironAjaxEl.url = "data/timeline-data.json";
@@ -175,9 +186,20 @@
             template.nodeCount = nodes.length;
           });
           ironAjaxEl.generateRequest();
+
+          ironAjaxEl2.handleAs = "json";
+          ironAjaxEl2.url = "data/industrial-data.json";
+          ironAjaxEl2.addEventListener('response', function(evt) {
+            nodes2 = evt.detail.response;
+            template.data2 = nodes2;
+            template.nodeCount2 = nodes2.length;
+          });
+          ironAjaxEl2.generateRequest();
+
           template.selected = "0";
           template.optionsArray = optionsArray;
           template.indexPlusOne = indexPlusOne;
+          template.isTab = isTab;
     });
   </script>
 </body>

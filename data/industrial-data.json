@@ -1,0 +1,58 @@
+[
+  {
+    "metaData": {
+      "editedBy": "Alison Jones",
+      "editedDate": "Fri Nov 04 2016 14:12:00 GMT-0700 (PDT)",
+      "editorTitle": "Head Maintenance Technician",
+      "customIcon": "fa-wrench"
+    },
+    "content": {
+      "title": "Engine Inspection at Caledonia Shop",
+      "bodyType": "Video",
+      "body": [
+        {
+          "video": "https://www.youtube.com/embed/VATyEPvuQy8",
+          "headline": "Results of shop engine inspection",
+          "host": "Remote"
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "John Smith",
+      "editedDate": "Thu Oct 27 2016 18:28:10 GMT-0700 (PDT)",
+      "editorTitle": "Director of Maintenance",
+      "customIcon": "fa-check"
+    },
+    "content": {
+      "title": "A check",
+      "bodyType": "text",
+      "body": [
+        {
+          "text": "A check conducted at PredixAir maintenance hangar 3 after 260 cycles."
+        }
+      ]
+    }
+  }, {
+    "metaData": {
+      "editedBy": "PredixAir Operations",
+      "editedDate": "Mon Sep 12 2016 06:37:00 GMT-0700 (PDT)",
+      "customIcon": "fa-plane"
+    },
+    "content": {
+      "title": "SFO > CVG",
+      "bodyType": "LIST",
+      "body": [
+        { "key": "Takeoff",
+          "value": "SFO - Mon Sep 12 2016 06:37:00 GMT-0700 (PDT)"
+        },
+        { "key": "Arrival",
+          "value": "CVG - Mon Sep 12 2016 3:15:00 GMT-0400 (EDT)"
+        },
+        { "key": "Flight Time",
+          "value": "5 hours, 43 minutes"
+        }
+      ]
+    }
+  }
+]

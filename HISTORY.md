@@ -1,3 +1,7 @@
+v0.1.4
+==================
+* added industrial example to demo page
+
 v0.1.3
 ==================
 * updated chevron colors
