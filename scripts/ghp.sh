@@ -47,19 +47,11 @@ yes | cp ../tmp_bower/bower.json bower.json
 #install your new tag through bower, it will fail without forcing it.
 bower install ${REPO_NAME} --force
 
-#optimize for production
-cd ${REPO_NAME} #go into the component folder
-npm install vulcanize -g
-vulcanize index.html -o index.vulcanized.html --inline-scripts --inline-css --strip-comments
-yes | cp index.vulcanized.html index.html
-rm index.vulcanized.html
-cd ../ #remember to exit out of the component before you do any git stuff
-
 #do the git stuff
 git add .
 git commit -m "rebuild github pages"
 eval `ssh-agent -s`
-#and change permissions
+#and cahnge permissions
 chmod 0400 $TRAVIS_BUILD_DIR/deploy_key
 ssh-add $TRAVIS_BUILD_DIR/deploy_key
 #Now that we're all set up, we can push.
