@@ -1,3 +1,7 @@
+v0.1.5
+==================
+* added auto-ghp
+
 v0.1.4
 ==================
 * added industrial example to demo page
