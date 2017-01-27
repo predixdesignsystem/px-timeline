@@ -1,3 +1,7 @@
+v0.1.11
+==================
+* added new demo component
+
 v0.1.10
 ==================
 * Update colors design to pick up new colors

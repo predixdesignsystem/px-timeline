@@ -1,0 +1,156 @@
+<!-- Common imports -->
+<link rel="import" href="../../polymer/polymer.html" />
+<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
+
+<!-- Common demo imports -->
+<link rel="import" href="../../px-demo/px-demo-header.html" />
+<link rel="import" href="../../px-demo/px-demo-api-viewer.html" />
+<link rel="import" href="../../px-demo/px-demo-footer.html" />
+<link rel="import" href="../../px-demo/px-demo-configs.html" />
+<link rel="import" href="../../px-demo/px-demo-props.html" />
+<link rel="import" href="../../px-demo/px-demo-interactive.html" />
+<link rel="import" href="../../px-demo/px-demo-code-editor.html" />
+<link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
+<link rel="import" href="../../iron-ajax/iron-ajax.html" />
+<link rel="import" href="../px-timeline.html" />
+
+<!-- Imports for this componnent -->
+<link rel="import" href="../../px-demo/css/px-demo-styles.html" />
+
+<!-- Demo DOM module -->
+<dom-module id="local-element-demo">
+  <template>
+    <style include="px-demo-styles" is="custom-style"></style>
+
+    <!-- Header -->
+    <px-demo-header
+        module-name="px-timeline"
+        description="px-timeline is used to quickly and easily copy text onto the user's clipboard.">
+    </px-demo-header>
+
+    <!-- Interactive -->
+    <px-demo-interactive >
+      <!-- Configs -->
+      <px-demo-configs configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
+
+      <!-- Props -->
+      <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+
+      <px-demo-code-editor props="{{props}}"></px-demo-code-editor>
+
+      <!-- Component ---------------------------------------------------------->
+      <px-demo-component>
+        <div style="width:250px">
+          <px-timeline
+            show-time-groups="[[props.timeGroups.value]]"
+            show-node-content="{{props.showNodeContent.value}}"
+            timeline-data="{{props.timelineData.value}}"
+            enhanced="{{props.enhanced.value}}">
+          </px-timeline>
+        </div>
+      </px-demo-component>
+      <!-- END Component ------------------------------------------------------>
+
+      <px-demo-component-snippet
+          element-properties="{{props}}"
+          element-name="px-timeline"
+          links-includes="[[linksIncludes]]">
+      </px-demo-component-snippet>
+    </px-demo-interactive>
+
+    <!-- API Viewer -->
+    <px-demo-api-viewer source="px-timeline"></px-demo-api-viewer>
+
+    <!-- Footer -->
+    <px-demo-footer></px-demo-footer>
+
+  </template>
+
+</dom-module>
+<script>
+  Polymer({
+    is: 'local-element-demo',
+
+    properties: {
+      ajaxUrl: {
+        type: Object,
+        value: {
+          Simple: "data/timeline-data.json",
+          Multimedia: "data/industrial-data.json"
+        }
+      },
+      /**
+       * @property demoProps
+       * @type {Object}
+       */
+      props: {
+        type: Object,
+        value: function(){ return this.demoProps; }
+      },
+
+      /**
+       * @property demoProps
+       * @type {Array}
+       */
+      configs: {
+        type: Array,
+        value: function(){
+          return [
+              {
+                configName: "Simple"
+              },
+              {
+                configName: "Multimedia",
+                timelineData: [{"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}]
+              }
+          ];
+        }
+      }
+    },
+
+    /**
+     * A reference for `this.props`. Read the documentation there.
+     */
+    demoProps: {
+      timeGroups: {
+        type: Boolean,
+        defaultValue: false
+      },
+      showNodeContent: {
+        type: Boolean,
+        defaultValue: false
+      },
+      enhanced: {
+        type: Boolean,
+        defaultValue: false
+      },
+      timelineData: {
+        type: Object,
+        inputType:"code:JSON",
+        defaultValue: [{"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}]
+      },
+    },
+    observers: ['_onChosenCofigChange(chosenConfig)'],
+    ready: function() {
+      this._makeAjaxRequest(this.ajaxUrl.Simple);
+    },
+    _onChosenCofigChange: function(cc) {
+      if (Object.keys(cc).length) {
+        this._makeAjaxRequest(this.ajaxUrl[cc.configName]);
+      }
+    },
+    _makeAjaxRequest: function(url) {
+      var ironAjaxEl = document.createElement('iron-ajax'),
+      nodes;
+
+      ironAjaxEl.handleAs = "json";
+      ironAjaxEl.url = url;
+      ironAjaxEl.addEventListener('response', function(evt) {
+        nodes = evt.detail.response;
+        this.set('props.timelineData.value', nodes);
+        //TODO tie in response to timeline
+      }.bind(this));
+      ironAjaxEl.generateRequest();
+    }
+  });
+</script>
