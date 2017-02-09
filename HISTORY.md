@@ -1,3 +1,7 @@
+v0.1.12
+==================
+* fixed description on demo page.
+
 v0.1.11
 ==================
 * added new demo component
