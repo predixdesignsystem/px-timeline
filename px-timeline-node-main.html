@@ -6,18 +6,24 @@
 <link rel="import" href="px-timeline-node-video.html">
 <link rel="import" href="px-timeline-node-audio.html">
 <link rel="import" href="css/px-timeline-styles.html">
+<link rel="import" href="../iron-resizable-behavior/iron-resizable-behavior.html">
 
 <!-- declare DOM module -->
 <dom-module id="px-timeline-node-main">
   <template>
     <style include="px-timeline-styles"></style>
+    <style>
+      .flex.flex--col > *:not(.left-node__body__line) {
+        flex: 1 1 auto;
+      }
+    </style>
     <div class="left-node__head flex flex--start">
 
-      <div class="left-node__head__icon flex flex--col flex--middle">
+      <div class="left-node__head__icon flex flex--col flex--middle flex__item flex__item--msfix">
         <template is="dom-if" if="{{enhanced}}">
-          <div class="left-node__head__icon__icons flex">
+          <div class="left-node__head__icon__icons flex flex__item flex__item--msfix">
 
-            <div class="left-node__head__icon__icons__tri icons__tri--color flex flex--middle">
+            <div class="left-node__head__icon__icons__tri icons__tri--color flex flex--middle  flex__item flex__item--msfix">
               <template  is="dom-if" if="{{hideContent}}">
                 <template is="dom-if" if={{timelineContent.body.length}}>
                   <i class="icons__tri right-caret fa fa-caret-right hot" aria-hidden="true" on-tap="openContent"></i>
@@ -37,7 +43,7 @@
             </div>
 
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <div id="open-icon" class="left-node__head__icon__icons__circle icons__circle--enhanced flex flex--center flex--middle">
+              <div id="open-icon" class="left-node__head__icon__icons__circle icons__circle--enhanced flex flex--center flex--middle flex__item flex__item--msfix">
 
                 <template is="dom-if" if="{{timelineMetadata.customIcon}}">
                   <i class$="icons__circle--enhanced__imedia fa {{timelineMetadata.customIcon}}" aria-hidden="true"></i>
@@ -65,7 +71,7 @@
             </template>
 
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <div class="left-node__head__icon__icons__circle icons__circle--simple circle--simple--enhanced flex">
+              <div class="left-node__head__icon__icons__circle icons__circle--simple circle--simple--enhanced flex flex__item flex__item--msfix">
               </div>
             </template>
           </div>
@@ -84,7 +90,7 @@
         </template>
 
         <template is="dom-if" if="{{!enhanced}}">
-          <div class="left-node__head__icon__icons__circle icons__circle--simple flex">
+          <div class="left-node__head__icon__icons__circle icons__circle--simple flex flex__item flex__item--msfix">
           </div>
           <template is="dom-if" if="{{showLine}}">
             <div class="left-node__head__icon__line">
@@ -93,28 +99,28 @@
         </template>
       </div>
 
-      <div class="left-node__head__title flex flex--col flex--justify">
-        <div class="left-node__head__title__title flex__item">
-          <div class="left-node__head__title__title__text ">
+      <div class="left-node__head__title flex flex--col flex--justify flex__item flex__item--msfix">
+        <div class="left-node__head__title__title  flex__item flex__item--msfix">
+          <div class="left-node__head__title__title__text  flex__item flex__item--msfix">
             <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
           </div>
         </div>
-        <div class="left-node__head__title__date">
+        <div class="left-node__head__title__date flex__item flex__item--msfix">
           <span> {{formattedEdittedDate}} </span>
         </div>
       </div>
     </div>
 
     <template is="dom-if" if="{{!enhanced}}">
-      <div class="left-node__body flex flex--start">
+      <div class="left-node__body flex flex--start flex__item flex__item--msfix"  id="nodeBody">
         <div class="left-node__body__line flex flex--col flex--middle">
           <template is="dom-if" if="{{showLine}}">
             <div class="left-node__body__line__line">
             </div>
           </template>
         </div>
-        <div class="left-node__body__content--basic flex">
-          <div class="left-node__body__content--basic__text">
+        <div class="left-node__body__content--basic flex flex__item flex__item--msfix">
+          <div class="left-node__body__content--basic__text flex__item flex__item--msfix">
             <span> {{basicBodyText}} </span>
           </div>
         </div>
@@ -123,44 +129,44 @@
 
     <template is="dom-if" if="{{enhanced}}">
       <template is="dom-if" if="{{showContent}}">
-        <div class="left-node__body flex flex--start">
-          <div class="left-node__body__line flex flex--col flex--middle">
+        <div class="left-node__body flex flex--start flex__item flex__item--msfix"  id="nodeBody">
+          <div class="left-node__body__line flex flex--col flex--middle flex__item flex__item--msfix">
             <template is="dom-if" if="{{showLine}}">
               <div class="left-node__body__line__line">
               </div>
             </template>
           </div>
-          <div class="left-node__body__content flex flex--col">
-            <div class="left-node__body__content__editor flex">
+          <div class="left-node__body__content flex flex--col flex__item flex__item--msfix">
+            <div class="left-node__body__content__editor flex flex__item flex__item--msfix">
               <template is="dom-if" if="{{showImg}}">
-                <div class="left-node__body__content__editor__img flex flex--center flex--middle">
+                <div class="left-node__body__content__editor__img flex flex--center flex--middle flex__item flex__item--msfix">
                   <img class="left-node__body__content__editor__img__img" src="{{timelineMetadata.editorImg}}">
                 </div>
               </template>
               <template is="dom-if" if="{{!showImg}}">
-                <div class="left-node__body__content__editor__icon flex flex--center flex--middle">
+                <div class="left-node__body__content__editor__icon flex flex--center flex--middle flex__item flex__item--msfix">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
               </template>
-              <div class="left-node__body__content__editor__details flex flex--col">
-                <div class="left-node__body__content__editor__details__name">
-                  <span class=""> {{timelineMetadata.editedBy}} </span>
+              <div class="left-node__body__content__editor__details flex flex--col flex__item flex__item--msfix">
+                <div class="left-node__body__content__editor__details__name flex__item flex__item--msfix">
+                  <span class=" flex__item flex__item--msfix"> {{timelineMetadata.editedBy}} </span>
                 </div>
-                <div class="left-node__body__content__editor__details__role">
-                  <span class=""> {{timelineMetadata.editorTitle}} </span>
+                <div class="left-node__body__content__editor__details__role flex__item flex__item--msfix">
+                  <span class=" flex__item flex__item--msfix"> {{timelineMetadata.editorTitle}} </span>
                 </div>
                 <template is="dom-if" if="{{hasPercent}}">
-                  <div class="left-node__body__content__editor__details__percent">
-                    <span class="left-node__body__content__editor__details__percent__value">
+                  <div class="left-node__body__content__editor__details__percent flex__item flex__item--msfix">
+                    <span class="left-node__body__content__editor__details__percent__value flex__item flex__item--msfix">
                       {{timelineMetadata.percent}}%
                     </span>
                   </div>
                 </template>
               </div>
             </div>
-            <div class="left-node__body__content__media flex flex--col">
-              <div class="left-node__body__content__media__title">
-                <span class="timeline-node__header__title--text"> {{contentHeadline}} </span>
+            <div class="left-node__body__content__media flex flex--col flex__item flex__item--msfix">
+              <div class="left-node__body__content__media__title flex__item flex__item--msfix">
+                <span class="timeline-node__header__title--text flex__item flex__item--msfix"> {{contentHeadline}} </span>
               </div>
               <template is="dom-if" if="{{bodyList}}">
                 <px-timeline-node-list
@@ -209,6 +215,35 @@
         observer: 'autoBodyChanged'
       }
     },
+    behaviors: [
+      Polymer.IronResizableBehavior
+    ],
+    listeners: {
+      'iron-resize': '_nodeMainResized'
+    },
+
+    /**
+     * Handle 'iron-resize' event
+     */
+    _nodeMainResized: function(evt) {
+      console.log('resize');
+      var nodeBody = Polymer.dom(this.root).querySelector('#nodeBody');
+
+      if (nodeBody) {
+
+        var clientRect = nodeBody.getBoundingClientRect();
+        console.dir(clientRect)
+        if (clientRect.width && clientRect.height) {
+          nodeBody.style.width = clientRect.width + 'px';
+          nodeBody.style.height = clientRect.height + 'px';
+           console.log('changed height and width'  + clientRect.height + clientRect.width );
+          return;
+        }
+      }
+      window.requestAnimationFrame(function(){
+        this.async(this.notifyResize, 1);
+      }.bind(this));
+    },
     ready: function () {
       if (this.timelineMetadata.percent) {
         this.hasPercent = true;
@@ -237,9 +272,11 @@
           this.hideContent = false;
           this.showContent = false;
         }
+
         if (this.timelineMetadata.customIcon) {
           this.customIcon = true;
         }
+
         if (this.timelineContent.bodyType) {
           if (this.timelineContent.bodyType.toUpperCase() === 'LIST') {
             this.bodyList = true;
@@ -249,15 +286,15 @@
             this.contentBodyText = this.timelineContent.body[0];
           }
           if (this.timelineContent.bodyType.toUpperCase() === 'IMG') {
-            this.bodyImg = true
+            this.bodyImg = true;
             this.contentBodyImg = this.timelineContent.body[0];
           }
           if (this.timelineContent.bodyType.toUpperCase() === 'VIDEO') {
-            this.bodyVideo = true
+            this.bodyVideo = true;
             this.contentBodyVideo = this.timelineContent.body[0];
           }
           if (this.timelineContent.bodyType.toUpperCase() === 'AUDIO') {
-            this.bodyAudio = true
+            this.bodyAudio = true;
             this.contentBodyAudio = this.timelineContent.body[0];
           }
         }
@@ -285,8 +322,10 @@
       return this.enhanced = newValue;
     },
     openContent: function(event, detail, sender) {
+      console.log('does this work?');
       this.showContent = true;
       this.hideContent = false;
+      //this._nodeMainResized();
     },
     closeContent: function(event, detail, sender) {
       this.showContent = false;
