@@ -1,3 +1,7 @@
+v0.1.13
+==================
+* temp fix for chrome and FF, safari is still broken.
+
 v0.1.12
 ==================
 * fixed description on demo page.
