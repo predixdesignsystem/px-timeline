@@ -1,3 +1,7 @@
+v0.1.14
+==================
+* added cloudflare keys
+
 v0.1.13
 ==================
 * temp fix for chrome and FF, safari is still broken.
