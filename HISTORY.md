@@ -1,3 +1,7 @@
+v0.1.15
+==================
+* fixed demo width
+
 v0.1.14
 ==================
 * added cloudflare keys
