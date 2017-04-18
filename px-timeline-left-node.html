@@ -104,32 +104,39 @@
       },
       enhanced: {
         type: Boolean
+      },
+      dateFormat: {
+        type: String
       }
     },
     ready: function() {
       if (this.timelineIndex === this.nodeCount - 1) {
         this.showLine = false;
       }
-      var dateTime = new Date(this.timelineMetadata.editedDate).getTime();
-      var dateDate = new Date(this.timelineMetadata.editedDate);
-      var dateDay = dateDate.getDate();
-      var dateWeekDay = dateDate.getDay();
-      var dateMonth = dateDate.getMonth();
-      var dateYear = dateDate.getFullYear();
+      var dateTime = new Date(this.timelineMetadata.editedDate).getTime(),
+          dateDate = new Date(this.timelineMetadata.editedDate),
+          dateDay = dateDate.getDate(),
+          dateWeekDay = dateDate.getDay(),
+          dateMonth = dateDate.getMonth(),
+          dateYear = dateDate.getFullYear(),
+          nowDate = this.startDate;
 
-      var nowDate = this.startDate;
-      var formattedDate = moment(dateDate).format('hh:mm a, MMM D');
+      if(this.dateFormat) {
+        var formattedDate = moment(dateDate).format(this.dateFormat);
+      }
+      else {
+        var formattedDate = moment(dateDate).format('hh:mm a, MMM D');
+      }
       this.formattedEdittedDate = formattedDate.toUpperCase();
 
-      var nowTime = nowDate.getTime();
-      var nowDay = nowDate.getDate();
-      var nowWeekDay = nowDate.getDay();
-      var nowMonth = nowDate.getMonth();
-      var nowYear = nowDate.getFullYear();
-
-      var oneDay = 1000*60*60*24;
-      var oneWeek = oneDay*7;
-      var timeDiff = nowTime - dateTime;
+      var nowTime = nowDate.getTime(),
+          nowDay = nowDate.getDate(),
+          nowWeekDay = nowDate.getDay(),
+          nowMonth = nowDate.getMonth(),
+          nowYear = nowDate.getFullYear(),
+          oneDay = 1000*60*60*24,
+          oneWeek = oneDay*7,
+          timeDiff = nowTime - dateTime;
 
       if (nowDay === dateDay) {
         if (nowMonth === dateMonth && nowYear === dateYear) {

@@ -86,8 +86,8 @@ span {
 .main-box {
   display: -webkit-flex;
   display: flex;
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .main-box-inner {
@@ -96,8 +96,8 @@ span {
 }
 
 .timeline-header {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .timeline-header__inner {
@@ -113,8 +113,8 @@ span {
 }
 
 .timeline-line {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .timeline-line__inner {
@@ -125,13 +125,13 @@ span {
 // LEFT NODE
 
 .left-node {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .left-node__head {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .left-node__head__icon {
@@ -165,26 +165,30 @@ span {
 .left-node__head__icon__line {
   width: 1px;
   height: 100%;
+  flex: 1 1 1px;
 }
 
 .left-node__head__icon__line--enhanced {
-  margin-top: calculateRem(13px);
+  // margin-top: calculateRem(13px);
+  width: 1px;
+  flex: 1 1 1px;
 }
 
 .left-node__head__icon__line--enhanced--simple {
   margin-top: calculateRem(-3px);
+  flex: 1 1 1px;
 }
 
 .left-node__head__title {
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
   padding-bottom: calculateRem(30px);
   margin-left: calculateRem(-28px);
 }
 
 .left-node__head__title__title {
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
 }
 
 .left-node__head__title__title__text {
@@ -196,8 +200,8 @@ span {
 
 .left-node__head__title__title__line {
   height: calculateRem(10px);
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .left-node__head__icon__icons__circle {
@@ -239,8 +243,8 @@ span {
 
 .left-node__body {
   font-size: calculateRem(15px);
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
   margin-top: calculateRem(-10px);
 }
 
@@ -254,18 +258,19 @@ span {
 .left-node__body__line__line {
   width: 1px;
   height: 100%;
+  flex: 1 1 1px;
 }
 
 .left-node__body__content {
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
   margin-left: calculateRem(-28px);
   padding-bottom: calculateRem(40px);
 }
 
 .left-node__body__content--basic {
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
   margin-left: calculateRem(-28px);
 }
 
@@ -356,8 +361,8 @@ span {
 }
 
 .left-node__body__content__media__video {
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
   max-width: calculateRem(600px);
 }
 
@@ -372,8 +377,8 @@ span {
 }
 
 .left-node__body__content__media__audio {
-  flex-basis:100%;
-  -webkit-flex-basis: 100%;
+  flex-basis:auto;
+  -webkit-flex-basis: auto;
 }
 
 .left-node__body__content__media__audio__embed {
@@ -389,8 +394,8 @@ span {
 // TIMELINE NODES
 
 .timeline-node {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .timeline-node__icon {
@@ -455,8 +460,8 @@ span {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-top: 3px;
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
   padding: calculateRem(10px) calculateRem(20px);
   margin-bottom: calculateRem(10px);
 }
@@ -509,8 +514,8 @@ span {
 }
 
 .timeline-node__line {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .timeline-node__footer {
@@ -524,8 +529,8 @@ span {
 }
 
 .timeline-footer {
-  flex-basis: 100%;
-  -webkit-flex-basis: 100%;
+  flex-basis: auto;
+  -webkit-flex-basis: auto;
 }
 
 .timeline-icon {
@@ -563,8 +568,8 @@ span {
    margin-bottom: calculateRem(20px);
  }
  .left-node__body__content__media {
-   flex-basis: 100%;
-   -webkit-flex-basis: 100%;
+   flex-basis: auto;
+   -webkit-flex-basis: auto;
    max-width: calculateRem(600px);
    height: auto;
  }

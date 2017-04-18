@@ -45,7 +45,8 @@
             show-time-groups="[[props.timeGroups.value]]"
             show-node-content="{{props.showNodeContent.value}}"
             timeline-data="{{props.timelineData.value}}"
-            enhanced="{{props.enhanced.value}}">
+            enhanced="{{props.enhanced.value}}"
+            date-format="{{props.dateFormat.value}}">
           </px-timeline>
         </div>
       </px-demo-component>
@@ -75,8 +76,7 @@
       ajaxUrl: {
         type: Object,
         value: {
-          Simple: "data/timeline-data.json",
-          Multimedia: "data/industrial-data.json"
+          Simple: "data/timeline-data.json"
         }
       },
       /**
@@ -98,10 +98,6 @@
           return [
               {
                 configName: "Simple"
-              },
-              {
-                configName: "Multimedia",
-                timelineData: [{"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}]
               }
           ];
         }
@@ -130,17 +126,16 @@
       timelineData: {
         type: Object,
         inputType:"code:JSON",
-        defaultValue: [{"metaData": {"editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"},"content": {"title": "Building the industrial internet","body": [{"text": "Example body text."}]}}]
+        defaultValue: []
       },
+      dateFormat: {
+        type: String,
+        inputType: "text",
+        defaultValue: "MMM D, YYYY HH:MM"
+      }
     },
-    observers: ['_onChosenCofigChange(chosenConfig)'],
     ready: function() {
       this._makeAjaxRequest(this.ajaxUrl.Simple);
-    },
-    _onChosenCofigChange: function(cc) {
-      if (Object.keys(cc).length) {
-        this._makeAjaxRequest(this.ajaxUrl[cc.configName]);
-      }
     },
     _makeAjaxRequest: function(url) {
       var ironAjaxEl = document.createElement('iron-ajax'),

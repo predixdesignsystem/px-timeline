@@ -157,7 +157,8 @@ Custom property | Description | Default
         start-date="{{startDate}}"
         show-time-groups="{{showTimeGroups}}"
         node-count="{{nodeCount}}"
-        enhanced="{{enhanced}}">
+        enhanced="{{enhanced}}"
+        date-format="{{dateFormat}}">
       </px-timeline-node-container>
     </div>
   </template>
@@ -230,7 +231,14 @@ Custom property | Description | Default
        */
       nodeCount: {
         type: Number
-      }
+      },
+      /**
+       * Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.
+       * See [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.
+       */
+       dateFormat: {
+         type: String
+       }
     },
     ready: function () {
       this.startDate = new Date();

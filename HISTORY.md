@@ -1,3 +1,7 @@
+v0.2.0
+==================
+* fixed issues #2 #3 #4, added dateFormat property
+
 v0.1.15
 ==================
 * fixed demo width
