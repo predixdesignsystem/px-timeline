@@ -106,9 +106,18 @@
         type: Boolean
       },
       dateFormat: {
-        type: String
+        type: String,
+        value: 'hh:mm a, MMM D'
       }
     },
+    observers: ['_formatDate(dateFormat, timelineMetadata)'],
+
+    _formatDate: function() {
+      var dateDate = new Date(this.timelineMetadata.editedDate);
+
+      this.set('formattedEdittedDate', moment(dateDate).format(this.dateFormat).toUpperCase());
+    },
+
     ready: function() {
       if (this.timelineIndex === this.nodeCount - 1) {
         this.showLine = false;
@@ -121,13 +130,7 @@
           dateYear = dateDate.getFullYear(),
           nowDate = this.startDate;
 
-      if(this.dateFormat) {
-        var formattedDate = moment(dateDate).format(this.dateFormat);
-      }
-      else {
-        var formattedDate = moment(dateDate).format('hh:mm a, MMM D');
-      }
-      this.formattedEdittedDate = formattedDate.toUpperCase();
+      this._formatDate();
 
       var nowTime = nowDate.getTime(),
           nowDay = nowDate.getDate(),
