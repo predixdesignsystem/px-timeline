@@ -1,3 +1,7 @@
+v0.3.0
+==================
+* added compactEditorInfo boolean for displaying editor information inline with date in title in enhanced mode
+
 v0.2.1
 ==================
 * make dateFormat dynamic

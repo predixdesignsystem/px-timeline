@@ -158,7 +158,8 @@ Custom property | Description | Default
         show-time-groups="{{showTimeGroups}}"
         node-count="{{nodeCount}}"
         enhanced="{{enhanced}}"
-        date-format="{{dateFormat}}">
+        date-format="{{dateFormat}}"
+        compact-editor-info="[[compactEditorInfo]]">
       </px-timeline-node-container>
     </div>
   </template>
@@ -238,6 +239,14 @@ Custom property | Description | Default
        */
        dateFormat: {
          type: String
+       },
+       /**
+        * When a node has editor info wether todisplay the name next
+        * to the date (compact) or in the details (not compact)
+        */
+       compactEditorInfo: {
+         type: Boolean,
+         value: false
        }
     },
     ready: function () {

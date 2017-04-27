@@ -46,7 +46,8 @@
             show-node-content="{{props.showNodeContent.value}}"
             timeline-data="{{props.timelineData.value}}"
             enhanced="{{props.enhanced.value}}"
-            date-format="{{props.dateFormat.value}}">
+            date-format="{{props.dateFormat.value}}"
+            compact-editor-info="[[props.compactEditorInfo.value]]">
           </px-timeline>
         </div>
       </px-demo-component>
@@ -119,6 +120,11 @@
         defaultValue: false
       },
       enhanced: {
+        type: Boolean,
+        inputType: "toggle",
+        defaultValue: false
+      },
+      compactEditorInfo: {
         type: Boolean,
         inputType: "toggle",
         defaultValue: false

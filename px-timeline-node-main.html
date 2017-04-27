@@ -101,6 +101,7 @@
         </div>
         <div class="left-node__head__title__date">
           <span> {{formattedEdittedDate}} </span>
+          <span> [[_compactEditorString]] </span>
         </div>
       </div>
     </div>
@@ -130,34 +131,39 @@
               </div>
             </template>
           </div>
-          <div class="left-node__body__content flex flex--col">
-            <div class="left-node__body__content__editor flex">
-              <template is="dom-if" if="{{showImg}}">
-                <div class="left-node__body__content__editor__img flex flex--center flex--middle">
-                  <img class="left-node__body__content__editor__img__img" src="{{timelineMetadata.editorImg}}">
-                </div>
-              </template>
-              <template is="dom-if" if="{{!showImg}}">
-                <div class="left-node__body__content__editor__icon flex flex--center flex--middle">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                </div>
-              </template>
-              <div class="left-node__body__content__editor__details flex flex--col">
-                <div class="left-node__body__content__editor__details__name">
-                  <span class=""> {{timelineMetadata.editedBy}} </span>
-                </div>
-                <div class="left-node__body__content__editor__details__role">
-                  <span class=""> {{timelineMetadata.editorTitle}} </span>
-                </div>
-                <template is="dom-if" if="{{hasPercent}}">
-                  <div class="left-node__body__content__editor__details__percent">
-                    <span class="left-node__body__content__editor__details__percent__value">
-                      {{timelineMetadata.percent}}%
-                    </span>
-                  </div>
+
+            <div class="left-node__body__content flex flex--col">
+              <div class="left-node__body__content__editor flex">
+                <template is="dom-if" if="{{!compactEditorInfo}}">
+                  <template is="dom-if" if="{{showImg}}">
+                    <div class="left-node__body__content__editor__img flex flex--center flex--middle">
+                      <img class="left-node__body__content__editor__img__img" src="{{timelineMetadata.editorImg}}">
+                    </div>
+                  </template>
+                  <template is="dom-if" if="{{!showImg}}">
+                    <div class="left-node__body__content__editor__icon flex flex--center flex--middle">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                  </template>
                 </template>
+                <div class="left-node__body__content__editor__details flex flex--col">
+                  <template is="dom-if" if="{{!compactEditorInfo}}">
+                    <div class="left-node__body__content__editor__details__name">
+                      <span class=""> {{timelineMetadata.editedBy}} </span>
+                    </div>
+                    <div class="left-node__body__content__editor__details__role">
+                      <span class=""> {{timelineMetadata.editorTitle}} </span>
+                    </div>
+                  </template>
+                  <template is="dom-if" if="{{hasPercent}}">
+                    <div class="left-node__body__content__editor__details__percent">
+                      <span class="left-node__body__content__editor__details__percent__value">
+                        {{timelineMetadata.percent}}%
+                      </span>
+                    </div>
+                  </template>
+                </div>
               </div>
-            </div>
             <div class="left-node__body__content__media flex flex--col">
               <div class="left-node__body__content__media__title">
                 <span class="timeline-node__header__title--text"> {{contentHeadline}} </span>
@@ -207,7 +213,19 @@
       showNodeContent: {
         type: Boolean,
         observer: 'autoBodyChanged'
-      }
+      },
+      /**
+        * When a node has editor info wether todisplay the name next
+        * to the date (compact) or in the details (not compact)
+        */
+       compactEditorInfo: {
+         type: Boolean,
+         value: false
+       },
+       _compactEditorString: {
+         type: String,
+         computed: '_computeCompactEditorString(compactEditorInfo, enhanced, timelineMetadata.*)'
+       }
     },
     ready: function () {
       if (this.timelineMetadata.percent) {
@@ -291,6 +309,25 @@
     closeContent: function(event, detail, sender) {
       this.showContent = false;
       this.hideContent = true;
+    },
+    _computeCompactEditorString: function() {
+      if(this.enhanced && this.compactEditorInfo) {
+        var string = ' - ',
+            hasEditedBy = false;
+        if(typeof this.timelineMetadata.editedBy !== 'undefined') {
+          string += this.timelineMetadata.editedBy;
+          hasEditedBy = true;
+        }
+        if(typeof this.timelineMetadata.editorTitle !== 'undefined') {
+          if(hasEditedBy) {
+            string += ', ';
+          }
+          string += this.timelineMetadata.editorTitle;
+        }
+        return string;
+      } else {
+        return '';
+      }
     }
   });
 </script>

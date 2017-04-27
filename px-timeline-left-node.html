@@ -51,7 +51,8 @@
         show-line="{{showLine}}"
         show-content="{{showContent}}"
         hide-content="{{hideContent}}"
-        formatted-editted-date="{{formattedEdittedDate}}">
+        formatted-editted-date="{{formattedEdittedDate}}"
+        compact-editor-info="[[compactEditorInfo]]">
       </px-timeline-node-main>
 
     </div>
@@ -108,7 +109,15 @@
       dateFormat: {
         type: String,
         value: 'hh:mm a, MMM D'
-      }
+      },
+      /**
+        * When a node has editor info wether todisplay the name next
+        * to the date (compact) or in the details (not compact)
+        */
+       compactEditorInfo: {
+         type: Boolean,
+         value: false
+       }
     },
     observers: ['_formatDate(dateFormat, timelineMetadata)'],
 
