@@ -6,6 +6,7 @@
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="px-timeline-node-container.html">
 <link rel="import" href="css/px-timeline-styles.html">
+<link rel="import" href="../app-localize-behavior/app-localize-behavior.html" />
 
 <!--
 The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.
@@ -159,7 +160,11 @@ Custom property | Description | Default
         node-count="{{nodeCount}}"
         enhanced="{{enhanced}}"
         date-format="{{dateFormat}}"
-        compact-editor-info="[[compactEditorInfo]]">
+        compact-editor-info="[[compactEditorInfo]]"
+        time-zone="[[timeZone]]"
+        resources="[[resources]]"
+        language="[[language]]"
+        formats="[[formats]]">
       </px-timeline-node-container>
     </div>
   </template>
@@ -169,7 +174,7 @@ Custom property | Description | Default
 
     is: 'px-timeline',
 
-    behaviors: [],
+    behaviors: [Polymer.AppLocalizeBehavior],
 
     properties: {
       /**
@@ -247,7 +252,49 @@ Custom property | Description | Default
        compactEditorInfo: {
          type: Boolean,
          value: false
-       }
+       },
+       /**
+        * set a default for localizing
+        */
+        language: {
+          type: String,
+          value: 'en'
+        },
+        /**
+        * Use the key for localization if value for  language is missing. Should
+        * always be true for  our components
+        */
+        useKeyIfMissing: {
+          type: Boolean,
+          value: true
+        },
+        resources: {
+          type: Object,
+          value: function() {
+            return {
+              'en': {
+                'TODAY': 'TODAY',
+                'THIS WEEK': 'THIS WEEK',
+                'THIS MONTH': 'THIS MONTH',
+                'THIS YEAR': 'THIS YEAR',
+                'LAST YEAR': 'LAST YEAR'
+              }
+            }
+          }
+        },
+      /**
+      *
+      * Moment-timezone string for using a specific timezone. See
+      * http://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.
+      *
+      * If not provided, tries to guess the current local timezone.
+      */
+      timeZone: {
+        type: String,
+        value: function() {
+          return Px.moment.tz.guess();
+        }
+      }
     },
     ready: function () {
       this.startDate = new Date();
