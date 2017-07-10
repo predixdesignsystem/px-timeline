@@ -33,7 +33,7 @@
     "px-moment-imports": "^0.0.1",
     "iron-ajax": "^1.4.3",
     "px-headings-design": "^0.3.3",
-    "app-localize-behavior": "^1.0.2"
+    "app-localize-behavior": "^2.0.0"
   },
   "devDependencies": {
     "px-demo": "^1.2.8"
