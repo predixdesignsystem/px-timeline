@@ -2,7 +2,7 @@
   {
     "metaData": {
       "editedBy": "Alison Jones",
-      "editedDate": "Fri Nov 04 2016 14:12:00 GMT-0700 (PDT)",
+      "editedDate": "2016-11-04 14:12:00-07",
       "editorTitle": "Head Maintenance Technician",
       "customIcon": "fa-wrench"
     },
@@ -20,7 +20,7 @@
   }, {
     "metaData": {
       "editedBy": "John Smith",
-      "editedDate": "Thu Oct 27 2016 18:28:10 GMT-0700 (PDT)",
+      "editedDate": "2016-10-27 18:28:10-07",
       "editorTitle": "Director of Maintenance",
       "customIcon": "fa-check"
     },
@@ -36,7 +36,7 @@
   }, {
     "metaData": {
       "editedBy": "PredixAir Operations",
-      "editedDate": "Mon Sep 12 2016 06:37:00 GMT-0700 (PDT)",
+      "editedDate": "2016-09-12 06:37:00-07",
       "customIcon": "fa-plane"
     },
     "content": {
@@ -44,10 +44,10 @@
       "bodyType": "LIST",
       "body": [
         { "key": "Takeoff",
-          "value": "SFO - Mon Sep 12 2016 06:37:00 GMT-0700 (PDT)"
+          "value": "SFO - Mon Sep 12 2016 06:37:00-07"
         },
         { "key": "Arrival",
-          "value": "CVG - Mon Sep 12 2016 3:15:00 GMT-0400 (EDT)"
+          "value": "CVG - Mon Sep 12 2016 3:15:00-04"
         },
         { "key": "Flight Time",
           "value": "5 hours, 43 minutes"

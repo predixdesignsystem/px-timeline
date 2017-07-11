@@ -2,11 +2,11 @@
   {
     "metaData": {
       "editedBy": "Google Chrome Developers",
-      "editedDate": "Fri Nov 04 2016 14:12:00 GMT-0700 (PDT)",
+      "editedDate": "2016-11-04 14:12:00-07",
       "editorImg": "img/immelt.jpg",
       "editorTitle": "Poly Chiefmaster",
       "percent": "88",
-      "customIcon": "fa-code-fork"
+      "customIcon": "px:route"
     },
     "content": {
       "title": "Binding to Arrays",
@@ -15,7 +15,7 @@
         {
           "video": "https://www.youtube.com/embed/HBUb8frm2Tw?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN",
           "headline": "To ng-repeat or dom-repeat, that is the question",
-          "text": "Thanks to the GE Digital team for evangelising polymer",
+          "text": "Check out this awesome YouTube video for more information.",
           "host": "Remote"
         }
       ]
@@ -23,9 +23,9 @@
   }, {
     "metaData": {
       "editedBy": "Soundcloud Podcast",
-      "editedDate": "Tue Nov 1 2016 11:42:00 GMT-0700 (PDT)",
+      "editedDate": "2016-11-01 11:42:00-07",
       "editorTitle": "Machine AI Recomendations",
-      "customIcon": "fa-code"
+      "customIcon": "px:microservice"
     },
     "content": {
       "title": "Polymer 1.0 Announced",
@@ -34,7 +34,7 @@
         {
           "audio": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/212712436&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
           "headline": "Everyone agrees on Polymer",
-          "text": "Just listen to podcast. No explanation is necessary",
+          "text": "Just listen to podcast. No explanation is necessary.",
           "host": "remote",
           "isComment": true
         }
@@ -43,11 +43,10 @@
   }, {
     "metaData": {
       "editedBy": "GE Digital",
-      "editedDate": "Thu Oct 27 2016 18:28:10 GMT-0700 (PDT)",
+      "editedDate": "2016-10-27 18:28:10-07",
       "editorTitle": "Chief Technical Division",
       "percent": "100",
-      "editorImg": "img/immelt.jpg",
-      "customIcon": "fa-bullhorn"
+      "editorImg": "img/immelt.jpg"
     },
     "content": {
       "title": "Building the industrial internet",
@@ -63,7 +62,7 @@
   }, {
     "metaData": {
       "editedBy": "Polymer Team",
-      "editedDate": "Mon Sep 12 2016 06:37:00 GMT-0700 (PDT)"
+      "editedDate": "2016-09-12 06:37:00-07"
     },
     "content": {
       "title": "New Polycast",
@@ -83,7 +82,7 @@
   }, {
     "metaData": {
       "editedBy": "GE Digital",
-      "editedDate": "Tue Nov 03 2015 00:00:00 GMT-0700 (PDT)"
+      "editedDate": "2015-11-03 00:00:00-07"
     },
     "content": {
       "title": "Building the industrial internet",

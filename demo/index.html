@@ -1,6 +1,5 @@
 <!-- Common imports -->
 <link rel="import" href="../../polymer/polymer.html" />
-<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
 
 <!-- Common demo imports -->
 <link rel="import" href="../../px-demo/px-demo-header.html" />
@@ -105,9 +104,6 @@
       }
     },
 
-    /**
-     * A reference for `this.props`. Read the documentation there.
-     */
     demoProps: {
       timeGroups: {
         type: Boolean,
@@ -152,7 +148,6 @@
       ironAjaxEl.addEventListener('response', function(evt) {
         nodes = evt.detail.response;
         this.set('props.timelineData.value', nodes);
-        //TODO tie in response to timeline
       }.bind(this));
       ironAjaxEl.generateRequest();
     }

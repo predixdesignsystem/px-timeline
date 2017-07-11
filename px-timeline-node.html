@@ -7,23 +7,23 @@
 
 
 <!-- declare DOM module -->
-<dom-module id="px-timeline-left-node">
+<dom-module id="px-timeline-node">
   <template>
     <style include="px-timeline-styles"></style>
-    <div id="left-node-box" class="left-node flex flex--start flex--col">
+    <div id="node-box" class="node flex flex--start flex--col">
 
       <template is="dom-if" if="{{showTimeGroups}}">
         <template is="dom-if" if="{{showDates}}">
 
-          <div class="left-node__head flex flex--start">
-            <div class="left-node__head__icon flex flex--col flex--middle">
-              <div class="left-node__head__icon__date flex">
+          <div class="node__head flex flex--start">
+            <div class$="node__head__icon flex flex--col flex--middle {{_getClass(enhanced)}}">
+              <div class="node__head__icon__date flex">
                 <span>[[_dateTitle]]</span>
               </div>
-              <div class="left-node__head__icon__line--date">
+              <div class="node__head__icon__line--date">
               </div>
             </div>
-            <div class="left-node__head__title flex flex--col flex--justify">
+            <div class="node__head__title flex flex--col flex--justify">
             </div>
           </div>
         </template>
@@ -47,7 +47,7 @@
 </dom-module>
 <script>
   Polymer({
-    is: 'px-timeline-left-node',
+    is: 'px-timeline-node',
 
     behaviors: [Polymer.AppLocalizeBehavior],
 
@@ -183,6 +183,9 @@
       if (this.timelineIndex === this.nodeCount - 1) {
         this.showLine = false;
       }
+    },
+    _getClass: function() {
+      return this.enhanced ? 'enhanced' : 'simple';
     }
   });
 </script>

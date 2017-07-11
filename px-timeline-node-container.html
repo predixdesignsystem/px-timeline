@@ -1,6 +1,6 @@
 <!-- import polymer library -->
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-timeline-left-node.html">
+<link rel="import" href="px-timeline-node.html">
 <link rel="import" href="css/px-timeline-styles.html">
 <link rel="import" href="../app-localize-behavior/app-localize-behavior.html" />
 
@@ -9,8 +9,8 @@
   <template>
     <style include="px-timeline-styles"></style>
     <template is="dom-repeat" items="[[timelineData]]">
-      <px-timeline-left-node
-        id="left-node"
+      <px-timeline-node
+        id="node"
         timeline-metadata="[[item.metaData]]"
         timeline-content="[[item.content]]"
         timeline-index="[[index]]"
@@ -26,7 +26,7 @@
         resources="[[resources]]"
         language="[[language]]"
         formats="[[formats]]">
-      </px-timeline-left-node>
+      </px-timeline-node>
     </template>
   </template>
 </dom-module>

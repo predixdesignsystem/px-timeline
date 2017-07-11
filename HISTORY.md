@@ -1,3 +1,9 @@
+v1.0.0
+==================
+* updated dependencies for design refresh
+* component redesign
+* simplified sass
+
 v0.3.0
 ==================
 * added compactEditorInfo boolean for displaying editor information inline with date in title in enhanced mode

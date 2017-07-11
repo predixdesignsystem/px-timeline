@@ -7,19 +7,19 @@
 <dom-module id="px-timeline-node-img">
   <template>
     <style include="px-timeline-styles"></style>
-    <div class="left-node__body__content__media__text__box flex">
+    <div class="node__body__content__media__text__box flex">
       <template is="dom-if" if="{{comment}}">
         <px-timeline-node-comment-svg> </px-timeline-node-comment-svg>
-        <div class="left-node__body__content__media__text--spacer flex">
+        <div class="node__body__content__media__text--spacer flex">
         </div>
       </template>
-      <div class="left-node__body__content__media__text">
+      <div class="node__body__content__media__text">
         <span>[[contentBodyImg.text]]</span>
       </div>
     </div>
     <template is="dom-if" if="{{hasImage}}>">
-      <div class="left-node__body__content__media__img flex flex--start">
-        <img srcset="[[contentBodyImg.img]], https://www.predix.com/sites/all/themes/ge_progressive/predix/images/why-predix/ge-predix-network.jpg" class="left-node__body__content__media__img__img" alt="there was a problem loading the image">
+      <div class="node__body__content__media__img flex flex--start">
+        <img srcset="[[contentBodyImg.img]], https://www.predix.com/sites/all/themes/ge_progressive/predix/images/why-predix/ge-predix-network.jpg" class="node__body__content__media__img__img" alt="there was a problem loading the image">
       </div>
     </template>
   </template>
