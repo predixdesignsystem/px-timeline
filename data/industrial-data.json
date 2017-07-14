@@ -4,7 +4,7 @@
       "editedBy": "Alison Jones",
       "editedDate": "2016-11-04 14:12:00-07",
       "editorTitle": "Head Maintenance Technician",
-      "customIcon": "fa-wrench"
+      "customIcon": "pxl:administration"
     },
     "content": {
       "title": "Engine Inspection at Caledonia Shop",
@@ -22,7 +22,7 @@
       "editedBy": "John Smith",
       "editedDate": "2016-10-27 18:28:10-07",
       "editorTitle": "Director of Maintenance",
-      "customIcon": "fa-check"
+      "customIcon": "pxs:confirmed"
     },
     "content": {
       "title": "A check",
@@ -37,7 +37,7 @@
     "metaData": {
       "editedBy": "PredixAir Operations",
       "editedDate": "2016-09-12 06:37:00-07",
-      "customIcon": "fa-plane"
+      "customIcon": "pxl:airplane"
     },
     "content": {
       "title": "SFO > CVG",
