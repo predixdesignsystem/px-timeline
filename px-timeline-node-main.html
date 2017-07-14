@@ -7,6 +7,7 @@
 <link rel="import" href="px-timeline-node-audio.html"/>
 <link rel="import" href="css/px-timeline-styles.html"/>
 <link rel="import" href="../px-icon-set/px-icon-set.html"/>
+<link rel="import" href="../px-icon-set/px-icon.html"/>
 
 <!-- declare DOM module -->
 <dom-module id="px-timeline-node-main">
@@ -18,18 +19,18 @@
         <div class="node__head__icon__icons__tri icons__tri--color flex flex--middle">
           <template  is="dom-if" if="{{hideContent}}">
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <iron-icon class="icons__tri right-caret hot" icon="px:chevron-right" aria-hidden="true" on-tap="openContent"></iron-icon>
+              <px-icon class="icons__tri right-caret hot" icon="pxm:next" aria-hidden="true" on-tap="openContent"></px-icon>
             </template>
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <iron-icon class="icon__icon--hidden right-caret hot" icon="px:chevron-right" aria-hidden="true" on-tap="openContent"></iron-icon>
+              <px-icon class="icon__icon--hidden right-caret hot" icon="pxm:next" aria-hidden="true" on-tap="openContent"></px-icon>
             </template>
           </template>
           <template  is="dom-if" if="{{showContent}}">
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <iron-icon class="icons__tri down-caret hot" icon="px:chevron-down" aria-hidden="true" on-tap="closeContent"></iron-icon>
+              <px-icon class="icons__tri down-caret hot" icon="pxm:down" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <iron-icon class="icon__icon--hidden down-caret hot" icon="px:chevron-down" aria-hidden="true" on-tap="closeContent"></iron-icon>
+              <px-icon class="icon__icon--hidden down-caret hot" icon="pxm:down" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
           </template>
         </div>
@@ -42,24 +43,24 @@
             <div id="open-icon" class="node__head__icon__icons__circle icons__circle--enhanced flex flex--center flex--middle">
 
               <template is="dom-if" if="{{timelineMetadata.customIcon}}">
-                <iron-icon class="icons__circle--enhanced__imedia" icon="{{timelineMetadata.customIcon}}" aria-hidden="true"></iron-icon>
+                <px-icon class="icons__circle--enhanced__imedia" icon="{{timelineMetadata.customIcon}}" aria-hidden="true"></px-icon>
               </template>
 
               <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
                 <template is="dom-if" if="{{bodyVideo}}">
-                  <iron-icon class="icons__circle--enhanced__imedia media-video" icon="px:camera" aria-hidden="true"></iron-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-video" icon="pxs:camera" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyImg}}">
-                  <iron-icon class="icons__circle--enhanced__imedia media-photo" icon="px:image" aria-hidden="true"></iron-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-photo" icon="pxs:image" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyAudio}}">
-                  <iron-icon class="icons__circle--enhanced__imedia media-headphones" icon="px:play" aria-hidden="true"></iron-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-headphones" icon="pxm:play" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyList}}">
-                  <iron-icon class="icons__circle--enhanced__imedia media-list" icon="px:list" aria-hidden="true"></iron-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-list" icon="pxm:list-view" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyText}}">
-                  <iron-icon class="icons__circle--enhanced__imedia media-text" icon="px:note" aria-hidden="true"></iron-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-text" icon="pxs:note" aria-hidden="true"></px-icon>
                 </template>
               </template>
 
@@ -143,7 +144,7 @@
                   </template>
                   <template is="dom-if" if="{{!showImg}}">
                     <div class="node__body__content__editor__icon flex flex--center flex--middle">
-                      <iron-icon icon="px:user" aria-hidden="true"></iron-icon>
+                      <px-icon icon="pxm:generic-user" aria-hidden="true"></px-icon>
                     </div>
                   </template>
                 </template>
