@@ -6,7 +6,7 @@
       "editorImg": "img/immelt.jpg",
       "editorTitle": "Poly Chiefmaster",
       "percent": "88",
-      "customIcon": "pxl:routes"
+      "customIcon": "px-obj:routes"
     },
     "content": {
       "title": "Binding to Arrays",
@@ -25,7 +25,7 @@
       "editedBy": "Soundcloud Podcast",
       "editedDate": "2016-11-01 11:42:00-07",
       "editorTitle": "Machine AI Recomendations",
-      "customIcon": "pxl:microservice"
+      "customIcon": "px-fea:microservice"
     },
     "content": {
       "title": "Polymer 1.0 Announced",

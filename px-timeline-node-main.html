@@ -19,18 +19,18 @@
         <div class="node__head__icon__icons__tri icons__tri--color flex flex--middle">
           <template  is="dom-if" if="{{hideContent}}">
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <px-icon class="icons__tri right-caret hot" icon="pxm:next" aria-hidden="true" on-tap="openContent"></px-icon>
+              <px-icon class="icons__tri right-caret hot" icon="px-nav:next" aria-hidden="true" on-tap="openContent"></px-icon>
             </template>
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <px-icon class="icon__icon--hidden right-caret hot" icon="pxm:next" aria-hidden="true" on-tap="openContent"></px-icon>
+              <px-icon class="icon__icon--hidden right-caret hot" icon="px-nav:next" aria-hidden="true" on-tap="openContent"></px-icon>
             </template>
           </template>
           <template  is="dom-if" if="{{showContent}}">
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <px-icon class="icons__tri down-caret hot" icon="pxm:down" aria-hidden="true" on-tap="closeContent"></px-icon>
+              <px-icon class="icons__tri down-caret hot" icon="px-nav:down" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <px-icon class="icon__icon--hidden down-caret hot" icon="pxm:down" aria-hidden="true" on-tap="closeContent"></px-icon>
+              <px-icon class="icon__icon--hidden down-caret hot" icon="px-nav:down" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
           </template>
         </div>
@@ -48,19 +48,19 @@
 
               <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
                 <template is="dom-if" if="{{bodyVideo}}">
-                  <px-icon class="icons__circle--enhanced__imedia media-video" icon="pxs:camera" aria-hidden="true"></px-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-video" icon="px-utl:camera" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyImg}}">
-                  <px-icon class="icons__circle--enhanced__imedia media-photo" icon="pxs:image" aria-hidden="true"></px-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-photo" icon="px-doc:image" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyAudio}}">
-                  <px-icon class="icons__circle--enhanced__imedia media-headphones" icon="pxm:play" aria-hidden="true"></px-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-headphones" icon="px-nav:play" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyList}}">
-                  <px-icon class="icons__circle--enhanced__imedia media-list" icon="pxm:list-view" aria-hidden="true"></px-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-list" icon="px-nav:list-view" aria-hidden="true"></px-icon>
                 </template>
                 <template is="dom-if" if="{{bodyText}}">
-                  <px-icon class="icons__circle--enhanced__imedia media-text" icon="pxs:note" aria-hidden="true"></px-icon>
+                  <px-icon class="icons__circle--enhanced__imedia media-text" icon="px-doc:note" aria-hidden="true"></px-icon>
                 </template>
               </template>
 
@@ -144,7 +144,7 @@
                   </template>
                   <template is="dom-if" if="{{!showImg}}">
                     <div class="node__body__content__editor__icon flex flex--center flex--middle">
-                      <px-icon icon="pxm:generic-user" aria-hidden="true"></px-icon>
+                      <px-icon icon="px-nav:generic-user" aria-hidden="true"></px-icon>
                     </div>
                   </template>
                 </template>
