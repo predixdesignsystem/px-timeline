@@ -1,10 +1,8 @@
-#px-timeline [![Build Status](https://travis-ci.org/PredixDev/px-timeline.svg?branch=master)](https://travis-ci.org/PredixDev/px-timeline)
-
-[![px-timeline demo](px-timeline.png?raw=true)](https://github.com/PredixDev/px-timeline)
+# px-timeline [![Build Status](https://travis-ci.org/PredixDev/px-timeline.svg?branch=master)](https://travis-ci.org/PredixDev/px-timeline)
 
 ## Overview
 
-px-timeline is a Predix UI component
+`Px-timeline` a Predix UI component that provides a flexible, interactive timeline for visualizing a time-based series of events and documenting details relevant to each event.
 
 ## Usage
 
@@ -15,17 +13,17 @@ px-timeline is a Predix UI component
 3. bower
 4. [webcomponents-lite.js polyfill](https://github.com/webcomponents/webcomponentsjs)
 
-Node, npm and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
+Node, npm, and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
 
 ## Getting Started
 
-First, install the component via bower on the command line.
+First, install the component via bower on the command line:
 
 ```
 bower install px-timeline --save
 ```
 
-Second, import the component to your application with the following tag in your head.
+Second, import the component in your application with the following tag in your head:
 
 ```
 <link rel="import" href="/bower_components/px-timeline/px-timeline.html"/>
@@ -46,7 +44,7 @@ Finally, use the component in your application:
 <br />
 <hr />
 
-## documentation
+## Documentation
 
 Read the full API and view the demo [here](https://predixdev.github.io/px-timeline).
 
