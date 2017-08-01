@@ -1,3 +1,7 @@
+v1.0.2
+==================
+* fix icons etc
+
 v1.0.1
 ==================
 * update readme and remove old component image

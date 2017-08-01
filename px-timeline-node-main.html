@@ -19,18 +19,18 @@
         <div class="node__head__icon__icons__tri icons__tri--color flex flex--middle">
           <template  is="dom-if" if="{{hideContent}}">
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <px-icon class="icons__tri right-caret hot" icon="px-nav:next" aria-hidden="true" on-tap="openContent"></px-icon>
+              <px-icon class="icons__tri right-caret hot" icon="px-utl:chevron-right" aria-hidden="true" on-tap="openContent"></px-icon>
             </template>
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <px-icon class="icon__icon--hidden right-caret hot" icon="px-nav:next" aria-hidden="true" on-tap="openContent"></px-icon>
+              <px-icon class="icon__icon--hidden right-caret hot" icon="px-utl:chevron-right" aria-hidden="true" on-tap="openContent"></px-icon>
             </template>
           </template>
           <template  is="dom-if" if="{{showContent}}">
             <template is="dom-if" if={{timelineContent.body.length}}>
-              <px-icon class="icons__tri down-caret hot" icon="px-nav:down" aria-hidden="true" on-tap="closeContent"></px-icon>
+              <px-icon class="icons__tri down-caret hot" icon="px-utl:chevron" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
             <template is="dom-if" if={{!timelineContent.body.length}}>
-              <px-icon class="icon__icon--hidden down-caret hot" icon="px-nav:down" aria-hidden="true" on-tap="closeContent"></px-icon>
+              <px-icon class="icon__icon--hidden down-caret hot" icon="px-utl:chevron" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
           </template>
         </div>
