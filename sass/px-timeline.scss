@@ -40,10 +40,8 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
 }
 
 .enhanced-icon-bubble {
-  width: calculateRem(26px);
-  min-width: calculateRem(26px);
-  height: calculateRem(26px);
-  min-height: calculateRem(26px);
+  --iron-icon-width: calculateRem(26px);
+  --iron-icon-height: calculateRem(26px);
   text-align: center;
 }
 
@@ -113,6 +111,7 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   margin-top: calculateRem(10px);
   height: calculateRem(26px);
   min-height: calculateRem(26px);
+  color: $px-timeline-alt-text-color;
 }
 
 .down-caret {
@@ -521,8 +520,9 @@ px-timeline-node-comment-svg {
 }
 
 .icons__tri {
-  width: calculateRem(20px);
-  height: calculateRem(20px);
+  --iron-icon-width: calculateRem(20px);
+  --iron-icon-height: calculateRem(20px);
+  margin-top: 0.5rem;
 }
 
 .icons__circle--simple {

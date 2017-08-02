@@ -1,3 +1,7 @@
+v1.0.3
+==================
+* tweak to match design spec
+
 v1.0.2
 ==================
 * fix icons etc
