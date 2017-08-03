@@ -1,3 +1,7 @@
+v1.0.4
+==================
+* tweak to match design spec
+
 v1.0.3
 ==================
 * tweak to match design spec

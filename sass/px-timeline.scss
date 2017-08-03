@@ -150,6 +150,9 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
 .node__head__title {
   flex-basis:auto;
   margin-bottom: calculateRem(25px);
+  &.enhanced {
+    margin-top: calculateRem(6px);
+  }
 }
 
 .node__head__title__title {

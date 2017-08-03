@@ -95,7 +95,7 @@
         </template>
       </div>
 
-      <div class="node__head__title flex flex--col flex--justify">
+      <div class$="node__head__title flex flex--col flex--justify {{_isEnhanced(enhanced)}}">
         <div class="node__head__title__title flex__item">
           <div class="node__head__title__title__text ">
             <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
@@ -330,6 +330,9 @@
       } else {
         return '';
       }
+    },
+    _isEnhanced: function() {
+      return this.enhanced ? 'enhanced' : '';
     }
   });
 </script>
