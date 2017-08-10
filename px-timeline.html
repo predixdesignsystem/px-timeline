@@ -1,12 +1,7 @@
-<!--
-    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
-    siblings. When this component is run from its own repo (e.g. tests, examples), we assume the server is started with
-    'gulp serve' (or similar server setup) to enable correct finding of bower dependencies for local runs.
--->
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-timeline-node-container.html">
-<link rel="import" href="css/px-timeline-styles.html">
-<link rel="import" href="../app-localize-behavior/app-localize-behavior.html" />
+<link rel="import" href="px-timeline-node-container.html"/>
+<link rel="import" href="css/px-timeline-styles.html"/>
+<link rel="import" href="../app-localize-behavior/app-localize-behavior.html"/>
 
 <!--
 The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.
@@ -139,13 +134,11 @@ Custom property | Description
 `--px-timeline-text-color` | Primary text color for headings and titles
 `--px-timeline-alt-text-color` | Secondary text color for dates and other supporting info
 
-
 @element px-timeline
-@blurb A flexible interactive timeline component by Predix
+@blurb A flexible interactive timeline component
 @homepage index.html
 @demo index.html
 -->
-
 <dom-module id="px-timeline">
   <template>
     <style include="px-timeline-styles"></style>
