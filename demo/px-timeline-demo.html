@@ -75,9 +75,11 @@
     properties: {
       ajaxUrl: {
         type: Object,
-        value: {
-          Simple: "data/timeline-data.json"
-        }
+        computed: '_computerDemoDataURL(_demoDataURL)'
+      },
+      _demoDataURL: {
+        type: String,
+        value: "data/timeline-data.json"
       },
       /**
        * @property demoProps
@@ -151,6 +153,11 @@
         this.set('props.timelineData.value', nodes);
       }.bind(this));
       ironAjaxEl.generateRequest();
+    },
+    _computerDemoDataURL: function(){
+      var importPath = this.importPath;
+      importPath = importPath.substr(0,importPath.indexOf('demo/'));
+      return {'Simple': importPath + this._demoDataURL};
     }
   });
 </script>

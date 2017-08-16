@@ -1,3 +1,7 @@
+v1.0.7
+==================
+* more robust calculation of demo page data url
+
 v1.0.6
 ==================
 * fix comment for analyzer
