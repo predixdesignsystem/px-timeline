@@ -16,7 +16,9 @@ suite('Check px-timeline configurable properties', function() {
     timelineEl.enhanced = true;
     timelineEl.showTimeGroups = true;
     timelineEl.showNodeContent = true;
-    done();
+    flush(()=>{
+       done();
+    });
   })
 
   test('timeline option enhanced is set to true', function(done){
