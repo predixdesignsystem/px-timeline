@@ -30,7 +30,7 @@
       if (!webComponentsSupported) {
         var script = document.createElement('script');
         script.async = true;
-        script.src = '../webcomponentsjs/webcomponents-lite.min.js';
+        script.src = '../webcomponentsjs/webcomponents-lite.js';
         script.onload = onload;
         document.head.appendChild(script);
       } else {
@@ -48,7 +48,6 @@
       Load theme files, apply default theme.
     -->
     <link rel="import" href="../px-theme/px-theme-styles.html">
-    <style include="px-theme-styles" is="custom-style"></style>
 
     <!--
       Load dark theme files for later use. Stamp dynamic theme switcher, which
@@ -87,12 +86,14 @@
     <!--
       Basic page styles.
     -->
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <custom-style>
+      <style include="px-theme-styles" is="custom-style">
+        html, body {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </custom-style>
   </head>
 
   <body>
