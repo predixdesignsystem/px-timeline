@@ -41,18 +41,11 @@ var timelines = [
     }
   ];
 
-document.addEventListener("WebComponentsReady", function() {
-  runTests();
-});
-
-function runTests() {
-
-  suite('Check timeline "Left Side" node position', function() {
-    suiteSetup(function(done) {
-      nodeContainerEl = Polymer.dom(document).querySelector('px-timeline-node-container');
-      nodeContainerEl.timelines = timelines;
-      done();
-    });
-
+suite('Check timeline "Left Side" node position', function() {
+  suiteSetup(function(done) {
+    nodeContainerEl = Polymer.dom(document).querySelector('px-timeline-node-container');
+    nodeContainerEl.timelines = timelines;
+    done();
   });
-}
+
+});
