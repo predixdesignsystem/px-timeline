@@ -6,7 +6,7 @@ suite('Check base timeline node properties', function() {
       leftNodeBox,
       nodeElRoot;
   suiteSetup(function(done) {
-    nodeEl = Polymer.dom(document).querySelector('px-timeline-node');
+    nodeEl = fixture('px-timeline-node_1');
     listNode = {
       "metaData": {
         "editedBy": "GE Digital",
@@ -30,27 +30,25 @@ suite('Check base timeline node properties', function() {
     nodeEl.timelineIndex = 0;
     nodeEl.indexEven = true;
     nodeEl.nodePosition = 'Left Side';
-    done();
+    flush(()=>{
+      done();
+    })
   });
 
-  test('timeline auto show node content is true', function(done){
+  test('timeline auto show node content is true', function(){
     assert.isTrue(nodeEl.autoShowContent);
-    done();
   });
 
-  test('timeline metaData editedBy equals GE Digital', function(done){
+  test('timeline metaData editedBy equals GE Digital', function(){
     assert.equal(nodeEl.timelineMetadata.editedBy, 'GE Digital');
-    done();
   });
 
-  test('timeline content title equals "FBuilding the industrial internet"', function(done){
+  test('timeline content title equals "FBuilding the industrial internet"', function(){
     assert.equal(nodeEl.timelineContent.title, 'Building the industrial internet');
-    done();
   });
 
-  test('timeline content bodyType equals TEXT', function(done){
+  test('timeline content bodyType equals TEXT', function(){
     assert.equal(nodeEl.timelineContent.bodyType.toUpperCase(), 'TEXT');
-    done();
   });
 
 });
@@ -63,7 +61,7 @@ suite('Check VIDEO timeline node properties', function() {
       leftNodeBox,
       nodeElRoot;
   suiteSetup(function(done) {
-    nodeEl = Polymer.dom(document).querySelector('px-timeline-node');
+    nodeEl = fixture('px-timeline-node_1');
     listNode = {
       "metaData": {
         "editedBy": "Google Chrome Developers",
@@ -92,21 +90,20 @@ suite('Check VIDEO timeline node properties', function() {
     nodeEl.timelineIndex = 0;
     nodeEl.indexEven = true;
 
-    done();
+    flush(()=>{
+      done();
+    })
   });
 
-  test('timeline metaData editedBy equals Google Chrome Developers', function(done){
+  test('timeline metaData editedBy equals Google Chrome Developers', function(){
     assert.equal(nodeEl.timelineMetadata.editedBy, 'Google Chrome Developers');
-    done();
   });
 
-  test('timeline metaData editedBy equals "Lazy loading data with app-route"', function(done){
+  test('timeline metaData editedBy equals "Lazy loading data with app-route"', function(){
     assert.equal(nodeEl.timelineContent.title, 'Lazy loading data with app-route');
-    done();
   });
 
-  test('timeline content bodyType equals Video', function(done){
+  test('timeline content bodyType equals Video', function(){
     assert.equal(nodeEl.timelineContent.bodyType.toUpperCase(), 'VIDEO');
-    done();
   });
 });
