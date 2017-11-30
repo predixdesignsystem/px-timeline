@@ -35,5 +35,8 @@
   },
   "suites": [
     "test/index.html"
-  ]
+  ],
+  "mochaOptions": {
+  "timeout": 300000
+}
 }
