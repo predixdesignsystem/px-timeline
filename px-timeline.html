@@ -14,7 +14,7 @@ Timeline Data is an array of timeline node objects.
 
 Sample schema for a simple timeline node is detailed below.
 
-<pre>
+```
 {
   "metaData": {
     "editedDate": "Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)"
@@ -28,11 +28,11 @@ Sample schema for a simple timeline node is detailed below.
     ]
   }
 }
-</pre>
+```
 
 Sample schema for an enhanced timeline node is detailed below.
 
-<pre>
+```
 {
   "metaData": {
     "editedBy": "Google Chrome Developers",
@@ -56,14 +56,14 @@ Sample schema for an enhanced timeline node is detailed below.
     ]
   }
 }
-</pre>
+```
 
 If the isComment property is set to true, designed quotation marks will precede the content body text.
 
 The content.body schema of a List (bodyType) node differs from the schema of other enhanced timeline bodyTypes. Please below example of content.body schemas for all enhanced node bodyTypes.
 
 bodyType = LIST
-<pre>
+```
 [{
   key: 'Topic 1', // String, isRequired
   value: 'Data Binding' // String, isRequired
@@ -71,20 +71,20 @@ bodyType = LIST
 { "key": "Topic 2",
   "value": "Data Flow"
 }]
-</pre>
+```
 
 bodyType = TEXT
-<pre>
+```
 
 [{
   "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
   "headline": "This is the content headline",
   "isComment": true
 }]
-</pre>
+```
 
 bodyType = AUDIO
-<pre>
+```
 [{
   "audio": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267404963&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true",
   "headline": "This is the content headline",
@@ -92,10 +92,10 @@ bodyType = AUDIO
   "host": "remote",
   "isComment": false
 }]
-</pre>
+```
 
 bodyType = VIDEO
-<pre>
+```
 [{
   "video": "video/sample-video.mp4",
   "headline": "This is the content headline",
@@ -103,17 +103,17 @@ bodyType = VIDEO
   "host": "local",
   "isComment": true
 }]
-</pre>
+```
 
 bodyType = IMG
-<pre>
+```
 [{
   "img": "https://s-media-cache-ak0.pinimg.com/564x/00/42/f1/0042f16c3b768f6c85899e0da8b5f6c6.jpg",
   "headline": "This is the content headline",
   "text": "This is a brand new polymer component",
   "isComment": true
 }]
-</pre>
+```
 
 
 ### Usage
