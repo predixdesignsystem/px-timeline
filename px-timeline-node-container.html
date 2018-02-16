@@ -20,6 +20,7 @@
         node-count="{{nodeCount}}"
         date-format="{{dateFormat}}"
         enhanced="{{enhanced}}"
+        editable="[[editable]]"
         compact-editor-info="[[compactEditorInfo]]"
         time-groups-used="[[_timeGroupsUsed]]"
         time-zone="[[timeZone]]"
@@ -55,6 +56,9 @@
       },
       dateFormat: {
         type: String
+      },
+      editable:{
+        type: Boolean
       },
       /**
       *

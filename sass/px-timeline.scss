@@ -27,6 +27,7 @@ $px-timeline-border-color : var(--px-timeline-border-color, gray);
 $px-timeline-text-color : var(--px-timeline-text-color, black);
 $px-timeline-alt-text-color : var(--px-timeline-alt-text-color, gray);
 $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
+$px-timeline-edit-hover-color : var(--px-timeline-edit-hover-color, #007acc);
 
 //PROTOTYPES
 
@@ -164,6 +165,16 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   color: $px-timeline-text-color;
   margin-right: calculateRem(10px);
   width: auto;
+  &.editable:hover{
+    color: $px-timeline-edit-hover-color;
+  }
+  & .timeline-node__time__editor__icon{
+    visibility: hidden;
+    padding-left: calculateRem(10px);
+  }
+  &:hover .timeline-node__time__editor__icon{
+     visibility: visible;
+  }
 }
 
 .node__head__title__title__line {

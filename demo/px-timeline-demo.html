@@ -46,6 +46,7 @@
             show-node-content="{{props.showNodeContent.value}}"
             timeline-data="{{props.timelineData.value}}"
             enhanced="{{props.enhanced.value}}"
+            editable="[[props.editable.value]]"
             date-format="{{props.dateFormat.value}}"
             compact-editor-info="[[props.compactEditorInfo.value]]">
           </px-timeline>
@@ -107,7 +108,9 @@
         }
       }
     },
-
+    listeners: {
+      'px-timeline-edit' : '_editTimeline'
+    },
     demoProps: {
       timeGroups: {
         type: Boolean,
@@ -139,6 +142,11 @@
         type: String,
         inputType: "text",
         defaultValue: "MMM D, YYYY HH:MM"
+      },
+      editable: {
+        type: Boolean,
+        inputType: "toggle",
+        defaultValue: false
       }
     },
     ready: function() {
@@ -160,6 +168,9 @@
       var importPath = this.importPath;
       importPath = importPath.substr(0,importPath.indexOf('demo/'));
       return {'Simple': importPath + this._demoDataURL};
+    },
+    _editTimeline: function(evt){
+      alert("Clicked on timeline node index " +evt.detail);
     }
   });
 </script>
