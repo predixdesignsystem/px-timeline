@@ -100,7 +100,7 @@
           <div class$="node__head__title__title__text {{_isEditable(editable)}}">
             <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
             <template is="dom-if" if="{{editable}}">
-              <span class="timeline-node__time__editor__icon"> <px-icon id="editTimelineIcon" class="icon__icon right-caret hot" icon="px-utl:edit" aria-hidden="true" on-tap="_timelineEdit"></px-icon></span>
+              <span class="timeline-node__time__editor__icon"> <px-icon  aria-label="Click to edit timeline node" class="icon__icon right-caret hot" icon="px-utl:edit" aria-hidden="true" on-tap="_timelineEdit"></px-icon></span>
             </template>
           </div>
         </div>
