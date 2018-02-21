@@ -33,7 +33,9 @@
         id="node-head-icons"
         timeline-content="{{timelineContent}}"
         timeline-metadata="{{timelineMetadata}}"
+        timeline-index="[[timelineIndex]]"
         enhanced="{{enhanced}}"
+        editable="[[editable]]"
         show-node-content="{{showNodeContent}}"
         show-line="{{showLine}}"
         show-content="{{showContent}}"
@@ -87,6 +89,9 @@
       },
       _dateTitle: {
         type: String
+      },
+      editable: {
+        type: Boolean
       },
       /**
       * set a default for localizing

@@ -107,3 +107,60 @@ suite('Check VIDEO timeline node properties', function() {
     assert.equal(nodeEl.timelineContent.bodyType.toUpperCase(), 'VIDEO');
   });
 });
+
+
+suite('Check edit timeline node property', function() {
+  let nodeEl,
+      minusIcon,
+      iconDiv,
+      listNode,
+      leftNodeBox,
+      nodeElRoot;
+  suiteSetup(function(done) {
+    nodeEl = fixture('px-timeline-node_1');
+    listNode = {
+      "metaData": {
+        "editedBy": "GE Digital",
+        "editedDate": "Tue Sep 20 2016 17:28:10 GMT-0700 (PDT)"
+      },
+      "content": {
+        "title": "Building the industrial internet",
+        "bodyType": "text",
+        "body": [
+          {
+            "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
+            "headline": "This is the content headline",
+            "isComment": true
+          }
+        ]
+      }
+    };
+    nodeEl.timelineMetadata = listNode.metaData;
+    nodeEl.timelineContent = listNode.content;
+    nodeEl.autoShowContent = true;
+    nodeEl.timelineIndex = 0;
+    nodeEl.indexEven = true;
+    nodeEl.nodePosition = 'Left Side';
+    nodeEl.editable = true;
+    flush(()=>{
+      done();
+    });
+  });
+
+  test('timeline editable is true', function(){
+    assert.isTrue(nodeEl.editable);
+  });
+
+  test('timeline option editable and fires event "px-timeline-edit"', function(done){
+    var nodeMainEl = Polymer.dom(nodeEl.root).querySelector('px-timeline-node-main');
+    var editTimelineNode =  Polymer.dom(nodeMainEl.root).querySelector('.node__head__title__title__text');
+
+    nodeMainEl.addEventListener('px-timeline-edit', (evt) => {
+      assert(true, 'Event is triggered');
+      assert.equal(parseInt(evt.detail,10), 0, 'Selected timeline 0');
+      done();
+    });
+    editTimelineNode.click();
+  });
+
+});

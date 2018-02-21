@@ -151,6 +151,7 @@ Custom property | Description
         show-time-groups="{{showTimeGroups}}"
         node-count="{{nodeCount}}"
         enhanced="{{enhanced}}"
+        editable="[[editable]]"
         date-format="{{dateFormat}}"
         compact-editor-info="[[compactEditorInfo]]"
         time-zone="[[timeZone]]"
@@ -286,8 +287,23 @@ Custom property | Description
         value: function() {
           return Px.moment.tz.guess();
         }
+      },
+      /**
+      *  Use editable attribute to edit the timeline data.
+      *
+      *  @default false
+      */
+      editable: {
+        type: Boolean,
+        value: false
       }
     },
+    /**
+     * Fired when a timeline node is clicked in the timeline. If the node is not editable,
+     * `px-timeline-edit` will not be fired. Node index information is stored in `evt.detail`.
+     *
+     * @event px-timeline-edit
+     */
     ready: function () {
       this.startDate = new Date();
     },

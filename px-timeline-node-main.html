@@ -39,7 +39,7 @@
       <div class="node__head__icon flex flex--col flex--middle">
         <template is="dom-if" if="{{enhanced}}">
 
-          <template is="dom-if" if={{timelineContent.body.length}}>
+          <template is="dom-if" if="{{timelineContent.body.length}}">
             <div id="open-icon" class="node__head__icon__icons__circle icons__circle--enhanced flex flex--center flex--middle">
 
               <template is="dom-if" if="{{timelineMetadata.customIcon}}">
@@ -97,9 +97,19 @@
 
       <div class$="node__head__title flex flex--col flex--justify {{_isEnhanced(enhanced)}}">
         <div class="node__head__title__title flex__item">
-          <div class="node__head__title__title__text ">
-            <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
-          </div>
+          <template is="dom-if" if="{{editable}}">
+            <div class="node__head__title__title__text actionable" on-tap="_timelineEdit">
+              <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
+              <span class="timeline-node__time__editor__icon">
+                <px-icon  aria-label="Click to edit timeline node" class="icon__icon right-caret hot" icon="px-utl:edit" aria-hidden="true" ></px-icon>
+              </span>
+            </div>
+          </template>
+          <template is="dom-if" if="{{!editable}}">
+            <div class="node__head__title__title__text" >
+              <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
+            </div>
+          </template>
         </div>
         <div class="node__head__title__date">
           <span> {{formattedEdittedDate}} </span>
@@ -333,6 +343,12 @@
     },
     _isEnhanced: function() {
       return this.enhanced ? 'enhanced' : '';
+    },
+    _timelineEdit: function(evt){
+      this.fire('px-timeline-edit', this.timelineIndex);
+    },
+    _isEditable: function(){
+      return this.editable ? 'actionable' : '';
     }
   });
 </script>
