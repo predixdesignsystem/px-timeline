@@ -2,7 +2,7 @@
   "name": "px-timeline",
   "author": "General Electric",
   "description": "A flexible interactive timeline component by Predix UI",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "private": false,
   "extName": null,
   "repository": {

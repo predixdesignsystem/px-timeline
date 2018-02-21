@@ -1,3 +1,7 @@
+v1.2.0
+==================
+* add editable timeline functionality (merge #7)
+
 v1.1.2
 ==================
 * Fix demo for IE
