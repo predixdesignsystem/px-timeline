@@ -153,7 +153,7 @@ suite('Check edit timeline node property', function() {
 
   test('timeline option editable and fires event "px-timeline-edit"', function(done){
     var nodeMainEl = Polymer.dom(nodeEl.root).querySelector('px-timeline-node-main');
-    var editTimelineNode =  Polymer.dom(nodeMainEl.root).querySelector('.timeline-node__time__editor__icon px-icon');
+    var editTimelineNode =  Polymer.dom(nodeMainEl.root).querySelector('.node__head__title__title__text');
 
     nodeMainEl.addEventListener('px-timeline-edit', (evt) => {
       assert(true, 'Event is triggered');

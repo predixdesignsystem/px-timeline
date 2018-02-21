@@ -97,12 +97,19 @@
 
       <div class$="node__head__title flex flex--col flex--justify {{_isEnhanced(enhanced)}}">
         <div class="node__head__title__title flex__item">
-          <div class$="node__head__title__title__text {{_isEditable(editable)}}">
-            <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
-            <template is="dom-if" if="{{editable}}">
-              <span class="timeline-node__time__editor__icon"> <px-icon  aria-label="Click to edit timeline node" class="icon__icon right-caret hot" icon="px-utl:edit" aria-hidden="true" on-tap="_timelineEdit"></px-icon></span>
-            </template>
-          </div>
+          <template is="dom-if" if="{{editable}}">
+            <div class="node__head__title__title__text actionable" on-tap="_timelineEdit">
+              <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
+              <span class="timeline-node__time__editor__icon">
+                <px-icon  aria-label="Click to edit timeline node" class="icon__icon right-caret hot" icon="px-utl:edit" aria-hidden="true" ></px-icon>
+              </span>
+            </div>
+          </template>
+          <template is="dom-if" if="{{!editable}}">
+            <div class="node__head__title__title__text" >
+              <span class="timeline-node__time__editor__text"> {{timelineContent.title}} </span>
+            </div>
+          </template>
         </div>
         <div class="node__head__title__date">
           <span> {{formattedEdittedDate}} </span>
@@ -341,7 +348,7 @@
       this.fire('px-timeline-edit', this.timelineIndex);
     },
     _isEditable: function(){
-      return this.editable ? 'editable' : '';
+      return this.editable ? 'actionable' : '';
     }
   });
 </script>
