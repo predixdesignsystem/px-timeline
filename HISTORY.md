@@ -1,3 +1,7 @@
+v1.3.0
+==================
+* add node type TABLE (merge #8)
+
 v1.2.0
 ==================
 * add editable timeline functionality (merge #7)
