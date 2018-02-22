@@ -65,8 +65,8 @@ The content.body schema of a List (bodyType) node differs from the schema of oth
 bodyType = LIST
 ```
 [{
-  key: 'Topic 1', // String, isRequired
-  value: 'Data Binding' // String, isRequired
+  "key": 'Topic 1', // String, isRequired
+  "value": 'Data Binding' // String, isRequired
 },
 { "key": "Topic 2",
   "value": "Data Flow"
@@ -114,7 +114,26 @@ bodyType = IMG
   "isComment": true
 }]
 ```
+bodyType = TABLE
 
+The content.body schema of Table (bodyType) is simple JSON structure. Please use the below example of content.body schema for enhanced node Table bodyType.
+```
+[{
+  "first": "Valentine",
+  "last": "Meyer",
+  "email": "valentinemeyer@scentric.com"
+ },
+  {
+  "first": "Silva",
+  "last": "Alexander",
+  "email": "silvaalexander@gmail.com"
+ },
+ {
+  "first": "Hopkins",
+  "last": "Wong",
+  "email": "hopkinswong@hotmail.com"
+}]
+```
 
 ### Usage
 

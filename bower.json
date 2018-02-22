@@ -33,7 +33,8 @@
     "px-box-sizing-design": "^1.0.0",
     "px-normalize-design": "^1.0.0",
     "px-spacing-design": "^1.0.0",
-    "web-component-tester": "^6.0.0"
+    "web-component-tester": "^6.0.0",
+    "px-tables-design": "^2.0.2"
   },
   "resolutions": {
     "webcomponentsjs": "^1.0.0"

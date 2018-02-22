@@ -107,3 +107,74 @@ suite('Check VIDEO timeline node properties', function() {
     assert.equal(nodeEl.timelineContent.bodyType.toUpperCase(), 'VIDEO');
   });
 });
+
+
+suite('Check TABLE timeline node properties', function() {
+  let nodeEl,
+      minusIcon,
+      iconDiv,
+      listNode,
+      leftNodeBox,
+      nodeElRoot;
+  suiteSetup(function(done) {
+    nodeEl = fixture('px-timeline-node_1');
+    listNode = {
+      "metaData": {
+        "editedBy": "GE Digital",
+        "editedDate": "Tue Sep 20 2016 16:28:10 GMT-0700 (PDT)"
+      },
+      "content": {
+        "title": "Industrial Details",
+        "bodyType": "table",
+        "body": [
+          {
+            "first": "Valentine",
+            "last": "Meyer",
+            "email": "valentinemeyer@scentric.com"
+          },
+          {
+            "first": "Silva",
+            "last": "Alexander",
+            "email": "silvaalexander@gmail.com"
+          },
+          {
+            "first": "Hopkins",
+            "last": "Wong",
+            "email": "hopkinswong@hotmail.com"
+          },
+          {
+            "first": "Joe",
+            "last": "Sherman",
+            "email": "joejoe@yahoo.com"
+          },
+          {
+            "first": "Jane",
+            "last": "Bartlett",
+            "email": "jane@scentric.com"
+          }
+        ]
+      }
+    };
+    nodeEl.timelineMetadata = listNode.metaData;
+    nodeEl.timelineContent = listNode.content;
+    nodeEl.autoShowContent = true;
+    nodeEl.timelineIndex = 0;
+    nodeEl.indexEven = true;
+
+    flush(()=>{
+      done();
+    })
+  });
+
+  test('timeline metaData editedBy equals GE Digital', function(){
+    assert.equal(nodeEl.timelineMetadata.editedBy, 'GE Digital');
+  });
+
+  test('timeline content bodyType equals Table', function(){
+    assert.equal(nodeEl.timelineContent.bodyType.toUpperCase(), 'TABLE');
+  });
+
+  test('timeline content body is not empty', function(){
+    assert.equal(nodeEl.timelineContent.body.length, 5);
+  });
+});

@@ -95,5 +95,41 @@
         }
       ]
     }
+  },{
+    "metaData": {
+      "editedBy": "GE Digital",
+      "editedDate": "2015-11-03 00:00:00-07"
+    },
+    "content": {
+      "title": "Industrial Details",
+      "bodyType": "table",
+      "body": [
+        {
+          "first": "Valentine",
+          "last": "Meyer",
+          "email": "valentinemeyer@scentric.com"
+        },
+        {
+          "first": "Silva",
+          "last": "Alexander",
+          "email": "silvaalexander@gmail.com"
+        },
+        {
+          "first": "Hopkins",
+          "last": "Wong",
+          "email": "hopkinswong@hotmail.com"
+        },
+        {
+          "first": "Joe",
+          "last": "Sherman",
+          "email": "joejoe@yahoo.com"
+        },
+        {
+          "first": "Jane",
+          "last": "Bartlett",
+          "email": "jane@scentric.com"
+        }
+      ]
+    }
   }
 ]
