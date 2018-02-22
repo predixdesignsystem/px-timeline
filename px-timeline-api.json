@@ -312,6 +312,115 @@
     {
       "description": "declare DOM module",
       "summary": "",
+      "path": "px-timeline-node-table.html",
+      "properties": [
+        {
+          "name": "keys",
+          "type": "Array",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 6
+            },
+            "end": {
+              "line": 33,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "ready",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 35,
+              "column": 4
+            },
+            "end": {
+              "line": 45,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_getValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 46,
+              "column": 4
+            },
+            "end": {
+              "line": 48,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "row"
+            },
+            {
+              "name": "key"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 28,
+          "column": 10
+        },
+        "end": {
+          "line": 49,
+          "column": 3
+        }
+      },
+      "privacy": "public",
+      "superclass": "HTMLElement",
+      "attributes": [
+        {
+          "name": "keys",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 31,
+              "column": 6
+            },
+            "end": {
+              "line": 33,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "Array"
+        }
+      ],
+      "events": [],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "px-timeline-node-table"
+    },
+    {
+      "description": "declare DOM module",
+      "summary": "",
       "path": "px-timeline-node-main.html",
       "properties": [
         {
@@ -321,11 +430,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 213,
+              "line": 229,
               "column": 6
             },
             "end": {
-              "line": 216,
+              "line": 232,
               "column": 7
             }
           },
@@ -342,11 +451,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 217,
+              "line": 233,
               "column": 6
             },
             "end": {
-              "line": 220,
+              "line": 236,
               "column": 7
             }
           },
@@ -363,11 +472,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 225,
+              "line": 241,
               "column": 7
             },
             "end": {
-              "line": 228,
+              "line": 244,
               "column": 8
             }
           },
@@ -383,11 +492,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 229,
+              "line": 245,
               "column": 7
             },
             "end": {
-              "line": 232,
+              "line": 248,
               "column": 8
             }
           },
@@ -405,11 +514,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 234,
+              "line": 250,
               "column": 4
             },
             "end": {
-              "line": 287,
+              "line": 306,
               "column": 5
             }
           },
@@ -422,11 +531,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 288,
+              "line": 307,
               "column": 4
             },
             "end": {
-              "line": 302,
+              "line": 321,
               "column": 5
             }
           },
@@ -446,11 +555,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 303,
+              "line": 322,
               "column": 4
             },
             "end": {
-              "line": 308,
+              "line": 327,
               "column": 5
             }
           },
@@ -470,11 +579,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 309,
+              "line": 328,
               "column": 4
             },
             "end": {
-              "line": 312,
+              "line": 331,
               "column": 5
             }
           },
@@ -497,11 +606,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 313,
+              "line": 332,
               "column": 4
             },
             "end": {
-              "line": 316,
+              "line": 335,
               "column": 5
             }
           },
@@ -524,11 +633,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 317,
+              "line": 336,
               "column": 4
             },
             "end": {
-              "line": 335,
+              "line": 354,
               "column": 5
             }
           },
@@ -541,11 +650,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 336,
+              "line": 355,
               "column": 4
             },
             "end": {
-              "line": 338,
+              "line": 357,
               "column": 5
             }
           },
@@ -558,11 +667,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 339,
+              "line": 358,
               "column": 4
             },
             "end": {
-              "line": 341,
+              "line": 360,
               "column": 5
             }
           },
@@ -579,11 +688,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 342,
+              "line": 361,
               "column": 4
             },
             "end": {
-              "line": 344,
+              "line": 363,
               "column": 5
             }
           },
@@ -596,11 +705,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 210,
+          "line": 226,
           "column": 10
         },
         "end": {
-          "line": 345,
+          "line": 364,
           "column": 3
         }
       },
@@ -612,11 +721,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 213,
+              "line": 229,
               "column": 6
             },
             "end": {
-              "line": 216,
+              "line": 232,
               "column": 7
             }
           },
@@ -628,11 +737,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 217,
+              "line": 233,
               "column": 6
             },
             "end": {
-              "line": 220,
+              "line": 236,
               "column": 7
             }
           },
@@ -644,11 +753,11 @@
           "description": "When a node has editor info whether to display the name next\nto the date (compact) or in the details (not compact)",
           "sourceRange": {
             "start": {
-              "line": 225,
+              "line": 241,
               "column": 7
             },
             "end": {
-              "line": 228,
+              "line": 244,
               "column": 8
             }
           },
@@ -2396,7 +2505,7 @@
       "tagname": "px-timeline-node-container"
     },
     {
-      "description": "The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.\n\nThe timeline can be implemented either as simple or enhanced. A simple timeline supports limited node content that includes a title, date and text description. An enhanced timeline supports detailed and rich node content that includes title, date, author name, author title, percent completion, headline, text and media. Media can be either video (local source or embedded), audio (local source or embedded) or image. The nodes of enhanced timelines can be opened and closed. When closed the node content displayed includes the title and date. Enhanced timelines can be set up to have nodes open or closed by default.\n\nFor both simple and enhanced timelines, the timeline can be set up to have nodes organized by generic time groupings that include Today, This Week, This Month, This Year and Last Year.\n\nTimeline Data is an array of timeline node objects.\n\nSample schema for a simple timeline node is detailed below.\n\n```\n{\n  \"metaData\": {\n    \"editedDate\": \"Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)\"\n  },\n  \"content\": {\n    \"title\": \"Building the industrial internet\",\n    \"body\": [\n      {\n        \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\"\n      }\n    ]\n  }\n}\n```\n\nSample schema for an enhanced timeline node is detailed below.\n\n```\n{\n  \"metaData\": {\n    \"editedBy\": \"Google Chrome Developers\",\n    \"editedDate\": \"Tue Sep 20 2016 16:28:10 GMT-0700 (PDT)\",\n    \"editorImg\": \"img/immelt.jpg\",\n    \"editorTitle\": \"Chief Field Scientist\",\n    \"percent\": \"80\",\n    \"customIcon\": \"px-obj:wind-turbine\" // the custom icon property allows the developer to override the default 'media type' icons of the enhanced timeline. if a timeline node has a customIcon defined it will take priority over the media type icons. the customIcon must be a px-icon.\n  },\n  \"content\": {\n    \"title\": \"Lazy loading data with app-route\",\n    \"bodyType\": \"Video\", // This is required  and needs to be set as VIDEO, AUDIO, IMAGE, TEXT or LIST\n    \"body\": [\n      {\n        \"video\": \"video/sample-video.mp4\",\n        \"headline\": \"This is the content headline\",\n        \"text\": \"Thanks to Rob Dobson\",\n        \"host\": \"local\", // This is required for VIDEO and AUDIO body types. Its values can be set as LOCAL or REMOTE.\n        \"isComment\": true\n      }\n    ]\n  }\n}\n```\n\nIf the isComment property is set to true, designed quotation marks will precede the content body text.\n\nThe content.body schema of a List (bodyType) node differs from the schema of other enhanced timeline bodyTypes. Please below example of content.body schemas for all enhanced node bodyTypes.\n\nbodyType = LIST\n```\n[{\n  key: 'Topic 1', // String, isRequired\n  value: 'Data Binding' // String, isRequired\n},\n{ \"key\": \"Topic 2\",\n  \"value\": \"Data Flow\"\n}]\n```\n\nbodyType = TEXT\n```\n\n[{\n  \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\",\n  \"headline\": \"This is the content headline\",\n  \"isComment\": true\n}]\n```\n\nbodyType = AUDIO\n```\n[{\n  \"audio\": \"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267404963&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Polymer, Polymer Polymer\",\n  \"host\": \"remote\",\n  \"isComment\": false\n}]\n```\n\nbodyType = VIDEO\n```\n[{\n  \"video\": \"video/sample-video.mp4\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Thanks to Rob Dobson\",\n  \"host\": \"local\",\n  \"isComment\": true\n}]\n```\n\nbodyType = IMG\n```\n[{\n  \"img\": \"https://s-media-cache-ak0.pinimg.com/564x/00/42/f1/0042f16c3b768f6c85899e0da8b5f6c6.jpg\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"This is a brand new polymer component\",\n  \"isComment\": true\n}]\n```\n\n\n### Usage\n\n    <px-timeline\n      time-groups=\"true\"\n      show-node-content=\"true\"\n      enhanced=\"true\"\n      timeline-data=\"{{data}}\">\n    </px-timeline>\n\n### Styling\nThe following variables are available for styling:\n\nCustom property | Description\n:----------------|:-------------\n`--px-timeline-border-color` | Color for most of the lines and icons\n`--px-timeline-text-color` | Primary text color for headings and titles\n`--px-timeline-alt-text-color` | Secondary text color for dates and other supporting info",
+      "description": "The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.\n\nThe timeline can be implemented either as simple or enhanced. A simple timeline supports limited node content that includes a title, date and text description. An enhanced timeline supports detailed and rich node content that includes title, date, author name, author title, percent completion, headline, text and media. Media can be either video (local source or embedded), audio (local source or embedded) or image. The nodes of enhanced timelines can be opened and closed. When closed the node content displayed includes the title and date. Enhanced timelines can be set up to have nodes open or closed by default.\n\nFor both simple and enhanced timelines, the timeline can be set up to have nodes organized by generic time groupings that include Today, This Week, This Month, This Year and Last Year.\n\nTimeline Data is an array of timeline node objects.\n\nSample schema for a simple timeline node is detailed below.\n\n```\n{\n  \"metaData\": {\n    \"editedDate\": \"Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)\"\n  },\n  \"content\": {\n    \"title\": \"Building the industrial internet\",\n    \"body\": [\n      {\n        \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\"\n      }\n    ]\n  }\n}\n```\n\nSample schema for an enhanced timeline node is detailed below.\n\n```\n{\n  \"metaData\": {\n    \"editedBy\": \"Google Chrome Developers\",\n    \"editedDate\": \"Tue Sep 20 2016 16:28:10 GMT-0700 (PDT)\",\n    \"editorImg\": \"img/immelt.jpg\",\n    \"editorTitle\": \"Chief Field Scientist\",\n    \"percent\": \"80\",\n    \"customIcon\": \"px-obj:wind-turbine\" // the custom icon property allows the developer to override the default 'media type' icons of the enhanced timeline. if a timeline node has a customIcon defined it will take priority over the media type icons. the customIcon must be a px-icon.\n  },\n  \"content\": {\n    \"title\": \"Lazy loading data with app-route\",\n    \"bodyType\": \"Video\", // This is required  and needs to be set as VIDEO, AUDIO, IMAGE, TEXT or LIST\n    \"body\": [\n      {\n        \"video\": \"video/sample-video.mp4\",\n        \"headline\": \"This is the content headline\",\n        \"text\": \"Thanks to Rob Dobson\",\n        \"host\": \"local\", // This is required for VIDEO and AUDIO body types. Its values can be set as LOCAL or REMOTE.\n        \"isComment\": true\n      }\n    ]\n  }\n}\n```\n\nIf the isComment property is set to true, designed quotation marks will precede the content body text.\n\nThe content.body schema of a List (bodyType) node differs from the schema of other enhanced timeline bodyTypes. Please below example of content.body schemas for all enhanced node bodyTypes.\n\nbodyType = LIST\n```\n[{\n  \"key\": 'Topic 1', // String, isRequired\n  \"value\": 'Data Binding' // String, isRequired\n},\n{ \"key\": \"Topic 2\",\n  \"value\": \"Data Flow\"\n}]\n```\n\nbodyType = TEXT\n```\n\n[{\n  \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\",\n  \"headline\": \"This is the content headline\",\n  \"isComment\": true\n}]\n```\n\nbodyType = AUDIO\n```\n[{\n  \"audio\": \"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267404963&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Polymer, Polymer Polymer\",\n  \"host\": \"remote\",\n  \"isComment\": false\n}]\n```\n\nbodyType = VIDEO\n```\n[{\n  \"video\": \"video/sample-video.mp4\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Thanks to Rob Dobson\",\n  \"host\": \"local\",\n  \"isComment\": true\n}]\n```\n\nbodyType = IMG\n```\n[{\n  \"img\": \"https://s-media-cache-ak0.pinimg.com/564x/00/42/f1/0042f16c3b768f6c85899e0da8b5f6c6.jpg\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"This is a brand new polymer component\",\n  \"isComment\": true\n}]\n```\nbodyType = TABLE\n\nThe content.body schema of Table (bodyType) is simple JSON structure. Please use the below example of content.body schema for enhanced node Table bodyType.\n```\n[{\n  \"first\": \"Valentine\",\n  \"last\": \"Meyer\",\n  \"email\": \"valentinemeyer@scentric.com\"\n },\n  {\n  \"first\": \"Silva\",\n  \"last\": \"Alexander\",\n  \"email\": \"silvaalexander@gmail.com\"\n },\n {\n  \"first\": \"Hopkins\",\n  \"last\": \"Wong\",\n  \"email\": \"hopkinswong@hotmail.com\"\n}]\n```\n\n### Usage\n\n    <px-timeline\n      time-groups=\"true\"\n      show-node-content=\"true\"\n      enhanced=\"true\"\n      timeline-data=\"{{data}}\">\n    </px-timeline>\n\n### Styling\nThe following variables are available for styling:\n\nCustom property | Description\n:----------------|:-------------\n`--px-timeline-border-color` | Color for most of the lines and icons\n`--px-timeline-text-color` | Primary text color for headings and titles\n`--px-timeline-alt-text-color` | Secondary text color for dates and other supporting info",
       "summary": "",
       "path": "px-timeline.html",
       "properties": [
@@ -2428,11 +2537,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 251,
+              "line": 270,
               "column": 8
             },
             "end": {
-              "line": 254,
+              "line": 273,
               "column": 9
             }
           },
@@ -2448,11 +2557,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 263,
+              "line": 282,
               "column": 8
             },
             "end": {
-              "line": 276,
+              "line": 295,
               "column": 9
             }
           },
@@ -2490,11 +2599,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 259,
+              "line": 278,
               "column": 8
             },
             "end": {
-              "line": 262,
+              "line": 281,
               "column": 9
             }
           },
@@ -2555,11 +2664,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 181,
+              "line": 200,
               "column": 6
             },
             "end": {
-              "line": 184,
+              "line": 203,
               "column": 7
             }
           },
@@ -2576,11 +2685,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 190,
+              "line": 209,
               "column": 6
             },
             "end": {
-              "line": 192,
+              "line": 211,
               "column": 7
             }
           },
@@ -2595,11 +2704,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 200,
+              "line": 219,
               "column": 6
             },
             "end": {
-              "line": 203,
+              "line": 222,
               "column": 7
             }
           },
@@ -2611,44 +2720,6 @@
           "name": "enhanced",
           "type": "boolean",
           "description": "Use the enhanced attribute to create a basic or enhanced timeline.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 211,
-              "column": 6
-            },
-            "end": {
-              "line": 213,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "showNodeContent",
-          "type": "boolean",
-          "description": "Use the showNodeContent attribute to set all nodes of an enhanced timeline to open as default. Note: This attribute only impacts enhanced timeleines.\n\n     <px-timeline show-node-content=\"true\" enhanced=\"true\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 221,
-              "column": 6
-            },
-            "end": {
-              "line": 223,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "nodeCount",
-          "type": "number",
-          "description": "nodeCount is used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.\n\nnodeCount is simply the length of the data array and does not need to be passed in as an option of the px-timeline component.",
           "privacy": "public",
           "sourceRange": {
             "start": {
@@ -2665,17 +2736,55 @@
           }
         },
         {
+          "name": "showNodeContent",
+          "type": "boolean",
+          "description": "Use the showNodeContent attribute to set all nodes of an enhanced timeline to open as default. Note: This attribute only impacts enhanced timeleines.\n\n     <px-timeline show-node-content=\"true\" enhanced=\"true\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 240,
+              "column": 6
+            },
+            "end": {
+              "line": 242,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "nodeCount",
+          "type": "number",
+          "description": "nodeCount is used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.\n\nnodeCount is simply the length of the data array and does not need to be passed in as an option of the px-timeline component.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 249,
+              "column": 6
+            },
+            "end": {
+              "line": 251,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
           "name": "dateFormat",
           "type": "string",
           "description": "Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.\nSee [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 237,
+              "line": 256,
               "column": 7
             },
             "end": {
-              "line": 239,
+              "line": 258,
               "column": 8
             }
           },
@@ -2690,11 +2799,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 244,
+              "line": 263,
               "column": 7
             },
             "end": {
-              "line": 247,
+              "line": 266,
               "column": 8
             }
           },
@@ -2710,11 +2819,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 284,
+              "line": 303,
               "column": 6
             },
             "end": {
-              "line": 289,
+              "line": 308,
               "column": 7
             }
           },
@@ -2729,11 +2838,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 295,
+              "line": 314,
               "column": 6
             },
             "end": {
-              "line": 298,
+              "line": 317,
               "column": 7
             }
           },
@@ -2883,11 +2992,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 306,
+              "line": 325,
               "column": 4
             },
             "end": {
-              "line": 308,
+              "line": 327,
               "column": 5
             }
           },
@@ -2900,11 +3009,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 309,
+              "line": 328,
               "column": 4
             },
             "end": {
-              "line": 314,
+              "line": 333,
               "column": 5
             }
           },
@@ -2929,11 +3038,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 165,
+          "line": 184,
           "column": 10
         },
         "end": {
-          "line": 315,
+          "line": 334,
           "column": 3
         }
       },
@@ -2945,11 +3054,11 @@
           "description": "set a default for localizing",
           "sourceRange": {
             "start": {
-              "line": 251,
+              "line": 270,
               "column": 8
             },
             "end": {
-              "line": 254,
+              "line": 273,
               "column": 9
             }
           },
@@ -2961,11 +3070,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 263,
+              "line": 282,
               "column": 8
             },
             "end": {
-              "line": 276,
+              "line": 295,
               "column": 9
             }
           },
@@ -2995,11 +3104,11 @@
           "description": "Use the key for localization if value for  language is missing. Should\nalways be true for  our components",
           "sourceRange": {
             "start": {
-              "line": 259,
+              "line": 278,
               "column": 8
             },
             "end": {
-              "line": 262,
+              "line": 281,
               "column": 9
             }
           },
@@ -3047,11 +3156,11 @@
           "description": "Data for the timeline.\n\nExpected data format is a json array of objects.  Each object in the array represents a timeline node entry. Timeline data is expected to be sorted before passing to the px-timeline component.\n\n\n    <px-timeline timeline-data=\"{{data}}\"></px-timeline>",
           "sourceRange": {
             "start": {
-              "line": 181,
+              "line": 200,
               "column": 6
             },
             "end": {
-              "line": 184,
+              "line": 203,
               "column": 7
             }
           },
@@ -3063,11 +3172,11 @@
           "description": "Startdate is today's date and is the head of the timeline. Startdate does not need to be passed into the component.",
           "sourceRange": {
             "start": {
-              "line": 190,
+              "line": 209,
               "column": 6
             },
             "end": {
-              "line": 192,
+              "line": 211,
               "column": 7
             }
           },
@@ -3079,11 +3188,11 @@
           "description": "Use the showTimeGroups attribute to group the timeline node entries by generic time groups. Time groups include Today, This Week, This Month, This Year and Last Year.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
           "sourceRange": {
             "start": {
-              "line": 200,
+              "line": 219,
               "column": 6
             },
             "end": {
-              "line": 203,
+              "line": 222,
               "column": 7
             }
           },
@@ -3095,11 +3204,11 @@
           "description": "Use the enhanced attribute to create a basic or enhanced timeline.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
           "sourceRange": {
             "start": {
-              "line": 211,
+              "line": 230,
               "column": 6
             },
             "end": {
-              "line": 213,
+              "line": 232,
               "column": 7
             }
           },
@@ -3111,11 +3220,11 @@
           "description": "Use the showNodeContent attribute to set all nodes of an enhanced timeline to open as default. Note: This attribute only impacts enhanced timeleines.\n\n     <px-timeline show-node-content=\"true\" enhanced=\"true\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
           "sourceRange": {
             "start": {
-              "line": 221,
+              "line": 240,
               "column": 6
             },
             "end": {
-              "line": 223,
+              "line": 242,
               "column": 7
             }
           },
@@ -3127,11 +3236,11 @@
           "description": "nodeCount is used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.\n\nnodeCount is simply the length of the data array and does not need to be passed in as an option of the px-timeline component.",
           "sourceRange": {
             "start": {
-              "line": 230,
+              "line": 249,
               "column": 6
             },
             "end": {
-              "line": 232,
+              "line": 251,
               "column": 7
             }
           },
@@ -3143,11 +3252,11 @@
           "description": "Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.\nSee [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.",
           "sourceRange": {
             "start": {
-              "line": 237,
+              "line": 256,
               "column": 7
             },
             "end": {
-              "line": 239,
+              "line": 258,
               "column": 8
             }
           },
@@ -3159,11 +3268,11 @@
           "description": "When a node has editor info wether todisplay the name next\nto the date (compact) or in the details (not compact)",
           "sourceRange": {
             "start": {
-              "line": 244,
+              "line": 263,
               "column": 7
             },
             "end": {
-              "line": 247,
+              "line": 266,
               "column": 8
             }
           },
@@ -3175,11 +3284,11 @@
           "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
           "sourceRange": {
             "start": {
-              "line": 284,
+              "line": 303,
               "column": 6
             },
             "end": {
-              "line": 289,
+              "line": 308,
               "column": 7
             }
           },
@@ -3191,11 +3300,11 @@
           "description": "Use editable attribute to edit the timeline data.",
           "sourceRange": {
             "start": {
-              "line": 295,
+              "line": 314,
               "column": 6
             },
             "end": {
-              "line": 298,
+              "line": 317,
               "column": 7
             }
           },

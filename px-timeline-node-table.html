@@ -1,0 +1,51 @@
+<!-- import polymer library -->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="css/px-timeline-styles.html">
+
+<!-- declare DOM module -->
+<dom-module id="px-timeline-node-table">
+  <template>
+    <style include="px-timeline-styles"></style>
+    <table class="table">
+      <tbody>
+        <tr>
+          <template is="dom-repeat" items="[[keys]]">
+            <th>{{item}}</th>
+          </template>
+        </tr>
+        <template is="dom-repeat" items="{{contentBodyTable}}" as="row">
+          <tr>
+            <template is="dom-repeat" items="{{keys}}" as="key">
+              <td>{{_getValue(row, key)}}</td>
+            </template>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'px-timeline-node-table',
+    properties: {
+      keys: {
+        type: Array
+      }
+    },
+    ready : function(){
+      var col = [];
+      for (var i = 0; i < this.contentBodyTable.length; i++) {
+        for (var key in this.contentBodyTable[i]) {
+          if (col.indexOf(key) === -1) {
+              col.push(key);
+          }
+        }
+      }
+      this.set("keys", col);
+    },
+    _getValue: function(row, key){
+      return row[key];
+    }
+  });
+</script>

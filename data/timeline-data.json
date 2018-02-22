@@ -82,7 +82,7 @@
   }, {
     "metaData": {
       "editedBy": "GE Digital",
-      "editedDate": "2015-11-03 00:00:00-07"
+      "editedDate": "2016-09-12 06:37:00-07"
     },
     "content": {
       "title": "Building the industrial internet",
@@ -92,6 +92,42 @@
           "text": "On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.",
           "headline": "This is the content headline",
           "isComment": true
+        }
+      ]
+    }
+  },{
+    "metaData": {
+      "editedBy": "GE Digital",
+      "editedDate": "2018-11-03 00:00:00-07"
+    },
+    "content": {
+      "title": "Industrial Details",
+      "bodyType": "table",
+      "body": [
+        {
+          "first": "Valentine",
+          "last": "Meyer",
+          "email": "valentinemeyer@scentric.com"
+        },
+        {
+          "first": "Silva",
+          "last": "Alexander",
+          "email": "silvaalexander@gmail.com"
+        },
+        {
+          "first": "Hopkins",
+          "last": "Wong",
+          "email": "hopkinswong@hotmail.com"
+        },
+        {
+          "first": "Joe",
+          "last": "Sherman",
+          "email": "joejoe@yahoo.com"
+        },
+        {
+          "first": "Jane",
+          "last": "Bartlett",
+          "email": "jane@scentric.com"
         }
       ]
     }

@@ -5,6 +5,7 @@
 <link rel="import" href="px-timeline-node-img.html"/>
 <link rel="import" href="px-timeline-node-video.html"/>
 <link rel="import" href="px-timeline-node-audio.html"/>
+<link rel="import" href="px-timeline-node-table.html"/>
 <link rel="import" href="css/px-timeline-styles.html"/>
 <link rel="import" href="../px-icon-set/px-icon-set.html"/>
 <link rel="import" href="../px-icon-set/px-icon.html"/>
@@ -61,6 +62,9 @@
                 </template>
                 <template is="dom-if" if="{{bodyText}}">
                   <px-icon class="icons__circle--enhanced__imedia media-text" icon="px-doc:note" aria-hidden="true"></px-icon>
+                </template>
+                <template is="dom-if" if="{{bodyTable}}">
+                  <px-icon class="icons__circle--enhanced__imedia media-list" icon="px-nav:list-view" aria-hidden="true"></px-icon>
                 </template>
               </template>
 
@@ -206,6 +210,11 @@
                   content-body-audio="[[contentBodyAudio]]">
                 </px-timeline-node-audio>
               </template>
+              <template is="dom-if" if="{{bodyTable}}">
+                <px-timeline-node-table
+                  content-body-table="[[timelineContent.body]]">
+                </px-timeline-node-table>
+              </template>
             </div>
           </div>
         </div>
@@ -289,6 +298,9 @@
           if (this.timelineContent.bodyType.toUpperCase() === 'AUDIO') {
             this.bodyAudio = true
             this.contentBodyAudio = this.timelineContent.body[0];
+          }
+          if (this.timelineContent.bodyType.toUpperCase() === 'TABLE') {
+            this.bodyTable = true
           }
         }
       }
