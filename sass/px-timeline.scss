@@ -17,7 +17,7 @@
 // Base
 @import "px-flexbox-design/_base.flexbox.scss";
 @import "px-tables-design/_base.tables.scss";
-
+@import "px-actionable-design/_objects.actionable.scss";
 
 // Component
 
@@ -165,6 +165,13 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   color: $px-timeline-text-color;
   margin-right: calculateRem(10px);
   width: auto;
+  & .timeline-node__time__editor__icon{
+    visibility: hidden;
+    padding-left: calculateRem(10px);
+  }
+  &:hover .timeline-node__time__editor__icon{
+     visibility: visible;
+  }
 }
 
 .node__head__title__title__line {
