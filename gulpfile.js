@@ -70,7 +70,6 @@ gulp.task('generate-api', function (cb) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(ES6_SRC, ['transpile']);
   gulp.watch(['sass/*.scss'], ['sass']);
 });
 

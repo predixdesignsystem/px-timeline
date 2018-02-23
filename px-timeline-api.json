@@ -421,361 +421,6 @@
     {
       "description": "declare DOM module",
       "summary": "",
-      "path": "px-timeline-node-main.html",
-      "properties": [
-        {
-          "name": "enhanced",
-          "type": "boolean",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 229,
-              "column": 6
-            },
-            "end": {
-              "line": 232,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "observer": "\"enhancedChanged\""
-            }
-          }
-        },
-        {
-          "name": "showNodeContent",
-          "type": "boolean",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 233,
-              "column": 6
-            },
-            "end": {
-              "line": 236,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "observer": "\"autoBodyChanged\""
-            }
-          }
-        },
-        {
-          "name": "compactEditorInfo",
-          "type": "boolean",
-          "description": "When a node has editor info whether to display the name next\nto the date (compact) or in the details (not compact)",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 241,
-              "column": 7
-            },
-            "end": {
-              "line": 244,
-              "column": 8
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "false"
-        },
-        {
-          "name": "_compactEditorString",
-          "type": "string",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 245,
-              "column": 7
-            },
-            "end": {
-              "line": 248,
-              "column": 8
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "ready",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 250,
-              "column": 4
-            },
-            "end": {
-              "line": 306,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "autoBodyChanged",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 307,
-              "column": 4
-            },
-            "end": {
-              "line": 321,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "newValue"
-            },
-            {
-              "name": "oldValue"
-            }
-          ]
-        },
-        {
-          "name": "enhancedChanged",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 322,
-              "column": 4
-            },
-            "end": {
-              "line": 327,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "newValue"
-            },
-            {
-              "name": "oldValue"
-            }
-          ]
-        },
-        {
-          "name": "openContent",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 328,
-              "column": 4
-            },
-            "end": {
-              "line": 331,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "event"
-            },
-            {
-              "name": "detail"
-            },
-            {
-              "name": "sender"
-            }
-          ]
-        },
-        {
-          "name": "closeContent",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 332,
-              "column": 4
-            },
-            "end": {
-              "line": 335,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "event"
-            },
-            {
-              "name": "detail"
-            },
-            {
-              "name": "sender"
-            }
-          ]
-        },
-        {
-          "name": "_computeCompactEditorString",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 336,
-              "column": 4
-            },
-            "end": {
-              "line": 354,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_isEnhanced",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 355,
-              "column": 4
-            },
-            "end": {
-              "line": 357,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        },
-        {
-          "name": "_timelineEdit",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 358,
-              "column": 4
-            },
-            "end": {
-              "line": 360,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "evt"
-            }
-          ]
-        },
-        {
-          "name": "_isEditable",
-          "description": "",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 361,
-              "column": 4
-            },
-            "end": {
-              "line": 363,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 226,
-          "column": 10
-        },
-        "end": {
-          "line": 364,
-          "column": 3
-        }
-      },
-      "privacy": "public",
-      "superclass": "HTMLElement",
-      "attributes": [
-        {
-          "name": "enhanced",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 229,
-              "column": 6
-            },
-            "end": {
-              "line": 232,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "show-node-content",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 233,
-              "column": 6
-            },
-            "end": {
-              "line": 236,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "compact-editor-info",
-          "description": "When a node has editor info whether to display the name next\nto the date (compact) or in the details (not compact)",
-          "sourceRange": {
-            "start": {
-              "line": 241,
-              "column": 7
-            },
-            "end": {
-              "line": 244,
-              "column": 8
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        }
-      ],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "px-timeline-node-main"
-    },
-    {
-      "description": "declare DOM module",
-      "summary": "",
       "path": "px-timeline-node.html",
       "properties": [
         {
@@ -802,15 +447,15 @@
         {
           "name": "language",
           "type": "string",
-          "description": "set a default for localizing",
+          "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 98,
+              "line": 270,
               "column": 6
             },
             "end": {
-              "line": 101,
+              "line": 273,
               "column": 7
             }
           },
@@ -822,23 +467,22 @@
         {
           "name": "resources",
           "type": "Object",
-          "description": "The dictionary of localized messages, for each of the languages that\nare going to be used. See http://formatjs.io/guides/message-syntax/ for\nmore information on the message syntax.\n\nFor example, a valid dictionary would be:\nthis.resources = {\n 'en': { 'greeting': 'Hello!' }, 'fr' : { 'greeting': 'Bonjour!' }\n}",
+          "description": "",
           "privacy": "public",
           "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
             "start": {
-              "line": 163,
-              "column": 4
+              "line": 256,
+              "column": 6
             },
             "end": {
-              "line": 165,
-              "column": 5
+              "line": 269,
+              "column": 7
             }
           },
           "metadata": {
             "polymer": {}
           },
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
+          "defaultValue": "{\"en\":{\"TODAY\":\"TODAY\",\"THIS WEEK\":\"THIS WEEK\",\"THIS MONTH\":\"THIS MONTH\",\"THIS YEAR\":\"THIS YEAR\",\"LAST YEAR\":\"LAST YEAR\"}}"
         },
         {
           "name": "formats",
@@ -865,15 +509,15 @@
         {
           "name": "useKeyIfMissing",
           "type": "boolean",
-          "description": "Use the key for localization if value for  language is missing. Should\nalways be true for  our components",
+          "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 116,
+              "line": 274,
               "column": 6
             },
             "end": {
-              "line": 119,
+              "line": 277,
               "column": 7
             }
           },
@@ -934,11 +578,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 201,
               "column": 6
             },
             "end": {
-              "line": 61,
+              "line": 206,
               "column": 7
             }
           },
@@ -954,11 +598,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 62,
+              "line": 207,
               "column": 6
             },
             "end": {
-              "line": 67,
+              "line": 212,
               "column": 7
             }
           },
@@ -968,23 +612,46 @@
           "defaultValue": "{}"
         },
         {
+          "name": "timelineIndex",
+          "type": "number",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 213,
+              "column": 6
+            },
+            "end": {
+              "line": 216,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "null"
+        },
+        {
           "name": "showNodeContent",
           "type": "boolean",
           "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 68,
+              "line": 217,
               "column": 6
             },
             "end": {
-              "line": 70,
+              "line": 221,
               "column": 7
             }
           },
           "metadata": {
-            "polymer": {}
-          }
+            "polymer": {
+              "observer": "\"showAllChanged\""
+            }
+          },
+          "defaultValue": "false"
         },
         {
           "name": "showTimeGroups",
@@ -993,17 +660,18 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 72,
+              "line": 222,
               "column": 6
             },
             "end": {
-              "line": 74,
+              "line": 225,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
-          }
+          },
+          "defaultValue": "false"
         },
         {
           "name": "nodeCount",
@@ -1012,56 +680,18 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 75,
+              "line": 226,
               "column": 6
             },
             "end": {
-              "line": 77,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "showLine",
-          "type": "boolean",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 78,
-              "column": 6
-            },
-            "end": {
-              "line": 81,
+              "line": 229,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
           },
-          "defaultValue": "true"
-        },
-        {
-          "name": "enhanced",
-          "type": "boolean",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 82,
-              "column": 6
-            },
-            "end": {
-              "line": 84,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
+          "defaultValue": "null"
         },
         {
           "name": "dateFormat",
@@ -1070,37 +700,38 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 85,
+              "line": 230,
               "column": 6
             },
             "end": {
-              "line": 88,
+              "line": 233,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
           },
-          "defaultValue": "\"hh:mm a, MMM D\""
+          "defaultValue": "\"\""
         },
         {
-          "name": "_dateTitle",
-          "type": "string",
+          "name": "enhanced",
+          "type": "boolean",
           "description": "",
-          "privacy": "protected",
+          "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 89,
+              "line": 234,
               "column": 6
             },
             "end": {
-              "line": 91,
+              "line": 237,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
-          }
+          },
+          "defaultValue": "false"
         },
         {
           "name": "editable",
@@ -1109,49 +740,31 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 92,
+              "line": 238,
               "column": 6
             },
             "end": {
-              "line": 94,
+              "line": 241,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
-          }
-        },
-        {
-          "name": "timeZone",
-          "type": "string",
-          "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 109,
-              "column": 6
-            },
-            "end": {
-              "line": 111,
-              "column": 7
-            }
           },
-          "metadata": {
-            "polymer": {}
-          }
+          "defaultValue": "false"
         },
         {
           "name": "compactEditorInfo",
           "type": "boolean",
-          "description": "When a node has editor info wether todisplay the name next\nto the date (compact) or in the details (not compact)",
+          "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 124,
+              "line": 242,
               "column": 6
             },
             "end": {
-              "line": 127,
+              "line": 245,
               "column": 7
             }
           },
@@ -1163,21 +776,126 @@
         {
           "name": "timeGroupsUsed",
           "type": "Object",
-          "description": "Tracks which timeGroups have been used already so that we don't display\nthe same timegroup twice",
+          "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 132,
+              "line": 246,
               "column": 6
             },
             "end": {
-              "line": 134,
+              "line": 251,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "{}"
+        },
+        {
+          "name": "timeZone",
+          "type": "string",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 252,
+              "column": 6
+            },
+            "end": {
+              "line": 255,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "\"\""
+        },
+        {
+          "name": "_compactEditorString",
+          "type": "string",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 278,
+              "column": 6
+            },
+            "end": {
+              "line": 281,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          }
+        },
+        {
+          "name": "_showLine",
+          "type": "boolean",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 282,
+              "column": 6
+            },
+            "end": {
+              "line": 286,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "defaultValue": "false"
+        },
+        {
+          "name": "_dateTitle",
+          "type": "string",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 287,
+              "column": 6
+            },
+            "end": {
+              "line": 289,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
           }
+        },
+        {
+          "name": "_formattedEditedDate",
+          "type": "string",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 290,
+              "column": 6
+            },
+            "end": {
+              "line": 294,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "readOnly": true
+            }
+          },
+          "defaultValue": "\"\""
         }
       ],
       "methods": [
@@ -1320,11 +1038,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 141,
+              "line": 301,
               "column": 4
             },
             "end": {
-              "line": 143,
+              "line": 303,
               "column": 5
             }
           },
@@ -1332,16 +1050,40 @@
           "params": []
         },
         {
+          "name": "_computeShowLine",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 304,
+              "column": 4
+            },
+            "end": {
+              "line": 306,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "index"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        {
           "name": "_getDateTitle",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 145,
+              "line": 307,
               "column": 4
             },
             "end": {
-              "line": 185,
+              "line": 347,
               "column": 5
             }
           },
@@ -1362,16 +1104,58 @@
           ]
         },
         {
-          "name": "ready",
+          "name": "_getIcon",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 187,
+              "line": 348,
               "column": 4
             },
             "end": {
-              "line": 191,
+              "line": 356,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "timelineContent"
+            }
+          ]
+        },
+        {
+          "name": "_isType",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 357,
+              "column": 4
+            },
+            "end": {
+              "line": 359,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "type"
+            }
+          ]
+        },
+        {
+          "name": "_getEnhancedClass",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 360,
+              "column": 4
+            },
+            "end": {
+              "line": 362,
               "column": 5
             }
           },
@@ -1379,21 +1163,165 @@
           "params": []
         },
         {
-          "name": "_getClass",
+          "name": "_getEditClass",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 192,
+              "line": 363,
               "column": 4
             },
             "end": {
-              "line": 194,
+              "line": 365,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "editable"
+            }
+          ]
+        },
+        {
+          "name": "_and",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 366,
+              "column": 4
+            },
+            "end": {
+              "line": 368,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ]
+        },
+        {
+          "name": "showAllChanged",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 369,
+              "column": 4
+            },
+            "end": {
+              "line": 371,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "newValue"
+            },
+            {
+              "name": "oldValue"
+            }
+          ]
+        },
+        {
+          "name": "openContent",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 372,
+              "column": 4
+            },
+            "end": {
+              "line": 374,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            },
+            {
+              "name": "detail"
+            },
+            {
+              "name": "sender"
+            }
+          ]
+        },
+        {
+          "name": "closeContent",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 375,
+              "column": 4
+            },
+            "end": {
+              "line": 377,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            },
+            {
+              "name": "detail"
+            },
+            {
+              "name": "sender"
+            }
+          ]
+        },
+        {
+          "name": "_computeCompactEditorString",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 378,
+              "column": 4
+            },
+            "end": {
+              "line": 396,
               "column": 5
             }
           },
           "metadata": {},
           "params": []
+        },
+        {
+          "name": "_timelineEdit",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 397,
+              "column": 4
+            },
+            "end": {
+              "line": 399,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "evt"
+            }
+          ]
         }
       ],
       "staticMethods": [],
@@ -1401,11 +1329,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 50,
+          "line": 195,
           "column": 10
         },
         "end": {
-          "line": 195,
+          "line": 400,
           "column": 3
         }
       },
@@ -1414,14 +1342,14 @@
       "attributes": [
         {
           "name": "language",
-          "description": "set a default for localizing",
+          "description": "",
           "sourceRange": {
             "start": {
-              "line": 98,
+              "line": 270,
               "column": 6
             },
             "end": {
-              "line": 101,
+              "line": 273,
               "column": 7
             }
           },
@@ -1430,21 +1358,19 @@
         },
         {
           "name": "resources",
-          "description": "The dictionary of localized messages, for each of the languages that\nare going to be used. See http://formatjs.io/guides/message-syntax/ for\nmore information on the message syntax.\n\nFor example, a valid dictionary would be:\nthis.resources = {\n 'en': { 'greeting': 'Hello!' }, 'fr' : { 'greeting': 'Bonjour!' }\n}",
+          "description": "",
           "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
             "start": {
-              "line": 163,
-              "column": 4
+              "line": 256,
+              "column": 6
             },
             "end": {
-              "line": 165,
-              "column": 5
+              "line": 269,
+              "column": 7
             }
           },
           "metadata": {},
-          "type": "Object",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
+          "type": "Object"
         },
         {
           "name": "formats",
@@ -1466,14 +1392,14 @@
         },
         {
           "name": "use-key-if-missing",
-          "description": "Use the key for localization if value for  language is missing. Should\nalways be true for  our components",
+          "description": "",
           "sourceRange": {
             "start": {
-              "line": 116,
+              "line": 274,
               "column": 6
             },
             "end": {
-              "line": 119,
+              "line": 277,
               "column": 7
             }
           },
@@ -1521,11 +1447,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 201,
               "column": 6
             },
             "end": {
-              "line": 61,
+              "line": 206,
               "column": 7
             }
           },
@@ -1537,11 +1463,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 62,
+              "line": 207,
               "column": 6
             },
             "end": {
-              "line": 67,
+              "line": 212,
               "column": 7
             }
           },
@@ -1549,15 +1475,31 @@
           "type": "Object"
         },
         {
+          "name": "timeline-index",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 213,
+              "column": 6
+            },
+            "end": {
+              "line": 216,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        },
+        {
           "name": "show-node-content",
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 68,
+              "line": 217,
               "column": 6
             },
             "end": {
-              "line": 70,
+              "line": 221,
               "column": 7
             }
           },
@@ -1569,11 +1511,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 72,
+              "line": 222,
               "column": 6
             },
             "end": {
-              "line": 74,
+              "line": 225,
               "column": 7
             }
           },
@@ -1585,11 +1527,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 75,
+              "line": 226,
               "column": 6
             },
             "end": {
-              "line": 77,
+              "line": 229,
               "column": 7
             }
           },
@@ -1597,63 +1539,47 @@
           "type": "number"
         },
         {
-          "name": "show-line",
+          "name": "date-format",
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 78,
+              "line": 230,
               "column": 6
             },
             "end": {
-              "line": 81,
+              "line": 233,
               "column": 7
             }
           },
           "metadata": {},
-          "type": "boolean"
+          "type": "string"
         },
         {
           "name": "enhanced",
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 82,
+              "line": 234,
               "column": 6
             },
             "end": {
-              "line": 84,
+              "line": 237,
               "column": 7
             }
           },
           "metadata": {},
           "type": "boolean"
-        },
-        {
-          "name": "date-format",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 85,
-              "column": 6
-            },
-            "end": {
-              "line": 88,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
         },
         {
           "name": "editable",
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 92,
+              "line": 238,
               "column": 6
             },
             "end": {
-              "line": 94,
+              "line": 241,
               "column": 7
             }
           },
@@ -1661,31 +1587,15 @@
           "type": "boolean"
         },
         {
-          "name": "time-zone",
-          "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
-          "sourceRange": {
-            "start": {
-              "line": 109,
-              "column": 6
-            },
-            "end": {
-              "line": 111,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
           "name": "compact-editor-info",
-          "description": "When a node has editor info wether todisplay the name next\nto the date (compact) or in the details (not compact)",
+          "description": "",
           "sourceRange": {
             "start": {
-              "line": 124,
+              "line": 242,
               "column": 6
             },
             "end": {
-              "line": 127,
+              "line": 245,
               "column": 7
             }
           },
@@ -1694,19 +1604,35 @@
         },
         {
           "name": "time-groups-used",
-          "description": "Tracks which timeGroups have been used already so that we don't display\nthe same timegroup twice",
+          "description": "",
           "sourceRange": {
             "start": {
-              "line": 132,
+              "line": 246,
               "column": 6
             },
             "end": {
-              "line": 134,
+              "line": 251,
               "column": 7
             }
           },
           "metadata": {},
           "type": "Object"
+        },
+        {
+          "name": "time-zone",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 252,
+              "column": 6
+            },
+            "end": {
+              "line": 255,
+              "column": 7
+            }
+          },
+          "metadata": {},
+          "type": "string"
         }
       ],
       "events": [
@@ -1733,9 +1659,9 @@
       "tagname": "px-timeline-node"
     },
     {
-      "description": "declare DOM module",
+      "description": "The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.\n\nThe timeline can be implemented either as simple or enhanced. A simple timeline supports limited node content that includes a title, date and text description. An enhanced timeline supports detailed and rich node content that includes title, date, author name, author title, percent completion, headline, text and media. Media can be either video (local source or embedded), audio (local source or embedded) or image. The nodes of enhanced timelines can be opened and closed. When closed the node content displayed includes the title and date. Enhanced timelines can be set up to have nodes open or closed by default.\n\nFor both simple and enhanced timelines, the timeline can be set up to have nodes organized by generic time groupings that include Today, This Week, This Month, This Year and Last Year.\n\nThe `timelineData` property should be an array of timeline node definition objects. Here is an example of a simple timeline node configuration:\n\n```\n{\n  \"metaData\": {\n    \"editedDate\": \"Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)\"\n  },\n  \"content\": {\n    \"title\": \"Building the industrial internet\",\n    \"body\": [\n      {\n        \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\"\n      }\n    ]\n  }\n}\n```\n\nAn `enhanced` timeline supports more complex node configurations:\n\n```\n{\n  \"metaData\": {\n    \"editedBy\": \"Google Chrome Developers\",\n    \"editedDate\": \"Tue Sep 20 2016 16:28:10 GMT-0700 (PDT)\",\n    \"editorImg\": \"img/immelt.jpg\",\n    \"editorTitle\": \"Chief Field Scientist\",\n    \"percent\": \"80\",\n    \"customIcon\": \"px-obj:wind-turbine\" // the custom icon property allows the developer to override the default 'media type' icons of the enhanced timeline. if a timeline node has a customIcon defined it will take priority over the media type icons. the customIcon must be a px-icon.\n  },\n  \"content\": {\n    \"title\": \"Lazy loading data with app-route\",\n    \"bodyType\": \"Video\", // This is required  and needs to be set as VIDEO, AUDIO, IMAGE, TEXT, LIST or TABLE\n    \"body\": [\n      {\n        \"video\": \"video/sample-video.mp4\",\n        \"headline\": \"This is the content headline\",\n        \"text\": \"Thanks to Rob Dobson\",\n        \"host\": \"local\", // This is required for VIDEO and AUDIO body types. Its values can be set as LOCAL or REMOTE.\n        \"isComment\": true // If set to true, stylized quotation marks will precede the content body text.\n      }\n    ]\n  }\n}\n```\n\nPlease see below examples of `content.body` schemas for each enhanced node type.\n\nbodyType = LIST\n```\n[{\n  \"key\": 'Topic 1', // String, isRequired\n  \"value\": 'Data Binding' // String, isRequired\n},\n{\n  \"key\": \"Topic 2\",\n  \"value\": \"Data Flow\"\n}]\n```\n\nbodyType = TEXT\n```\n\n[{\n  \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\",\n  \"headline\": \"This is the content headline\",\n  \"isComment\": true\n}]\n```\n\nbodyType = AUDIO\n```\n[{\n  \"audio\": \"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267404963&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Polymer, Polymer Polymer\",\n  \"host\": \"remote\",\n  \"isComment\": false\n}]\n```\n\nbodyType = VIDEO\n```\n[{\n  \"video\": \"video/sample-video.mp4\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Thanks to Rob Dobson\",\n  \"host\": \"local\",\n  \"isComment\": true\n}]\n```\n\nbodyType = IMG\n```\n[{\n  \"img\": \"https://s-media-cache-ak0.pinimg.com/564x/00/42/f1/0042f16c3b768f6c85899e0da8b5f6c6.jpg\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"This is a brand new polymer component\",\n  \"isComment\": true\n}]\n```\n\nbodyType = TABLE\n```\n[{\n  \"first\": \"Valentine\",\n  \"last\": \"Meyer\",\n  \"email\": \"valentinemeyer@scentric.com\"\n },\n  {\n  \"first\": \"Silva\",\n  \"last\": \"Alexander\",\n  \"email\": \"silvaalexander@gmail.com\"\n },\n {\n  \"first\": \"Hopkins\",\n  \"last\": \"Wong\",\n  \"email\": \"hopkinswong@hotmail.com\"\n}]\n```\n\n## Usage\n\n    <px-timeline\n      time-groups=\"true\"\n      show-node-content=\"true\"\n      enhanced=\"true\"\n      timeline-data=\"{{data}}\">\n    </px-timeline>\n\n## Styling\nThe following variables are available for styling:\n\nCustom property | Description\n:----------------|:-------------\n`--px-timeline-border-color` | Color for most of the lines and icons\n`--px-timeline-text-color` | Primary text color for headings and titles\n`--px-timeline-alt-text-color` | Secondary text color for dates and other supporting info",
       "summary": "",
-      "path": "px-timeline-node-container.html",
+      "path": "px-timeline.html",
       "properties": [
         {
           "name": "__localizationCache",
@@ -1761,16 +1687,16 @@
         {
           "name": "language",
           "type": "string",
-          "description": "set a default for localizing",
+          "description": "A valid IETF language tag as a string that `app-localize-behavior` will\nuse to localize this component.\n\nSee https://github.com/PolymerElements/app-localize-behavior for API\ndocumentation and more information.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 75,
-              "column": 6
+              "line": 251,
+              "column": 8
             },
             "end": {
-              "line": 78,
-              "column": 7
+              "line": 254,
+              "column": 9
             }
           },
           "metadata": {
@@ -1781,23 +1707,22 @@
         {
           "name": "resources",
           "type": "Object",
-          "description": "The dictionary of localized messages, for each of the languages that\nare going to be used. See http://formatjs.io/guides/message-syntax/ for\nmore information on the message syntax.\n\nFor example, a valid dictionary would be:\nthis.resources = {\n 'en': { 'greeting': 'Hello!' }, 'fr' : { 'greeting': 'Bonjour!' }\n}",
+          "description": "Dictionary of strings used in this component.\nYou should provide localizations for whichever `language`\nyou plan to use.",
           "privacy": "public",
           "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
             "start": {
-              "line": 163,
-              "column": 4
+              "line": 268,
+              "column": 8
             },
             "end": {
-              "line": 165,
-              "column": 5
+              "line": 281,
+              "column": 9
             }
           },
           "metadata": {
             "polymer": {}
           },
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
+          "defaultValue": "{\"en\":{\"TODAY\":\"TODAY\",\"THIS WEEK\":\"THIS WEEK\",\"THIS MONTH\":\"THIS MONTH\",\"THIS YEAR\":\"THIS YEAR\",\"LAST YEAR\":\"LAST YEAR\"}}"
         },
         {
           "name": "formats",
@@ -1828,12 +1753,12 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 83,
-              "column": 6
+              "line": 259,
+              "column": 8
             },
             "end": {
-              "line": 86,
-              "column": 7
+              "line": 262,
+              "column": 9
             }
           },
           "metadata": {
@@ -1887,74 +1812,38 @@
           "inheritedFrom": "Polymer.AppLocalizeBehavior"
         },
         {
-          "name": "showNodeContent",
-          "type": "boolean",
-          "description": "",
+          "name": "timelineData",
+          "type": "Array",
+          "description": "Data for the timeline.\nExpected format is an array of objects, see above for further details.\nEach object in the array represents a timeline node entry.\nTimeline data is expected to be sorted before passing to the px-timeline component.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 41,
+              "line": 198,
               "column": 6
             },
             "end": {
-              "line": 43,
+              "line": 201,
               "column": 7
             }
           },
           "metadata": {
-            "polymer": {}
+            "polymer": {
+              "observer": "\"_timelineDataChanged\""
+            }
           }
         },
         {
           "name": "showTimeGroups",
           "type": "boolean",
-          "description": "",
+          "description": "Whether to group the timeline node entries by generic time groups. Time groups are Today, This Week, This Month, This Year and Last Year.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 44,
+              "line": 205,
               "column": 6
             },
             "end": {
-              "line": 46,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "nodeCount",
-          "type": "number",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 47,
-              "column": 6
-            },
-            "end": {
-              "line": 49,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "startDate",
-          "type": "Object",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 50,
-              "column": 6
-            },
-            "end": {
-              "line": 52,
+              "line": 207,
               "column": 7
             }
           },
@@ -1965,15 +1854,53 @@
         {
           "name": "enhanced",
           "type": "boolean",
-          "description": "",
+          "description": "Whether to create a basic or enhanced timeline. The default, basic timeline only includes text content, whereas an enhanced\ntimeline can display rich media content in expandable/collapsible nodes.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 53,
+              "line": 212,
               "column": 6
             },
             "end": {
-              "line": 55,
+              "line": 214,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "showNodeContent",
+          "type": "boolean",
+          "description": "Set this flag to expand all nodes within the timeline, either by default or dynamically.\nNote: only applies to `enhanced` timelines.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 219,
+              "column": 6
+            },
+            "end": {
+              "line": 221,
+              "column": 7
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "_nodeCount",
+          "type": "number",
+          "description": "Used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 225,
+              "column": 6
+            },
+            "end": {
+              "line": 227,
               "column": 7
             }
           },
@@ -1984,15 +1911,54 @@
         {
           "name": "dateFormat",
           "type": "string",
-          "description": "",
+          "description": "Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.\nSee [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 56,
+              "line": 232,
+              "column": 7
+            },
+            "end": {
+              "line": 234,
+              "column": 8
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          }
+        },
+        {
+          "name": "compactEditorInfo",
+          "type": "boolean",
+          "description": "When a node has editor info, whether to display the name next\nto the date (compact) or in the details (not compact).\nNote: only applies to `enhanced` timelines.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 240,
+              "column": 7
+            },
+            "end": {
+              "line": 243,
+              "column": 8
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false"
+        },
+        {
+          "name": "timeZone",
+          "type": "string",
+          "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 289,
               "column": 6
             },
             "end": {
-              "line": 58,
+              "line": 294,
               "column": 7
             }
           },
@@ -2003,53 +1969,35 @@
         {
           "name": "editable",
           "type": "boolean",
-          "description": "",
+          "description": "Whether the timeline node titles should be editable.\nWhen set and a user invokes the edit mode, the `px-timeline-edit` event\nis fired, which you should handle accordingly to update `timelineData`.",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 59,
+              "line": 300,
               "column": 6
             },
             "end": {
-              "line": 61,
+              "line": 303,
               "column": 7
             }
           },
           "metadata": {
             "polymer": {}
-          }
-        },
-        {
-          "name": "timeZone",
-          "type": "string",
-          "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 69,
-              "column": 6
-            },
-            "end": {
-              "line": 71,
-              "column": 7
-            }
           },
-          "metadata": {
-            "polymer": {}
-          }
+          "defaultValue": "false"
         },
         {
           "name": "_timeGroupsUsed",
           "type": "Object",
-          "description": "Tracks which timeGroups have been used already so that we don't display\nthe same timegroup twice",
+          "description": "Tracks which timeGroups have been used already so that we don't display\nthe same time group twice.",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 91,
-              "column": 6
+              "line": 308,
+              "column": 7
             },
             "end": {
-              "line": 102,
+              "line": 319,
               "column": 7
             }
           },
@@ -2199,11 +2147,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 111,
+              "line": 328,
               "column": 4
             },
             "end": {
-              "line": 120,
+              "line": 337,
               "column": 5
             }
           },
@@ -2216,11 +2164,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 122,
+              "line": 339,
               "column": 4
             },
             "end": {
-              "line": 124,
+              "line": 341,
               "column": 5
             }
           },
@@ -2230,778 +2178,6 @@
               "name": "e"
             }
           ]
-        }
-      ],
-      "staticMethods": [],
-      "demos": [],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 35,
-          "column": 10
-        },
-        "end": {
-          "line": 125,
-          "column": 3
-        }
-      },
-      "privacy": "public",
-      "superclass": "HTMLElement",
-      "attributes": [
-        {
-          "name": "language",
-          "description": "set a default for localizing",
-          "sourceRange": {
-            "start": {
-              "line": 75,
-              "column": 6
-            },
-            "end": {
-              "line": 78,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
-          "name": "resources",
-          "description": "The dictionary of localized messages, for each of the languages that\nare going to be used. See http://formatjs.io/guides/message-syntax/ for\nmore information on the message syntax.\n\nFor example, a valid dictionary would be:\nthis.resources = {\n 'en': { 'greeting': 'Hello!' }, 'fr' : { 'greeting': 'Bonjour!' }\n}",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 163,
-              "column": 4
-            },
-            "end": {
-              "line": 165,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "type": "Object",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "formats",
-          "description": "Optional dictionary of user defined formats, as explained here:\nhttp://formatjs.io/guides/message-syntax/#custom-formats\n\nFor example, a valid dictionary of formats would be:\nthis.formats = {\n   number: { USD: { style: 'currency', currency: 'USD' } }\n}",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 176,
-              "column": 4
-            },
-            "end": {
-              "line": 179,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "type": "Object",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "use-key-if-missing",
-          "description": "Use the key for localization if value for  language is missing. Should\nalways be true for  our components",
-          "sourceRange": {
-            "start": {
-              "line": 83,
-              "column": 6
-            },
-            "end": {
-              "line": 86,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "localize",
-          "description": "Translates a string to the current `language`. Any parameters to the\nstring should be passed in order, as follows:\n`localize(stringKey, param1Name, param1Value, param2Name, param2Value)`",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 195,
-              "column": 4
-            },
-            "end": {
-              "line": 198,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "type": "Function",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "bubble-event",
-          "description": "If true, will bubble up the event to the parents",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 203,
-              "column": 4
-            },
-            "end": {
-              "line": 206,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "type": "boolean",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "show-node-content",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 41,
-              "column": 6
-            },
-            "end": {
-              "line": 43,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "show-time-groups",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 44,
-              "column": 6
-            },
-            "end": {
-              "line": 46,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "node-count",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 47,
-              "column": 6
-            },
-            "end": {
-              "line": 49,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "number"
-        },
-        {
-          "name": "start-date",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 50,
-              "column": 6
-            },
-            "end": {
-              "line": 52,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "Object"
-        },
-        {
-          "name": "enhanced",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 53,
-              "column": 6
-            },
-            "end": {
-              "line": 55,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "date-format",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 56,
-              "column": 6
-            },
-            "end": {
-              "line": 58,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
-          "name": "editable",
-          "description": "",
-          "sourceRange": {
-            "start": {
-              "line": 59,
-              "column": 6
-            },
-            "end": {
-              "line": 61,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "boolean"
-        },
-        {
-          "name": "time-zone",
-          "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
-          "sourceRange": {
-            "start": {
-              "line": 69,
-              "column": 6
-            },
-            "end": {
-              "line": 71,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        }
-      ],
-      "events": [
-        {
-          "type": "CustomEvent",
-          "name": "app-localize-resources-error",
-          "description": "app-localize-resources-error",
-          "metadata": {},
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "type": "CustomEvent",
-          "name": "app-localize-resources-loaded",
-          "description": "app-localize-resources-loaded",
-          "metadata": {},
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        }
-      ],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "px-timeline-node-container"
-    },
-    {
-      "description": "The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.\n\nThe timeline can be implemented either as simple or enhanced. A simple timeline supports limited node content that includes a title, date and text description. An enhanced timeline supports detailed and rich node content that includes title, date, author name, author title, percent completion, headline, text and media. Media can be either video (local source or embedded), audio (local source or embedded) or image. The nodes of enhanced timelines can be opened and closed. When closed the node content displayed includes the title and date. Enhanced timelines can be set up to have nodes open or closed by default.\n\nFor both simple and enhanced timelines, the timeline can be set up to have nodes organized by generic time groupings that include Today, This Week, This Month, This Year and Last Year.\n\nTimeline Data is an array of timeline node objects.\n\nSample schema for a simple timeline node is detailed below.\n\n```\n{\n  \"metaData\": {\n    \"editedDate\": \"Fri Nov 4 2016 18:28:10 GMT-0700 (PDT)\"\n  },\n  \"content\": {\n    \"title\": \"Building the industrial internet\",\n    \"body\": [\n      {\n        \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\"\n      }\n    ]\n  }\n}\n```\n\nSample schema for an enhanced timeline node is detailed below.\n\n```\n{\n  \"metaData\": {\n    \"editedBy\": \"Google Chrome Developers\",\n    \"editedDate\": \"Tue Sep 20 2016 16:28:10 GMT-0700 (PDT)\",\n    \"editorImg\": \"img/immelt.jpg\",\n    \"editorTitle\": \"Chief Field Scientist\",\n    \"percent\": \"80\",\n    \"customIcon\": \"px-obj:wind-turbine\" // the custom icon property allows the developer to override the default 'media type' icons of the enhanced timeline. if a timeline node has a customIcon defined it will take priority over the media type icons. the customIcon must be a px-icon.\n  },\n  \"content\": {\n    \"title\": \"Lazy loading data with app-route\",\n    \"bodyType\": \"Video\", // This is required  and needs to be set as VIDEO, AUDIO, IMAGE, TEXT or LIST\n    \"body\": [\n      {\n        \"video\": \"video/sample-video.mp4\",\n        \"headline\": \"This is the content headline\",\n        \"text\": \"Thanks to Rob Dobson\",\n        \"host\": \"local\", // This is required for VIDEO and AUDIO body types. Its values can be set as LOCAL or REMOTE.\n        \"isComment\": true\n      }\n    ]\n  }\n}\n```\n\nIf the isComment property is set to true, designed quotation marks will precede the content body text.\n\nThe content.body schema of a List (bodyType) node differs from the schema of other enhanced timeline bodyTypes. Please below example of content.body schemas for all enhanced node bodyTypes.\n\nbodyType = LIST\n```\n[{\n  \"key\": 'Topic 1', // String, isRequired\n  \"value\": 'Data Binding' // String, isRequired\n},\n{ \"key\": \"Topic 2\",\n  \"value\": \"Data Flow\"\n}]\n```\n\nbodyType = TEXT\n```\n\n[{\n  \"text\": \"On Tuesday, GE CEO Jeff Immelt and Intel CEO Brian Krzanich spoke at the Intel Developer Forum in San Francisco about the partnership and the future of the Industrial Internet. They noted this is a significant step in the two companies’ plan to eventually offer GE’s Industrial Internet software on Intel-powered devices.\",\n  \"headline\": \"This is the content headline\",\n  \"isComment\": true\n}]\n```\n\nbodyType = AUDIO\n```\n[{\n  \"audio\": \"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267404963&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Polymer, Polymer Polymer\",\n  \"host\": \"remote\",\n  \"isComment\": false\n}]\n```\n\nbodyType = VIDEO\n```\n[{\n  \"video\": \"video/sample-video.mp4\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"Thanks to Rob Dobson\",\n  \"host\": \"local\",\n  \"isComment\": true\n}]\n```\n\nbodyType = IMG\n```\n[{\n  \"img\": \"https://s-media-cache-ak0.pinimg.com/564x/00/42/f1/0042f16c3b768f6c85899e0da8b5f6c6.jpg\",\n  \"headline\": \"This is the content headline\",\n  \"text\": \"This is a brand new polymer component\",\n  \"isComment\": true\n}]\n```\nbodyType = TABLE\n\nThe content.body schema of Table (bodyType) is simple JSON structure. Please use the below example of content.body schema for enhanced node Table bodyType.\n```\n[{\n  \"first\": \"Valentine\",\n  \"last\": \"Meyer\",\n  \"email\": \"valentinemeyer@scentric.com\"\n },\n  {\n  \"first\": \"Silva\",\n  \"last\": \"Alexander\",\n  \"email\": \"silvaalexander@gmail.com\"\n },\n {\n  \"first\": \"Hopkins\",\n  \"last\": \"Wong\",\n  \"email\": \"hopkinswong@hotmail.com\"\n}]\n```\n\n### Usage\n\n    <px-timeline\n      time-groups=\"true\"\n      show-node-content=\"true\"\n      enhanced=\"true\"\n      timeline-data=\"{{data}}\">\n    </px-timeline>\n\n### Styling\nThe following variables are available for styling:\n\nCustom property | Description\n:----------------|:-------------\n`--px-timeline-border-color` | Color for most of the lines and icons\n`--px-timeline-text-color` | Primary text color for headings and titles\n`--px-timeline-alt-text-color` | Secondary text color for dates and other supporting info",
-      "summary": "",
-      "path": "px-timeline.html",
-      "properties": [
-        {
-          "name": "__localizationCache",
-          "type": "Object",
-          "description": "Internal singleton cache. This is the private implementation of the\nbehaviour; don't interact with it directly.",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 127,
-              "column": 2
-            },
-            "end": {
-              "line": 131,
-              "column": 3
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "language",
-          "type": "string",
-          "description": "set a default for localizing",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 270,
-              "column": 8
-            },
-            "end": {
-              "line": 273,
-              "column": 9
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "\"en\""
-        },
-        {
-          "name": "resources",
-          "type": "Object",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 282,
-              "column": 8
-            },
-            "end": {
-              "line": 295,
-              "column": 9
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "{\"en\":{\"TODAY\":\"TODAY\",\"THIS WEEK\":\"THIS WEEK\",\"THIS MONTH\":\"THIS MONTH\",\"THIS YEAR\":\"THIS YEAR\",\"LAST YEAR\":\"LAST YEAR\"}}"
-        },
-        {
-          "name": "formats",
-          "type": "Object",
-          "description": "Optional dictionary of user defined formats, as explained here:\nhttp://formatjs.io/guides/message-syntax/#custom-formats\n\nFor example, a valid dictionary of formats would be:\nthis.formats = {\n   number: { USD: { style: 'currency', currency: 'USD' } }\n}",
-          "privacy": "public",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 176,
-              "column": 4
-            },
-            "end": {
-              "line": 179,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "{}",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "useKeyIfMissing",
-          "type": "boolean",
-          "description": "Use the key for localization if value for  language is missing. Should\nalways be true for  our components",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 278,
-              "column": 8
-            },
-            "end": {
-              "line": 281,
-              "column": 9
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "true"
-        },
-        {
-          "name": "localize",
-          "type": "Function",
-          "description": "Translates a string to the current `language`. Any parameters to the\nstring should be passed in order, as follows:\n`localize(stringKey, param1Name, param1Value, param2Name, param2Value)`",
-          "privacy": "public",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 195,
-              "column": 4
-            },
-            "end": {
-              "line": 198,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "readOnly": true
-            }
-          },
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "bubbleEvent",
-          "type": "boolean",
-          "description": "If true, will bubble up the event to the parents",
-          "privacy": "public",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 203,
-              "column": 4
-            },
-            "end": {
-              "line": 206,
-              "column": 5
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "false",
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "timelineData",
-          "type": "Array",
-          "description": "Data for the timeline.\n\nExpected data format is a json array of objects.  Each object in the array represents a timeline node entry. Timeline data is expected to be sorted before passing to the px-timeline component.\n\n\n    <px-timeline timeline-data=\"{{data}}\"></px-timeline>",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 200,
-              "column": 6
-            },
-            "end": {
-              "line": 203,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {
-              "observer": "\"_timelineDataChanged\""
-            }
-          }
-        },
-        {
-          "name": "startDate",
-          "type": "Object",
-          "description": "Startdate is today's date and is the head of the timeline. Startdate does not need to be passed into the component.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 209,
-              "column": 6
-            },
-            "end": {
-              "line": 211,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "showTimeGroups",
-          "type": "boolean",
-          "description": "Use the showTimeGroups attribute to group the timeline node entries by generic time groups. Time groups include Today, This Week, This Month, This Year and Last Year.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 219,
-              "column": 6
-            },
-            "end": {
-              "line": 222,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "enhanced",
-          "type": "boolean",
-          "description": "Use the enhanced attribute to create a basic or enhanced timeline.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 230,
-              "column": 6
-            },
-            "end": {
-              "line": 232,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "showNodeContent",
-          "type": "boolean",
-          "description": "Use the showNodeContent attribute to set all nodes of an enhanced timeline to open as default. Note: This attribute only impacts enhanced timeleines.\n\n     <px-timeline show-node-content=\"true\" enhanced=\"true\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 240,
-              "column": 6
-            },
-            "end": {
-              "line": 242,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "nodeCount",
-          "type": "number",
-          "description": "nodeCount is used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.\n\nnodeCount is simply the length of the data array and does not need to be passed in as an option of the px-timeline component.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 249,
-              "column": 6
-            },
-            "end": {
-              "line": 251,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "dateFormat",
-          "type": "string",
-          "description": "Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.\nSee [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 256,
-              "column": 7
-            },
-            "end": {
-              "line": 258,
-              "column": 8
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "compactEditorInfo",
-          "type": "boolean",
-          "description": "When a node has editor info wether todisplay the name next\nto the date (compact) or in the details (not compact)",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 263,
-              "column": 7
-            },
-            "end": {
-              "line": 266,
-              "column": 8
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "false"
-        },
-        {
-          "name": "timeZone",
-          "type": "string",
-          "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 303,
-              "column": 6
-            },
-            "end": {
-              "line": 308,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "editable",
-          "type": "boolean",
-          "description": "Use editable attribute to edit the timeline data.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 314,
-              "column": 6
-            },
-            "end": {
-              "line": 317,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          },
-          "defaultValue": "false"
-        }
-      ],
-      "methods": [
-        {
-          "name": "loadResources",
-          "description": "",
-          "privacy": "public",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 209,
-              "column": 2
-            },
-            "end": {
-              "line": 242,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "path"
-            },
-            {
-              "name": "language"
-            },
-            {
-              "name": "merge"
-            }
-          ],
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "__computeLocalize",
-          "description": "Returns a computed `localize` method, based on the current `language`.",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 247,
-              "column": 2
-            },
-            "end": {
-              "line": 287,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "language"
-            },
-            {
-              "name": "resources"
-            },
-            {
-              "name": "formats"
-            }
-          ],
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "__onRequestResponse",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 289,
-              "column": 2
-            },
-            "end": {
-              "line": 317,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "event"
-            },
-            {
-              "name": "language"
-            },
-            {
-              "name": "merge"
-            }
-          ],
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "__onRequestError",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 319,
-              "column": 2
-            },
-            "end": {
-              "line": 321,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "event"
-            }
-          ],
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "__checkLocalizationCache",
-          "description": "",
-          "privacy": "private",
-          "sourceRange": {
-            "file": "bower_components/app-localize-behavior/app-localize-behavior.html",
-            "start": {
-              "line": 323,
-              "column": 2
-            },
-            "end": {
-              "line": 331,
-              "column": 3
-            }
-          },
-          "metadata": {},
-          "params": [
-            {
-              "name": "proto"
-            }
-          ],
-          "inheritedFrom": "Polymer.AppLocalizeBehavior"
-        },
-        {
-          "name": "ready",
-          "description": "Fired when a timeline node is clicked in the timeline. If the node is not editable,\n`px-timeline-edit` will not be fired. Node index information is stored in `evt.detail`.",
-          "privacy": "protected",
-          "sourceRange": {
-            "start": {
-              "line": 325,
-              "column": 4
-            },
-            "end": {
-              "line": 327,
-              "column": 5
-            }
-          },
-          "metadata": {},
-          "params": []
         },
         {
           "name": "_timelineDataChanged",
@@ -3009,11 +2185,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 328,
+              "line": 343,
               "column": 4
             },
             "end": {
-              "line": 333,
+              "line": 348,
               "column": 5
             }
           },
@@ -3038,11 +2214,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 184,
+          "line": 185,
           "column": 10
         },
         "end": {
-          "line": 334,
+          "line": 355,
           "column": 3
         }
       },
@@ -3051,14 +2227,14 @@
       "attributes": [
         {
           "name": "language",
-          "description": "set a default for localizing",
+          "description": "A valid IETF language tag as a string that `app-localize-behavior` will\nuse to localize this component.\n\nSee https://github.com/PolymerElements/app-localize-behavior for API\ndocumentation and more information.",
           "sourceRange": {
             "start": {
-              "line": 270,
+              "line": 251,
               "column": 8
             },
             "end": {
-              "line": 273,
+              "line": 254,
               "column": 9
             }
           },
@@ -3067,14 +2243,14 @@
         },
         {
           "name": "resources",
-          "description": "",
+          "description": "Dictionary of strings used in this component.\nYou should provide localizations for whichever `language`\nyou plan to use.",
           "sourceRange": {
             "start": {
-              "line": 282,
+              "line": 268,
               "column": 8
             },
             "end": {
-              "line": 295,
+              "line": 281,
               "column": 9
             }
           },
@@ -3104,11 +2280,11 @@
           "description": "Use the key for localization if value for  language is missing. Should\nalways be true for  our components",
           "sourceRange": {
             "start": {
-              "line": 278,
+              "line": 259,
               "column": 8
             },
             "end": {
-              "line": 281,
+              "line": 262,
               "column": 9
             }
           },
@@ -3153,14 +2329,14 @@
         },
         {
           "name": "timeline-data",
-          "description": "Data for the timeline.\n\nExpected data format is a json array of objects.  Each object in the array represents a timeline node entry. Timeline data is expected to be sorted before passing to the px-timeline component.\n\n\n    <px-timeline timeline-data=\"{{data}}\"></px-timeline>",
+          "description": "Data for the timeline.\nExpected format is an array of objects, see above for further details.\nEach object in the array represents a timeline node entry.\nTimeline data is expected to be sorted before passing to the px-timeline component.",
           "sourceRange": {
             "start": {
-              "line": 200,
+              "line": 198,
               "column": 6
             },
             "end": {
-              "line": 203,
+              "line": 201,
               "column": 7
             }
           },
@@ -3168,31 +2344,15 @@
           "type": "Array"
         },
         {
-          "name": "start-date",
-          "description": "Startdate is today's date and is the head of the timeline. Startdate does not need to be passed into the component.",
-          "sourceRange": {
-            "start": {
-              "line": 209,
-              "column": 6
-            },
-            "end": {
-              "line": 211,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "Object"
-        },
-        {
           "name": "show-time-groups",
-          "description": "Use the showTimeGroups attribute to group the timeline node entries by generic time groups. Time groups include Today, This Week, This Month, This Year and Last Year.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
+          "description": "Whether to group the timeline node entries by generic time groups. Time groups are Today, This Week, This Month, This Year and Last Year.",
           "sourceRange": {
             "start": {
-              "line": 219,
+              "line": 205,
               "column": 6
             },
             "end": {
-              "line": 222,
+              "line": 207,
               "column": 7
             }
           },
@@ -3201,14 +2361,14 @@
         },
         {
           "name": "enhanced",
-          "description": "Use the enhanced attribute to create a basic or enhanced timeline.\n\n     <px-timeline enhanced=\"false\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
+          "description": "Whether to create a basic or enhanced timeline. The default, basic timeline only includes text content, whereas an enhanced\ntimeline can display rich media content in expandable/collapsible nodes.",
           "sourceRange": {
             "start": {
-              "line": 230,
+              "line": 212,
               "column": 6
             },
             "end": {
-              "line": 232,
+              "line": 214,
               "column": 7
             }
           },
@@ -3217,14 +2377,14 @@
         },
         {
           "name": "show-node-content",
-          "description": "Use the showNodeContent attribute to set all nodes of an enhanced timeline to open as default. Note: This attribute only impacts enhanced timeleines.\n\n     <px-timeline show-node-content=\"true\" enhanced=\"true\" node-position=\"Left Side\" timeline-data=\"{{data}}\"></px-timeline>",
+          "description": "Set this flag to expand all nodes within the timeline, either by default or dynamically.\nNote: only applies to `enhanced` timelines.",
           "sourceRange": {
             "start": {
-              "line": 240,
+              "line": 219,
               "column": 6
             },
             "end": {
-              "line": 242,
+              "line": 221,
               "column": 7
             }
           },
@@ -3232,31 +2392,15 @@
           "type": "boolean"
         },
         {
-          "name": "node-count",
-          "description": "nodeCount is used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.\n\nnodeCount is simply the length of the data array and does not need to be passed in as an option of the px-timeline component.",
-          "sourceRange": {
-            "start": {
-              "line": 249,
-              "column": 6
-            },
-            "end": {
-              "line": 251,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "number"
-        },
-        {
           "name": "date-format",
           "description": "Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.\nSee [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.",
           "sourceRange": {
             "start": {
-              "line": 256,
+              "line": 232,
               "column": 7
             },
             "end": {
-              "line": 258,
+              "line": 234,
               "column": 8
             }
           },
@@ -3265,14 +2409,14 @@
         },
         {
           "name": "compact-editor-info",
-          "description": "When a node has editor info wether todisplay the name next\nto the date (compact) or in the details (not compact)",
+          "description": "When a node has editor info, whether to display the name next\nto the date (compact) or in the details (not compact).\nNote: only applies to `enhanced` timelines.",
           "sourceRange": {
             "start": {
-              "line": 263,
+              "line": 240,
               "column": 7
             },
             "end": {
-              "line": 266,
+              "line": 243,
               "column": 8
             }
           },
@@ -3284,11 +2428,11 @@
           "description": "Moment-timezone string for using a specific timezone. See\nhttp://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.\n\nIf not provided, tries to guess the current local timezone.",
           "sourceRange": {
             "start": {
-              "line": 303,
+              "line": 289,
               "column": 6
             },
             "end": {
-              "line": 308,
+              "line": 294,
               "column": 7
             }
           },
@@ -3297,14 +2441,14 @@
         },
         {
           "name": "editable",
-          "description": "Use editable attribute to edit the timeline data.",
+          "description": "Whether the timeline node titles should be editable.\nWhen set and a user invokes the edit mode, the `px-timeline-edit` event\nis fired, which you should handle accordingly to update `timelineData`.",
           "sourceRange": {
             "start": {
-              "line": 314,
+              "line": 300,
               "column": 6
             },
             "end": {
-              "line": 317,
+              "line": 303,
               "column": 7
             }
           },

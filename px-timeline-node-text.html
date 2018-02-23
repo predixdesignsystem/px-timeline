@@ -7,13 +7,13 @@
 <dom-module id="px-timeline-node-text">
   <template>
     <style include="px-timeline-styles"></style>
-    <div class="node__body__content__media__text__box flex">
+    <div class="text__box flex">
       <template is="dom-if" if="{{comment}}">
         <px-timeline-node-comment-svg> </px-timeline-node-comment-svg>
-        <div class="node__body__content__media__text--spacer flex">
+        <div class="text--spacer flex">
         </div>
       </template>
-      <div class="node__body__content__media__text">
+      <div class="text">
         <span> {{contentBodyText.text}} </span>
       </div>
     </div>

@@ -80,7 +80,7 @@
       },
       _demoDataURL: {
         type: String,
-        value: "data/timeline-data.json"
+        value: "data/industrial-data.json"
       },
       /**
        * @property demoProps
@@ -110,7 +110,22 @@
       'px-timeline-edit' : '_editTimeline'
     },
     demoProps: {
+      timelineData: {
+        type: Object,
+        inputType:"code:JSON",
+        defaultValue: []
+      },
+      dateFormat: {
+        type: String,
+        inputType: "text",
+        defaultValue: "MMM D, YYYY HH:MM"
+      },
       timeGroups: {
+        type: Boolean,
+        inputType: "toggle",
+        defaultValue: false
+      },
+      editable: {
         type: Boolean,
         inputType: "toggle",
         defaultValue: false
@@ -129,22 +144,8 @@
       compactEditorInfo: {
         type: Boolean,
         inputType: "toggle",
-        defaultValue: false
-      },
-      timelineData: {
-        type: Object,
-        inputType:"code:JSON",
-        defaultValue: []
-      },
-      dateFormat: {
-        type: String,
-        inputType: "text",
-        defaultValue: "MMM D, YYYY HH:MM"
-      },
-      editable: {
-        type: Boolean,
-        inputType: "toggle",
-        defaultValue: false
+        defaultValue: false,
+        inputHelpText: 'Only applies to "enhanced"'
       }
     },
     ready: function() {

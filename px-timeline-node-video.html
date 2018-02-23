@@ -7,22 +7,22 @@
 <dom-module id="px-timeline-node-video">
   <template>
     <style include="px-timeline-styles"></style>
-    <div class="node__body__content__media__text__box flex">
+    <div class="text__box flex">
       <template is="dom-if" if="{{comment}}">
         <px-timeline-node-comment-svg> </px-timeline-node-comment-svg>
-        <div class="node__body__content__media__text--spacer flex">
+        <div class="text--spacer flex">
         </div>
       </template>
-      <div class="node__body__content__media__text">
+      <div class="text">
         <span>[[contentBodyVideo.text]]</span>
       </div>
     </div>
-    <div class="node__body__content__media__video flex flex--start">
+    <div class="video flex flex--start">
       <template is="dom-if" if="{{remoteHost}}">
-        <embed class="node__body__content__media__video__embed" src="[[contentBodyVideo.video]]"/>
+        <embed class="video__embed" src="[[contentBodyVideo.video]]"/>
       </template>
       <template is="dom-if" if="{{localHost}}">
-        <video class="node__body__content__media__video__video" src="[[contentBodyVideo.video]]" controls>
+        <video class="video__video" src="[[contentBodyVideo.video]]" controls>
         </video>
       </template>
     </div>
