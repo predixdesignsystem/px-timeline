@@ -58,26 +58,6 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   display: flex;
 }
 
-.main-box-inner {
-  flex-basis: 50%;
-}
-
-.timeline-header__inner {
-  padding: 10px;
-  text-align: center;
-  font-size: calculateRem(20px);
-  flex-basis: 35%;
-}
-
-.timeline-header__inner span {
-  font-size: calculateRem(20px)
-}
-
-.timeline-line__inner {
-  width: 3px;
-  height: 70px;
-}
-
 // TIMELINE NODE
 
 .icon {
@@ -382,14 +362,6 @@ px-timeline-node-comment-svg {
 
 .base-icon-styles {
   box-shadow: 0 0 0 calculateRem(1px) $px-timeline-border-color;
-}
-
-.timeline-header__inner {
-  border: 3px solid $px-timeline-border-color;
-}
-
-.timeline-line__inner {
-  background-color: $px-timeline-border-color;
 }
 
 .timegroup {
