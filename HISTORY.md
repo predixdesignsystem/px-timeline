@@ -1,3 +1,7 @@
+v1.3.1
+==================
+* simplify internal structure (merge #9)
+
 v1.3.0
 ==================
 * add node type TABLE (merge #8)
