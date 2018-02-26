@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-timeline-node-container.html"/>
+<link rel="import" href="px-timeline-node.html">
 <link rel="import" href="css/px-timeline-styles.html"/>
 <link rel="import" href="../app-localize-behavior/app-localize-behavior.html"/>
 
@@ -10,9 +10,7 @@ The timeline can be implemented either as simple or enhanced. A simple timeline 
 
 For both simple and enhanced timelines, the timeline can be set up to have nodes organized by generic time groupings that include Today, This Week, This Month, This Year and Last Year.
 
-Timeline Data is an array of timeline node objects.
-
-Sample schema for a simple timeline node is detailed below.
+The `timelineData` property should be an array of timeline node definition objects. Here is an example of a simple timeline node configuration:
 
 ```
 {
@@ -30,7 +28,7 @@ Sample schema for a simple timeline node is detailed below.
 }
 ```
 
-Sample schema for an enhanced timeline node is detailed below.
+An `enhanced` timeline supports more complex node configurations:
 
 ```
 {
@@ -44,23 +42,21 @@ Sample schema for an enhanced timeline node is detailed below.
   },
   "content": {
     "title": "Lazy loading data with app-route",
-    "bodyType": "Video", // This is required  and needs to be set as VIDEO, AUDIO, IMAGE, TEXT or LIST
+    "bodyType": "Video", // This is required  and needs to be set as VIDEO, AUDIO, IMAGE, TEXT, LIST or TABLE
     "body": [
       {
         "video": "video/sample-video.mp4",
         "headline": "This is the content headline",
         "text": "Thanks to Rob Dobson",
         "host": "local", // This is required for VIDEO and AUDIO body types. Its values can be set as LOCAL or REMOTE.
-        "isComment": true
+        "isComment": true // If set to true, stylized quotation marks will precede the content body text.
       }
     ]
   }
 }
 ```
 
-If the isComment property is set to true, designed quotation marks will precede the content body text.
-
-The content.body schema of a List (bodyType) node differs from the schema of other enhanced timeline bodyTypes. Please below example of content.body schemas for all enhanced node bodyTypes.
+Please see below examples of `content.body` schemas for each enhanced node type.
 
 bodyType = LIST
 ```
@@ -68,7 +64,8 @@ bodyType = LIST
   "key": 'Topic 1', // String, isRequired
   "value": 'Data Binding' // String, isRequired
 },
-{ "key": "Topic 2",
+{
+  "key": "Topic 2",
   "value": "Data Flow"
 }]
 ```
@@ -114,9 +111,8 @@ bodyType = IMG
   "isComment": true
 }]
 ```
-bodyType = TABLE
 
-The content.body schema of Table (bodyType) is simple JSON structure. Please use the below example of content.body schema for enhanced node Table bodyType.
+bodyType = TABLE
 ```
 [{
   "first": "Valentine",
@@ -135,7 +131,7 @@ The content.body schema of Table (bodyType) is simple JSON structure. Please use
 }]
 ```
 
-### Usage
+## Usage
 
     <px-timeline
       time-groups="true"
@@ -144,7 +140,7 @@ The content.body schema of Table (bodyType) is simple JSON structure. Please use
       timeline-data="{{data}}">
     </px-timeline>
 
-### Styling
+## Styling
 The following variables are available for styling:
 
 Custom property | Description
@@ -162,22 +158,27 @@ Custom property | Description
   <template>
     <style include="px-timeline-styles"></style>
     <div class="main-box flex--center flex--col">
-      <px-timeline-node-container
-        id="node-container"
-        show-node-content="{{showNodeContent}}"
-        timeline-data="[[timelineData]]"
-        start-date="{{startDate}}"
-        show-time-groups="{{showTimeGroups}}"
-        node-count="{{nodeCount}}"
-        enhanced="{{enhanced}}"
-        editable="[[editable]]"
-        date-format="{{dateFormat}}"
-        compact-editor-info="[[compactEditorInfo]]"
-        time-zone="[[timeZone]]"
-        resources="[[resources]]"
-        language="[[language]]"
-        formats="[[formats]]">
-      </px-timeline-node-container>
+      <template is="dom-repeat" items="[[timelineData]]">
+        <px-timeline-node
+          id="node"
+          timeline-metadata="[[item.metaData]]"
+          timeline-content="[[item.content]]"
+          timeline-index="[[index]]"
+          show-node-content="{{showNodeContent}}"
+          show-time-groups="{{showTimeGroups}}"
+          node-count="{{_nodeCount}}"
+          date-format="{{dateFormat}}"
+          enhanced="{{enhanced}}"
+          editable="[[editable]]"
+          compact-editor-info="[[compactEditorInfo]]"
+          time-groups-used="[[_timeGroupsUsed]]"
+          time-zone="[[timeZone]]"
+          resources="[[resources]]"
+          language="[[language]]"
+          use-key-if-missing="[[useKeyIfMissing]]"
+          formats="[[formats]]">
+        </px-timeline-node>
+      </template>
     </div>
   </template>
 </dom-module>
@@ -191,63 +192,38 @@ Custom property | Description
     properties: {
       /**
        * Data for the timeline.
-       *
-       * Expected data format is a json array of objects.  Each object in the array represents a timeline node entry. Timeline data is expected to be sorted before passing to the px-timeline component.
-       *
-       *
-       *     <px-timeline timeline-data="{{data}}"></px-timeline>
-       *
+       * Expected format is an array of objects, see above for further details.
+       * Each object in the array represents a timeline node entry.
+       * Timeline data is expected to be sorted before passing to the px-timeline component.
        */
       timelineData: {
         type: Array,
         observer: '_timelineDataChanged'
       },
       /**
-       * Startdate is today's date and is the head of the timeline. Startdate does not need to be passed into the component.
-       *
-       *
-       */
-      startDate: {
-        type: Object
-      },
-      /**
-       * Use the showTimeGroups attribute to group the timeline node entries by generic time groups. Time groups include Today, This Week, This Month, This Year and Last Year.
-       *
-       *      <px-timeline enhanced="false" node-position="Left Side" timeline-data="{{data}}"></px-timeline>
-       *
-       * @default 'Left Side'
+       * Whether to group the timeline node entries by generic time groups. Time groups are Today, This Week, This Month, This Year and Last Year.
        */
       showTimeGroups: {
         type: Boolean
-        // observer: '_timeGroupsChanged'
       },
       /**
-       * Use the enhanced attribute to create a basic or enhanced timeline.
-       *
-       *      <px-timeline enhanced="false" node-position="Left Side" timeline-data="{{data}}"></px-timeline>
-       *
-       * @default false
+       * Whether to create a basic or enhanced timeline. The default, basic timeline only includes text content, whereas an enhanced
+       * timeline can display rich media content in expandable/collapsible nodes.
        */
       enhanced: {
         type: Boolean
       },
       /**
-       * Use the showNodeContent attribute to set all nodes of an enhanced timeline to open as default. Note: This attribute only impacts enhanced timeleines.
-       *
-       *      <px-timeline show-node-content="true" enhanced="true" node-position="Left Side" timeline-data="{{data}}"></px-timeline>
-       *
-       * @default false
+       * Set this flag to expand all nodes within the timeline, either by default or dynamically.
+       * Note: only applies to `enhanced` timelines.
        */
       showNodeContent: {
         type: Boolean
       },
       /**
-       * nodeCount is used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.
-       *
-       * nodeCount is simply the length of the data array and does not need to be passed in as an option of the px-timeline component.
-       *
+       * Used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.
        */
-      nodeCount: {
+      _nodeCount: {
         type: Number
       },
       /**
@@ -258,15 +234,20 @@ Custom property | Description
          type: String
        },
        /**
-        * When a node has editor info wether todisplay the name next
-        * to the date (compact) or in the details (not compact)
+        * When a node has editor info, whether to display the name next
+        * to the date (compact) or in the details (not compact).
+        * Note: only applies to `enhanced` timelines.
         */
        compactEditorInfo: {
          type: Boolean,
          value: false
        },
        /**
-        * set a default for localizing
+        * A valid IETF language tag as a string that `app-localize-behavior` will
+        * use to localize this component.
+        *
+        * See https://github.com/PolymerElements/app-localize-behavior for API
+        * documentation and more information.
         */
         language: {
           type: String,
@@ -280,6 +261,11 @@ Custom property | Description
           type: Boolean,
           value: true
         },
+        /**
+         * Dictionary of strings used in this component.
+         * You should provide localizations for whichever `language`
+         * you plan to use.
+         */
         resources: {
           type: Object,
           value: function() {
@@ -308,29 +294,64 @@ Custom property | Description
         }
       },
       /**
-      *  Use editable attribute to edit the timeline data.
-      *
-      *  @default false
+      * Whether the timeline node titles should be editable.
+      * When set and a user invokes the edit mode, the `px-timeline-edit` event
+      * is fired, which you should handle accordingly to update `timelineData`.
       */
       editable: {
         type: Boolean,
         value: false
+      },
+      /**
+       * Tracks which timeGroups have been used already so that we don't display
+       * the same time group twice.
+       */
+       _timeGroupsUsed: {
+        type: Object,
+        value: function() {
+          return {
+            'today': false,
+            'thisWeek': false,
+            'thisMonth': false,
+            'thisYear': false,
+            'lastYear': false
+          }
+        }
       }
     },
-    /**
-     * Fired when a timeline node is clicked in the timeline. If the node is not editable,
-     * `px-timeline-edit` will not be fired. Node index information is stored in `evt.detail`.
-     *
-     * @event px-timeline-edit
-     */
-    ready: function () {
-      this.startDate = new Date();
+
+    observers: ['_showTimeGroupsChanged(showTimeGroups, localize)'],
+
+    listeners: {
+      'px-timeline-timegroup-used-update': '_updateTimegroupUsed'
     },
+
+    _showTimeGroupsChanged: function() {
+      //reset track of timegroups
+      this._timeGroupsUsed = {
+            'today': false,
+            'thisWeek': false,
+            'thisMonth': false,
+            'thisYear': false,
+            'lastYear': false
+          };
+    },
+
+    _updateTimegroupUsed: function(e) {
+      this._timeGroupsUsed[e.detail.key] = true;
+    },
+
     _timelineDataChanged: function (newValue, oldValue) {
       if (newValue && newValue.length) {
-        this.nodeCount = newValue.length;
+        this._nodeCount = newValue.length;
       }
       return this.timelineData = newValue;
     }
+    /**
+     * Fired when a timeline node is clicked in the timeline and the `editable` property
+     * has been set. Node index information is stored in `evt.detail`.
+     *
+     * @event px-timeline-edit
+     */
   });
 </script>

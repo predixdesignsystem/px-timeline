@@ -7,10 +7,10 @@
   <template>
     <style include="px-timeline-styles"></style>
     <template is="dom-repeat" items="[[contentBodyList]]">
-      <div class="node__body__content__media__list">
+      <div class="list">
         <span> {{item.key}} | {{item.value}} </span>
       </div>
-      <hr class="timeline-node__header__content__line">
+      <hr class="node__header__content__line">
     </template>
   </template>
 </dom-module>
