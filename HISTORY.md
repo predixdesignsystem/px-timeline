@@ -1,3 +1,7 @@
+v1.3.2
+==================
+* fix editable icons
+
 v1.3.1
 ==================
 * simplify internal structure (merge #9)
