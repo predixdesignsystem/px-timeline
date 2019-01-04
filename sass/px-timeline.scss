@@ -82,6 +82,11 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   height: calculateRem(26px);
   min-height: calculateRem(26px);
   color: $px-timeline-alt-text-color;
+  visibility: visible;
+
+  &.hidden {
+    visibility: hidden;
+  }
 }
 
 .timegroup {

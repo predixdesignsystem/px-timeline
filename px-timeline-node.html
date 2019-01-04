@@ -50,14 +50,12 @@ limitations under the License.
 
       <div class="node__head flex">
         <template is="dom-if" if="{{enhanced}}">
-          <div class="chevron flex flex--middle">
-            <template is="dom-if" if={{timelineContent.body.length}}>
-              <template  is="dom-if" if="{{!showContent}}">
-                <px-icon class="caret pointer" icon="px-utl:chevron-right" aria-hidden="true" on-tap="openContent"></px-icon>
-              </template>
-              <template  is="dom-if" if="{{showContent}}">
-                <px-icon class="caret pointer" icon="px-utl:chevron" aria-hidden="true" on-tap="closeContent"></px-icon>
-              </template>
+          <div class$="chevron {{_getChevronClass(timelineContent)}} flex flex--middle">
+            <template  is="dom-if" if="{{!showContent}}">
+              <px-icon class="caret pointer" icon="px-utl:chevron-right" aria-hidden="true" on-tap="openContent"></px-icon>
+            </template>
+            <template  is="dom-if" if="{{showContent}}">
+              <px-icon class="caret pointer" icon="px-utl:chevron" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
           </div>
         </template>
@@ -378,6 +376,9 @@ limitations under the License.
     },
     _getEditClass: function(editable){
       return editable ? 'actionable' : '';
+    },
+    _getChevronClass: function(timelineContent) {
+      return timelineContent.body && timelineContent.body.length === 0 ? 'hidden' : '';
     },
     _and: function(a,b) {
       return a && b;
