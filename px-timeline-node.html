@@ -62,21 +62,14 @@ limitations under the License.
 
         <div class="icon flex flex--col flex--middle">
           <template is="dom-if" if="{{enhanced}}">
-            <template is="dom-if" if="{{timelineContent.body.length}}">
-              <div id="open-icon" class="icon__circle icon__circle--enhanced flex flex--center flex--middle">
-                <template is="dom-if" if="{{timelineMetadata.customIcon}}">
-                  <px-icon class="icon--enhanced" icon="{{timelineMetadata.customIcon}}" aria-hidden="true"></px-icon>
-                </template>
-                <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
-                  <px-icon class="icon--enhanced" icon="[[_getIcon(timelineContent)]]" aria-hidden="true"></px-icon>
-                </template>
-              </div>
-            </template>
-
-            <template is="dom-if" if={{!timelineContent.body.length}}>
-              <div class="icon__circle icon__circle--simple icon__circle--both flex">
-              </div>
-            </template>
+            <div id="open-icon" class="icon__circle icon__circle--enhanced flex flex--center flex--middle">
+              <template is="dom-if" if="{{timelineMetadata.customIcon}}">
+                <px-icon class="icon--enhanced" icon="{{timelineMetadata.customIcon}}" aria-hidden="true"></px-icon>
+              </template>
+              <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
+                <px-icon class="icon--enhanced" icon="[[_getIcon(timelineContent)]]" aria-hidden="true"></px-icon>
+              </template>
+            </div>
 
             <template is="dom-if" if="{{_showLine}}">
               <template is="dom-if" if={{timelineContent.body.length}}>
