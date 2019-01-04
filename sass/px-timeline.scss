@@ -113,11 +113,6 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   flex: 1 1 1px;
 }
 
-.icon__line--simple {
-  margin-top: calculateRem(-3px);
-  flex: 1 1 1px;
-}
-
 .title {
   margin-bottom: calculateRem(25px);
   &.enhanced {
