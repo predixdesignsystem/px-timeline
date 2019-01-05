@@ -1,3 +1,7 @@
+v1.3.3
+==================
+* Fixed enhanced mode styling for empty timeline body
+
 v1.3.2
 ==================
 * fix editable icons

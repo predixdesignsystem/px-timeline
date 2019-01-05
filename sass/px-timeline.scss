@@ -82,6 +82,11 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
   height: calculateRem(26px);
   min-height: calculateRem(26px);
   color: $px-timeline-alt-text-color;
+  visibility: visible;
+
+  &.hidden {
+    visibility: hidden;
+  }
 }
 
 .timegroup {
@@ -105,11 +110,6 @@ $px-timeline-quote-mark-color : var(--px-timeline-quote-mark-color, gray);
 
 .icon__line--enhanced {
   width: 1px;
-  flex: 1 1 1px;
-}
-
-.icon__line--simple {
-  margin-top: calculateRem(-3px);
   flex: 1 1 1px;
 }
 

@@ -50,35 +50,26 @@ limitations under the License.
 
       <div class="node__head flex">
         <template is="dom-if" if="{{enhanced}}">
-          <div class="chevron flex flex--middle">
-            <template is="dom-if" if={{timelineContent.body.length}}>
-              <template  is="dom-if" if="{{!showContent}}">
-                <px-icon class="caret pointer" icon="px-utl:chevron-right" aria-hidden="true" on-tap="openContent"></px-icon>
-              </template>
-              <template  is="dom-if" if="{{showContent}}">
-                <px-icon class="caret pointer" icon="px-utl:chevron" aria-hidden="true" on-tap="closeContent"></px-icon>
-              </template>
+          <div class$="chevron {{_getChevronClass(timelineContent)}} flex flex--middle">
+            <template  is="dom-if" if="{{!showContent}}">
+              <px-icon class="caret pointer" icon="px-utl:chevron-right" aria-hidden="true" on-tap="openContent"></px-icon>
+            </template>
+            <template  is="dom-if" if="{{showContent}}">
+              <px-icon class="caret pointer" icon="px-utl:chevron" aria-hidden="true" on-tap="closeContent"></px-icon>
             </template>
           </div>
         </template>
 
         <div class="icon flex flex--col flex--middle">
           <template is="dom-if" if="{{enhanced}}">
-            <template is="dom-if" if="{{timelineContent.body.length}}">
-              <div id="open-icon" class="icon__circle icon__circle--enhanced flex flex--center flex--middle">
-                <template is="dom-if" if="{{timelineMetadata.customIcon}}">
-                  <px-icon class="icon--enhanced" icon="{{timelineMetadata.customIcon}}" aria-hidden="true"></px-icon>
-                </template>
-                <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
-                  <px-icon class="icon--enhanced" icon="[[_getIcon(timelineContent)]]" aria-hidden="true"></px-icon>
-                </template>
-              </div>
-            </template>
-
-            <template is="dom-if" if={{!timelineContent.body.length}}>
-              <div class="icon__circle icon__circle--simple icon__circle--both flex">
-              </div>
-            </template>
+            <div id="open-icon" class="icon__circle icon__circle--enhanced flex flex--center flex--middle">
+              <template is="dom-if" if="{{timelineMetadata.customIcon}}">
+                <px-icon class="icon--enhanced" icon="{{timelineMetadata.customIcon}}" aria-hidden="true"></px-icon>
+              </template>
+              <template is="dom-if" if="{{!timelineMetadata.customIcon}}">
+                <px-icon class="icon--enhanced" icon="[[_getIcon(timelineContent)]]" aria-hidden="true"></px-icon>
+              </template>
+            </div>
 
             <template is="dom-if" if="{{_showLine}}">
               <template is="dom-if" if={{timelineContent.body.length}}>
@@ -86,7 +77,7 @@ limitations under the License.
                 </div>
               </template>
               <template is="dom-if" if={{!timelineContent.body.length}}>
-                <div class="icon__line icon__line--simple">
+                <div class="icon__line">
                 </div>
               </template>
             </template>
@@ -378,6 +369,9 @@ limitations under the License.
     },
     _getEditClass: function(editable){
       return editable ? 'actionable' : '';
+    },
+    _getChevronClass: function(timelineContent) {
+      return timelineContent.body && timelineContent.body.length === 0 ? 'hidden' : '';
     },
     _and: function(a,b) {
       return a && b;
