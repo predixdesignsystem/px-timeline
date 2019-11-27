@@ -1,4 +1,4 @@
-<!--
+/*
 Copyright (c) 2018, General Electric
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +12,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
-
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-timeline-node.html">
-<link rel="import" href="css/px-timeline-styles.html"/>
-<link rel="import" href="../app-localize-behavior/app-localize-behavior.html"/>
-
-<!--
+*/
+/**
 The px-timeline is a flexible interactive timeline component for visualizing a time based series of events and documenting details relevant to each event respectively.
 
 The timeline can be implemented either as simple or enhanced. A simple timeline supports limited node content that includes a title, date and text description. An enhanced timeline supports detailed and rich node content that includes title, date, author name, author title, percent completion, headline, text and media. Media can be either video (local source or embedded), audio (local source or embedded) or image. The nodes of enhanced timelines can be opened and closed. When closed the node content displayed includes the title and date. Enhanced timelines can be set up to have nodes open or closed by default.
@@ -169,205 +163,195 @@ Custom property | Description
 @blurb A flexible interactive timeline component
 @homepage index.html
 @demo index.html
--->
-<dom-module id="px-timeline">
-  <template>
+*/
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
+
+import './px-timeline-node.js';
+import './css/px-timeline-styles.js';
+import { AppLocalizeBehavior } from '@polymer/app-localize-behavior/app-localize-behavior.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+Polymer({
+  _template: html`
     <style include="px-timeline-styles"></style>
     <div class="main-box flex--center flex--col">
       <template is="dom-repeat" items="[[timelineData]]">
-        <px-timeline-node
-          id="node"
-          timeline-metadata="[[item.metaData]]"
-          timeline-content="[[item.content]]"
-          timeline-index="[[index]]"
-          show-node-content="{{showNodeContent}}"
-          show-time-groups="{{showTimeGroups}}"
-          node-count="{{_nodeCount}}"
-          date-format="{{dateFormat}}"
-          enhanced="{{enhanced}}"
-          editable="[[editable]]"
-          compact-editor-info="[[compactEditorInfo]]"
-          time-groups-used="[[_timeGroupsUsed]]"
-          time-zone="[[timeZone]]"
-          resources="[[resources]]"
-          language="[[language]]"
-          use-key-if-missing="[[useKeyIfMissing]]"
-          formats="[[formats]]">
+        <px-timeline-node id="node" timeline-metadata="[[item.metaData]]" timeline-content="[[item.content]]" timeline-index="[[index]]" show-node-content="{{showNodeContent}}" show-time-groups="{{showTimeGroups}}" node-count="{{_nodeCount}}" date-format="{{dateFormat}}" enhanced="{{enhanced}}" editable="[[editable]]" compact-editor-info="[[compactEditorInfo]]" time-groups-used="[[_timeGroupsUsed]]" time-zone="[[timeZone]]" resources="[[resources]]" language="[[language]]" use-key-if-missing="[[useKeyIfMissing]]" formats="[[formats]]">
         </px-timeline-node>
       </template>
     </div>
-  </template>
-</dom-module>
-<script>
-  Polymer({
+`,
 
-    is: 'px-timeline',
+  is: 'px-timeline',
+  behaviors: [AppLocalizeBehavior],
 
-    behaviors: [Polymer.AppLocalizeBehavior],
-
-    properties: {
-      /**
-       * Data for the timeline.
-       * Expected format is an array of objects, see above for further details.
-       * Each object in the array represents a timeline node entry.
-       * Timeline data is expected to be sorted before passing to the px-timeline component.
-       */
-      timelineData: {
-        type: Array,
-        observer: '_timelineDataChanged'
-      },
-      /**
-       * Whether to group the timeline node entries by generic time groups. Time groups are Today, This Week, This Month, This Year and Last Year.
-       */
-      showTimeGroups: {
-        type: Boolean
-      },
-      /**
-       * Whether to create a basic or enhanced timeline. The default, basic timeline only includes text content, whereas an enhanced
-       * timeline can display rich media content in expandable/collapsible nodes.
-       */
-      enhanced: {
-        type: Boolean
-      },
-      /**
-       * Set this flag to expand all nodes within the timeline, either by default or dynamically.
-       * Note: only applies to `enhanced` timelines.
-       */
-      showNodeContent: {
-        type: Boolean
-      },
-      /**
-       * Used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.
-       */
-      _nodeCount: {
-        type: Number
-      },
-      /**
-       * Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.
-       * See [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.
-       */
-       dateFormat: {
-         type: String
-       },
-       /**
-        * When a node has editor info, whether to display the name next
-        * to the date (compact) or in the details (not compact).
-        * Note: only applies to `enhanced` timelines.
-        */
-       compactEditorInfo: {
-         type: Boolean,
-         value: false
-       },
-       /**
-        * A valid IETF language tag as a string that `app-localize-behavior` will
-        * use to localize this component.
-        *
-        * See https://github.com/PolymerElements/app-localize-behavior for API
-        * documentation and more information.
-        */
-        language: {
-          type: String,
-          value: 'en'
-        },
-        /**
-        * Use the key for localization if value for  language is missing. Should
-        * always be true for  our components
-        */
-        useKeyIfMissing: {
-          type: Boolean,
-          value: true
-        },
-        /**
-         * Dictionary of strings used in this component.
-         * You should provide localizations for whichever `language`
-         * you plan to use.
-         */
-        resources: {
-          type: Object,
-          value: function() {
-            return {
-              'en': {
-                'TODAY': 'TODAY',
-                'THIS WEEK': 'THIS WEEK',
-                'THIS MONTH': 'THIS MONTH',
-                'THIS YEAR': 'THIS YEAR',
-                'LAST YEAR': 'LAST YEAR'
-              }
-            }
-          }
-        },
-      /**
-      *
-      * Moment-timezone string for using a specific timezone. See
-      * http://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.
-      *
-      * If not provided, tries to guess the current local timezone.
+  properties: {
+    /**
+     * Data for the timeline.
+     * Expected format is an array of objects, see above for further details.
+     * Each object in the array represents a timeline node entry.
+     * Timeline data is expected to be sorted before passing to the px-timeline component.
+     */
+    timelineData: {
+      type: Array,
+      observer: '_timelineDataChanged'
+    },
+    /**
+     * Whether to group the timeline node entries by generic time groups. Time groups are Today, This Week, This Month, This Year and Last Year.
+     */
+    showTimeGroups: {
+      type: Boolean
+    },
+    /**
+     * Whether to create a basic or enhanced timeline. The default, basic timeline only includes text content, whereas an enhanced
+     * timeline can display rich media content in expandable/collapsible nodes.
+     */
+    enhanced: {
+      type: Boolean
+    },
+    /**
+     * Set this flag to expand all nodes within the timeline, either by default or dynamically.
+     * Note: only applies to `enhanced` timelines.
+     */
+    showNodeContent: {
+      type: Boolean
+    },
+    /**
+     * Used in logic controlling when to break the timeline with the time groups Today, This Week, This Month, This Year.
+     */
+    _nodeCount: {
+      type: Number
+    },
+    /**
+     * Valid date string to be used by Moment.js for formatting of the date and time displayed in the timeline.
+     * See [https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/) for more information.
+     */
+     dateFormat: {
+       type: String
+     },
+     /**
+      * When a node has editor info, whether to display the name next
+      * to the date (compact) or in the details (not compact).
+      * Note: only applies to `enhanced` timelines.
       */
-      timeZone: {
+     compactEditorInfo: {
+       type: Boolean,
+       value: false
+     },
+     /**
+      * A valid IETF language tag as a string that `app-localize-behavior` will
+      * use to localize this component.
+      *
+      * See https://github.com/PolymerElements/app-localize-behavior for API
+      * documentation and more information.
+      */
+      language: {
         type: String,
-        value: function() {
-          return Px.moment.tz.guess();
-        }
+        value: 'en'
       },
       /**
-      * Whether the timeline node titles should be editable.
-      * When set and a user invokes the edit mode, the `px-timeline-edit` event
-      * is fired, which you should handle accordingly to update `timelineData`.
+      * Use the key for localization if value for  language is missing. Should
+      * always be true for  our components
       */
-      editable: {
+      useKeyIfMissing: {
         type: Boolean,
-        value: false
+        value: true
       },
       /**
-       * Tracks which timeGroups have been used already so that we don't display
-       * the same time group twice.
+       * Dictionary of strings used in this component.
+       * You should provide localizations for whichever `language`
+       * you plan to use.
        */
-       _timeGroupsUsed: {
+      resources: {
         type: Object,
         value: function() {
           return {
-            'today': false,
-            'thisWeek': false,
-            'thisMonth': false,
-            'thisYear': false,
-            'lastYear': false
+            'en': {
+              'TODAY': 'TODAY',
+              'THIS WEEK': 'THIS WEEK',
+              'THIS MONTH': 'THIS MONTH',
+              'THIS YEAR': 'THIS YEAR',
+              'LAST YEAR': 'LAST YEAR'
+            }
           }
         }
-      }
-    },
-
-    observers: ['_showTimeGroupsChanged(showTimeGroups, localize)'],
-
-    listeners: {
-      'px-timeline-timegroup-used-update': '_updateTimegroupUsed'
-    },
-
-    _showTimeGroupsChanged: function() {
-      //reset track of timegroups
-      this._timeGroupsUsed = {
-            'today': false,
-            'thisWeek': false,
-            'thisMonth': false,
-            'thisYear': false,
-            'lastYear': false
-          };
-    },
-
-    _updateTimegroupUsed: function(e) {
-      this._timeGroupsUsed[e.detail.key] = true;
-    },
-
-    _timelineDataChanged: function (newValue, oldValue) {
-      if (newValue && newValue.length) {
-        this._nodeCount = newValue.length;
-      }
-      return this.timelineData = newValue;
-    }
+      },
     /**
-     * Fired when a timeline node is clicked in the timeline and the `editable` property
-     * has been set. Node index information is stored in `evt.detail`.
-     *
-     * @event px-timeline-edit
+    *
+    * Moment-timezone string for using a specific timezone. See
+    * http://momentjs.com/timezone/docs/#/data-loading/getting-zone-names/.
+    *
+    * If not provided, tries to guess the current local timezone.
+    */
+    timeZone: {
+      type: String,
+      value: function() {
+        return Px.moment.tz.guess();
+      }
+    },
+    /**
+    * Whether the timeline node titles should be editable.
+    * When set and a user invokes the edit mode, the `px-timeline-edit` event
+    * is fired, which you should handle accordingly to update `timelineData`.
+    */
+    editable: {
+      type: Boolean,
+      value: false
+    },
+    /**
+     * Tracks which timeGroups have been used already so that we don't display
+     * the same time group twice.
      */
-  });
-</script>
+     _timeGroupsUsed: {
+      type: Object,
+      value: function() {
+        return {
+          'today': false,
+          'thisWeek': false,
+          'thisMonth': false,
+          'thisYear': false,
+          'lastYear': false
+        }
+      }
+    }
+  },
+
+  observers: ['_showTimeGroupsChanged(showTimeGroups, localize)'],
+
+  listeners: {
+    'px-timeline-timegroup-used-update': '_updateTimegroupUsed'
+  },
+
+  _showTimeGroupsChanged: function() {
+    //reset track of timegroups
+    this._timeGroupsUsed = {
+          'today': false,
+          'thisWeek': false,
+          'thisMonth': false,
+          'thisYear': false,
+          'lastYear': false
+        };
+  },
+
+  _updateTimegroupUsed: function(e) {
+    this._timeGroupsUsed[e.detail.key] = true;
+  },
+
+  _timelineDataChanged: function (newValue, oldValue) {
+    if (newValue && newValue.length) {
+      this._nodeCount = newValue.length;
+    }
+    return this.timelineData = newValue;
+  }
+  /**
+   * Fired when a timeline node is clicked in the timeline and the `editable` property
+   * has been set. Node index information is stored in `evt.detail`.
+   *
+   * @event px-timeline-edit
+   */
+});

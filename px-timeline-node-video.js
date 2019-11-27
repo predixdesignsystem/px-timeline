@@ -1,4 +1,4 @@
-<!--
+/*
 Copyright (c) 2018, General Electric
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,16 +12,22 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+*/
+/* import polymer library */
+/* declare DOM module */
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
 
-<!-- import polymer library -->
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-timeline-node-comment-svg.html">
-<link rel="import" href="css/px-timeline-styles.html">
-
-<!-- declare DOM module -->
-<dom-module id="px-timeline-node-video">
-  <template>
+import './px-timeline-node-comment-svg.js';
+import './css/px-timeline-styles.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+Polymer({
+  _template: html`
     <style include="px-timeline-styles"></style>
     <div class="text__box flex">
       <template is="dom-if" if="{{comment}}">
@@ -35,34 +41,32 @@ limitations under the License.
     </div>
     <div class="video flex flex--start">
       <template is="dom-if" if="{{remoteHost}}">
-        <embed class="video__embed" src="[[contentBodyVideo.video]]"/>
+        <embed class="video__embed" src="[[contentBodyVideo.video]]">
       </template>
       <template is="dom-if" if="{{localHost}}">
-        <video class="video__video" src="[[contentBodyVideo.video]]" controls>
+        <video class="video__video" src="[[contentBodyVideo.video]]" controls="">
         </video>
       </template>
     </div>
-  </template>
-</dom-module>
+`,
 
-<script>
-  Polymer({
-    is: 'px-timeline-node-video',
-    properties: {
+  is: 'px-timeline-node-video',
 
-    },
-    ready: function() {
-      if (this.contentBodyVideo) {
-        if (this.contentBodyVideo.host.toUpperCase() === 'REMOTE' && this.contentBodyVideo.video) {
-          this.remoteHost = true;
-        }
-        if (this.contentBodyVideo.host.toUpperCase() === 'LOCAL' && this.contentBodyVideo.video) {
-          this.localHost = true;
-        }
-        if (this.contentBodyVideo.isComment) {
-          this.comment = true;
-        }
+  properties: {
+
+  },
+
+  ready: function() {
+    if (this.contentBodyVideo) {
+      if (this.contentBodyVideo.host.toUpperCase() === 'REMOTE' && this.contentBodyVideo.video) {
+        this.remoteHost = true;
+      }
+      if (this.contentBodyVideo.host.toUpperCase() === 'LOCAL' && this.contentBodyVideo.video) {
+        this.localHost = true;
+      }
+      if (this.contentBodyVideo.isComment) {
+        this.comment = true;
       }
     }
-  });
-</script>
+  }
+});
